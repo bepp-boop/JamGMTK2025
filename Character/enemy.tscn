@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfdhgyg7ljxvm"]
+
+[ext_resource type="PackedScene" uid="uid://dbcr5xq38755q" path="res://Composition/health.tscn" id="1_1ptw2"]
+[ext_resource type="PackedScene" uid="uid://bs1ght1faye3t" path="res://Composition/hitbox_component.tscn" id="2_hema6"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1whr7"]
+
+[node name="Enemy" type="Node2D"]
+
+[node name="Health" parent="." instance=ExtResource("1_1ptw2")]
+
+[node name="ProgressBar" type="ProgressBar" parent="Health"]
+offset_right = 4.0
+offset_bottom = 27.0
+
+[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_hema6")]
+health_component = NodePath("../Health")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+shape = SubResource("RectangleShape2D_1whr7")

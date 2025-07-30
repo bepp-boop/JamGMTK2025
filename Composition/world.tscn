@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://5xeilywqi2lo"]
+[gd_scene load_steps=4 format=3 uid="uid://5xeilywqi2lo"]
 
-[ext_resource type="PackedScene" uid="uid://4ndbdy8j5i2a" path="res://Composition/player.tscn" id="1_5pyyo"]
+[ext_resource type="PackedScene" uid="uid://4ndbdy8j5i2a" path="res://Character/player.tscn" id="1_5pyyo"]
+[ext_resource type="PackedScene" uid="uid://cfdhgyg7ljxvm" path="res://Character/enemy.tscn" id="2_ultib"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ultib"]
 size = Vector2(355, 20)
@@ -15,3 +16,6 @@ size = Vector2(355, 20)
 position = Vector2(-32, 43)
 shape = SubResource("RectangleShape2D_ultib")
 debug_color = Color(0.868757, 0.300545, 0.480283, 0.42)
+
+[node name="Enemy" parent="." instance=ExtResource("2_ultib")]
+position = Vector2(126, -8)
