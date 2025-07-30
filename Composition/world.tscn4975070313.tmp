@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://5xeilywqi2lo"]
+
+[ext_resource type="PackedScene" uid="uid://4ndbdy8j5i2a" path="res://Composition/player.tscn" id="1_5pyyo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ultib"]
+size = Vector2(355, 20)
+
+[node name="World" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("1_5pyyo")]
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="Player"]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(1, 24)
+shape = SubResource("RectangleShape2D_ultib")
+debug_color = Color(0.868757, 0.300545, 0.480283, 0.42)

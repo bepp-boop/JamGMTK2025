@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="TopDownMovementStats" load_steps=2 format=3 uid="uid://4l3wekky8rcu"]
+
+[ext_resource type="Script" uid="uid://c4x0wx58tvgf2" path="res://Composition/Script/top_down_movement_stats.gd" id="1_xsge4"]
+
+[resource]
+script = ExtResource("1_xsge4")
+max_speed = 100.0
+accelaration = 1000.0
+friction = 500.0
+metadata/_custom_type_script = "uid://c4x0wx58tvgf2"

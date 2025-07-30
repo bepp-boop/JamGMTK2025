@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://rxiniqhf73dl"]
+
+[ext_resource type="Script" uid="uid://cpo6yb2mg2vv7" path="res://Composition/Script/top_down_movement_velocity_input.gd" id="1_myppo"]
+
+[node name="TopDownMovementVelocityInput" type="Node2D"]
+script = ExtResource("1_myppo")
