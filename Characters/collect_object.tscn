@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cwdvae1ds3svm"]
+
+[ext_resource type="Script" uid="uid://bkhyd57masw4k" path="res://Characters/collectable.gd" id="1_w1sef"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v41mi"]
+height = 3.75952
+
+[node name="CollectObject" type="Node3D"]
+script = ExtResource("1_w1sef")
+
+[node name="Area3D" type="Area3D" parent="."]
+collision_mask = 2
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.879761, 0)
+shape = SubResource("CylinderShape3D_v41mi")
+debug_color = Color(0.991938, 0, 0.258897, 0.42)
+
+[node name="Sprite3D" type="Sprite3D" parent="Area3D"]
