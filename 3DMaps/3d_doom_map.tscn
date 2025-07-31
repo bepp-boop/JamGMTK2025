@@ -1,6 +1,7 @@
-[gd_scene load_steps=18 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=19 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://Characters/player.tscn" id="1_1s3sh"]
+[ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://Characters/SwitchManager.tscn" id="1_c4kt8"]
 [ext_resource type="ArrayMesh" uid="uid://c327kq7jr0jov" path="res://Enviornment/Tiles/maptest.obj" id="1_jikqn"]
 [ext_resource type="ArrayMesh" uid="uid://dk7gu0f4d8f0j" path="res://Enviornment/Props/ribcage.obj" id="2_jikqn"]
 [ext_resource type="PackedScene" uid="uid://cwdvae1ds3svm" path="res://Characters/collect_object.tscn" id="2_um6cl"]
@@ -198,9 +199,16 @@ environment = SubResource("Environment_hl680")
 transform = Transform3D(0.999867, -0.0148756, 0.00668694, -0.0042621, 0.157436, 0.98752, -0.0157427, -0.987417, 0.157352, -1.76157, 11.6856, -1.54025)
 shadow_enabled = true
 
-[node name="Player" parent="." instance=ExtResource("1_1s3sh")]
-unique_name_in_owner = true
+[node name="SwitchManager" parent="." instance=ExtResource("1_c4kt8")]
+
+[node name="Player1" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06115, 0, 8.28942)
+
+[node name="Player2" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -15.4152, 0.0486064, 11.7864)
+
+[node name="Player3" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 14.8791, 0, 0)
 
 [node name="CollectObject" parent="." instance=ExtResource("2_um6cl")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42147, 0, 2.29818)

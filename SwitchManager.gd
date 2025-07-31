@@ -1,34 +1,102 @@
 extends Node3D
 
-@onready var player1 = %Player  # Reference to Player1 node
-@onready var player2 = %Player2  # Reference to Player2 node
-@onready var player3 = %Player3  # Reference to Player3 node
+# Ensure correct node paths (modify if necessary)
+@onready var player1 = get_node("Player1")  # Reference to Player 1 Node
+@onready var player2 = get_node("Player2")  # Reference to Player 2 Node
+@onready var player3 = get_node("Player3")  # Reference to Player 3 Node
 
-var current_player = 1  # 1 = Player1, 2 = Player2, 3 = Player3
+@onready var camera1 = get_node("Player1/Camera3D")  # Camera attached to Player 1
+@onready var camera2 = get_node("Player2/Camera3D")  # Camera attached to Player 2
+@onready var camera3 = get_node("Player3/Camera3D")  # Camera attached to Player 3
 
+var max_time = 1.0
+var time_left = 0.0
+var can_change = false
+
+enum {CHAR_1, CHAR_2, CHAR_3}
+var state
+
+# Called when the node enters the scene tree for the first time.
 func _ready():
-	# Set initial player states
-	player1.set_input_disabled(false)  # Player1 can move
-	player2.set_input_disabled(true)   # Player2 can't move
-	player3.set_input_disabled(true)   # Player3 can't move
+	time_left = max_time
+	state = CHAR_1
 
-func _input(event):
-	# Listen for the "ui_select" (default is Enter/Space) to switch players
-	if event is InputEventKey and event.pressed:
-		if event.scancode == KEY_TAB:  # Check if the TAB key was pressed
-			_on_switch_key_pressed()
+	# Set initial states
+	player1.visible = true
+	player2.visible = false
+	player3.visible = false
+	
+	# Set all cameras to be initially off (not active)
+	camera1.current = true
+	camera2.current = false
+	camera3.current = false
+	
+	# Initially disable input for players 2 and 3
+	player1.set_input_disabled(false)  # Player 1 gets input
+	player2.set_input_disabled(true)   # Disable Player 2 input
+	player3.set_input_disabled(true)   # Disable Player 3 input
 
-# Switch input control between Player1, Player2, and Player3
-func _on_switch_key_pressed():
-	if current_player == 1:
-		player1.set_input_disabled(true)  # Disable Player1's input
-		player2.set_input_disabled(false) # Enable Player2's input
-		current_player = 2
-	elif current_player == 2:
-		player2.set_input_disabled(true)  # Disable Player2's input
-		player3.set_input_disabled(false) # Enable Player3's input
-		current_player = 3
-	else:
-		player3.set_input_disabled(true)  # Disable Player3's input
-		player1.set_input_disabled(false) # Enable Player1's input
-		current_player = 1
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	if time_left > 0.0:
+		time_left -= delta
+		print(time_left)
+	elif time_left <= 0.0 and can_change == false:
+		print("Can now change characters")
+		can_change = true
+	
+	match state:
+		CHAR_1:
+			if Input.is_action_just_pressed("ui_accept") and can_change == true:
+				state = CHAR_2
+				print(state)
+				print("char 2 active")
+				_switch_to_player(player2)
+				reset_char_switch_delay()
+		CHAR_2:
+			if Input.is_action_just_pressed("ui_accept") and can_change == true:
+				state = CHAR_3
+				print(state)
+				print("char 3 active")
+				_switch_to_player(player3)
+				reset_char_switch_delay()
+		CHAR_3:
+			if Input.is_action_just_pressed("ui_accept") and can_change == true:
+				state = CHAR_1
+				print(state)
+				print("char 1 active")
+				_switch_to_player(player1)
+				reset_char_switch_delay()
+
+func reset_char_switch_delay():
+	time_left = max_time
+	can_change = false
+
+# Function to handle switching to a new player
+func _switch_to_player(new_player):
+	# Deactivate all players' cameras
+	camera1.current = false
+	camera2.current = false
+	camera3.current = false
+	
+	# Deactivate all players (hide them)
+	player1.visible = false
+	player2.visible = false
+	player3.visible = false
+	
+	# Disable input for all players
+	player1.set_input_disabled(true)
+	player2.set_input_disabled(true)
+	player3.set_input_disabled(true)
+
+	# Activate the new player and its camera
+	new_player.visible = true
+	if new_player == player1:
+		camera1.current = true
+		player1.set_input_disabled(false)  # Enable input for Player 1
+	elif new_player == player2:
+		camera2.current = true
+		player2.set_input_disabled(false)  # Enable input for Player 2
+	elif new_player == player3:
+		camera3.current = true
+		player3.set_input_disabled(false)  # Enable input for Player 3
