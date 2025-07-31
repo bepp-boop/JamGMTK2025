@@ -1,8 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ball51xonh4ng"]
+[gd_scene load_steps=3 format=3 uid="uid://ball51xonh4ng"]
 
-[ext_resource type="Script" uid="uid://b1e8pt5jmigye" path="res://Enviornment/breakable.gd" id="1_gmecg"]
-
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_asq3n"]
+[ext_resource type="Script" uid="uid://cd3ei8ic1jgph" path="res://Enviornment/breakable.gd" id="1_gmecg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtio"]
 size = Vector3(1, 2.02515, 1)
@@ -13,7 +11,6 @@ script = ExtResource("1_gmecg")
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 collision_layer = 2
 collision_mask = 3
-physics_material_override = SubResource("PhysicsMaterial_asq3n")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622904, 0)
