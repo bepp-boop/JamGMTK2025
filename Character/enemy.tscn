@@ -7,14 +7,17 @@
 
 [node name="Enemy" type="Node2D"]
 
-[node name="Health" parent="." instance=ExtResource("1_1ptw2")]
+[node name="Health" parent="." node_paths=PackedStringArray("health_bar") instance=ExtResource("1_1ptw2")]
+health_bar = NodePath("ProgressBar")
 
 [node name="ProgressBar" type="ProgressBar" parent="Health"]
 offset_right = 4.0
 offset_bottom = 27.0
 
-[node name="HitboxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_hema6")]
+[node name="HitBoxComponent" parent="." node_paths=PackedStringArray("health_component") instance=ExtResource("2_hema6")]
+position = Vector2(1, 0)
 health_component = NodePath("../Health")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HitboxComponent"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HitBoxComponent"]
+position = Vector2(-1, 0)
 shape = SubResource("RectangleShape2D_1whr7")
