@@ -58,9 +58,11 @@ func shoot():
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
 		ray_cast_3d.get_collider().kill()
+	
 
 func shoot_animation_done():
 	can_shoot = true
+
 
 func kill():
 	dead = true
