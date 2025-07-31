@@ -57,7 +57,7 @@ func shoot():
 	animated_sprite_2d.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
-		print(ray_cast_3d.get_collider())
+		print("hit collider of"+ray_cast_3d.get_collider().name)
 		ray_cast_3d.get_collider().kill()
 	
 

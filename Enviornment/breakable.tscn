@@ -1,18 +1,35 @@
-[gd_scene load_steps=3 format=3 uid="uid://ball51xonh4ng"]
+[gd_scene load_steps=6 format=3 uid="uid://ball51xonh4ng"]
 
 [ext_resource type="Script" uid="uid://cd3ei8ic1jgph" path="res://Enviornment/breakable.gd" id="1_gmecg"]
+[ext_resource type="AudioStream" uid="uid://cits2aogokbmo" path="res://Characters/Audio/PanicScream1.wav" id="2_ae6fg"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_lrtio"]
-size = Vector3(1, 2.02515, 1)
+size = Vector3(1, 3.35254, 1)
 
-[node name="Breakable" type="Node3D"]
-script = ExtResource("1_gmecg")
+[sub_resource type="BoxMesh" id="BoxMesh_gmecg"]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[sub_resource type="PrismMesh" id="PrismMesh_gmecg"]
+
+[node name="Breakable" type="StaticBody3D"]
 collision_layer = 2
 collision_mask = 3
+script = ExtResource("1_gmecg")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.622904, 0)
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00474966, 1.7433, 0.000258684)
 shape = SubResource("BoxShape3D_lrtio")
 debug_color = Color(0.558809, 0.560483, 0, 0.42)
+
+[node name="Box" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.503667, 0)
+mesh = SubResource("BoxMesh_gmecg")
+skeleton = NodePath("../..")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_ae6fg")
+
+[node name="DestroyBox" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.44862, 0, 0, 0, 0.409628, 0, 0, 0, 0.640442, 0, 0.153231, 0)
+visible = false
+mesh = SubResource("PrismMesh_gmecg")
+skeleton = NodePath("../StaticBody3D/Box")
