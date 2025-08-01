@@ -113,6 +113,7 @@ position = Vector2(196.5, -116.5)
 scale = Vector2(0.619141, 0.619141)
 sprite_frames = SubResource("SpriteFrames_p728j")
 animation = &"shoot"
+autoplay = "idle"
 frame = 4
 frame_progress = 1.0
 

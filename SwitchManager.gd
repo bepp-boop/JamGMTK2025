@@ -5,6 +5,10 @@ extends Node3D
 @onready var player2 = get_node("Player2")  # Reference to Player 2 Node
 @onready var player3 = get_node("Player3")  # Reference to Player 3 Node
 
+@onready var player1HUD = get_node("Player1/CanvasLayer")  # Reference to Player 1 HUD
+@onready var player2HUD  = get_node("Player2/CanvasLayer")  # Reference to Player 2 HUD
+@onready var player3HUD  = get_node("Player3/CanvasLayer")  # Reference to Player 3 HUD
+
 @onready var camera1 = get_node("Player1/Camera3D")  # Camera attached to Player 1
 @onready var camera2 = get_node("Player2/Camera3D")  # Camera attached to Player 2
 @onready var camera3 = get_node("Player3/Camera3D")  # Camera attached to Player 3
@@ -31,6 +35,11 @@ func _ready():
 	player1.visible = true
 	player2.visible = false
 	player3.visible = false
+	
+	# Set initial states
+	player1HUD.visible = true
+	player2HUD.visible = false
+	player3HUD.visible = false
 	
 	# Set all cameras to be initially off (not active)
 	camera1.current = true
