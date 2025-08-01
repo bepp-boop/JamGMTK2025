@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://ball51xonh4ng"]
 
-[ext_resource type="Script" uid="uid://cd3ei8ic1jgph" path="res://Enviornment/breakable.gd" id="1_gmecg"]
+[ext_resource type="Script" uid="uid://cd3ei8ic1jgph" path="res://Enviornment/Props/Breakable/breakable.gd" id="1_gmecg"]
 [ext_resource type="AudioStream" uid="uid://cits2aogokbmo" path="res://Characters/Audio/PanicScream1.wav" id="2_ae6fg"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ae6fg"]

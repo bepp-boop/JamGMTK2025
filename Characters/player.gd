@@ -3,6 +3,11 @@ extends CharacterBody3D
 @onready var animated_sprite_2d = $CanvasLayer/GunBase/AnimatedSprite2D
 @onready var ray_cast_3d = $RayCast3D
 @onready var shoot_sound = $ShootSound
+@onready var minigame: Control = $CanvasMinigame/Minigame
+
+var minigame_instance
+
+
 
 const SPEED = 5.0
 const MOUSE_SENSITIVITY = 0.5
@@ -10,6 +15,8 @@ const MOUSE_SENSITIVITY = 0.5
 var input_disabled = false  # Track if input is disabled
 var can_shoot = true
 var dead = false
+
+var game_mode = 'FPS' ##
 
 func _ready():
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
@@ -23,12 +30,14 @@ func set_input_disabled(state: bool):
 func _input(event):
 	if dead or input_disabled:
 		return  # Ignore input if player is dead or input is disabled
-
+	
 	if event is InputEventMouseMotion:
 		rotation_degrees.y -= event.relative.x * MOUSE_SENSITIVITY
 
 func _process(delta: float) -> void:
 	if dead:
+		return
+	if input_disabled:
 		return
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
@@ -36,6 +45,9 @@ func _process(delta: float) -> void:
 		restart()
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
+	if Input.is_action_just_pressed("debugbutton"):
+		print("debug activated")
+		start_minigame()
 
 func _physics_process(delta: float):
 	if dead or input_disabled:
@@ -72,3 +84,19 @@ func kill():
 
 func restart():
 	get_tree().reload_current_scene()
+	
+func start_minigame(minigamename = "Minigame2"):
+	print("minigame started: %s" % minigamename)
+	$CanvasMinigame.show()
+	set_input_disabled(true)
+	var minigame_chosen = load("res://Minigames/%s/%s.tscn" % [minigamename, minigamename])
+	minigame_instance = minigame_chosen.instantiate()
+	minigame.add_child(minigame_instance)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	
+func end_minigame():
+	print("minigame closed")
+	set_input_disabled(false)
+	$CanvasMinigame.hide()
+	minigame_instance.queue_free()
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

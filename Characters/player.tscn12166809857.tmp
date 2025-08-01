@@ -169,6 +169,12 @@ text = "Restart"
 layer = 2
 visible = false
 
+[node name="Minigame" type="Control" parent="CanvasMinigame"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="ColorRect" type="ColorRect" parent="CanvasMinigame"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -181,10 +187,3 @@ offset_right = 379.0
 offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.737879, 0.18848, 0.457453, 1)
-
-[node name="Minigame" type="Control" parent="CanvasMinigame"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0

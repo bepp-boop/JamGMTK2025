@@ -8,7 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://btiui8q711cw5" path="res://Enviornment/Props/hand.obj" id="3_hsryo"]
 [ext_resource type="ArrayMesh" uid="uid://b11qpmfs4c0fk" path="res://Enviornment/Props/obelisk.obj" id="4_nkqoi"]
 [ext_resource type="ArrayMesh" uid="uid://23ih3e0hwvwm" path="res://Enviornment/Props/fountain.obj" id="5_nhcnx"]
-[ext_resource type="PackedScene" uid="uid://ball51xonh4ng" path="res://Enviornment/breakable.tscn" id="6_nhcnx"]
+[ext_resource type="PackedScene" uid="uid://ball51xonh4ng" path="res://Enviornment/Props/Breakable/breakable.tscn" id="6_nhcnx"]
 [ext_resource type="PackedScene" uid="uid://kthv83n7dlnx" path="res://Characters/enemy.tscn" id="9_b1foq"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hl680"]

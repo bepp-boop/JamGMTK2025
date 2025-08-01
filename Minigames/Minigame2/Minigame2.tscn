@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://h3kmjyishdd7"]
+
+[ext_resource type="Script" uid="uid://d0r22dkx7rcru" path="res://Minigames/Minigame2/minigame_2.gd" id="1_oyvx3"]
+[ext_resource type="Texture2D" uid="uid://8eakg8ff6aw3" path="res://Icons/PadoruTemplate.png" id="1_qg7s6"]
+
+[node name="Minigame2" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_oyvx3")
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="ColorRect" type="ColorRect" parent="MarginContainer"]
+layout_mode = 2
+color = Color(0.193047, 0.495857, 0.723434, 1)
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer/ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 757.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Exitbutton" type="Button" parent="MarginContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+text = "Back to the Game"
+
+[node name="TextureRect" type="TextureRect" parent="MarginContainer/ColorRect/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("1_qg7s6")
+expand_mode = 2

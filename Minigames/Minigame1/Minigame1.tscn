@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://drrlmg7hwcpav"]
+
+[ext_resource type="Script" uid="uid://obescl4s535q" path="res://Minigames/Minigame1/minigame_1.gd" id="1_fe4rq"]
+
+[node name="Minigame1" type="Node2D"]
+script = ExtResource("1_fe4rq")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+polygon = PackedVector2Array(908, 389, 678, 187, 272, 189, 160, 374, 389, 535, 613, 536)
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(577, 326)
