@@ -9,6 +9,10 @@ extends Node3D
 @onready var camera2 = get_node("Player2/Camera3D")  # Camera attached to Player 2
 @onready var camera3 = get_node("Player3/Camera3D")  # Camera attached to Player 3
 
+@onready var statusTag1 = get_node("Player1/CanvasLayer/ClownName/Label")  # Label for Player 1
+@onready var statusTag2 = get_node("Player2/CanvasLayer/ClownName/Label")  # Label for Player 2
+@onready var statusTag3 = get_node("Player3/CanvasLayer/ClownName/Label")  # Label for Player 3
+
 var max_time = 1.0
 var time_left = 0.0
 var can_change = false
@@ -35,6 +39,11 @@ func _ready():
 	player1.set_input_disabled(false)  # Player 1 gets input
 	player2.set_input_disabled(true)   # Disable Player 2 input
 	player3.set_input_disabled(true)   # Disable Player 3 input
+
+	# Initially update the label for player 1
+	statusTag1.text = "1"
+	statusTag2.text = ""
+	statusTag3.text = ""
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -94,9 +103,18 @@ func _switch_to_player(new_player):
 	if new_player == player1:
 		camera1.current = true
 		player1.set_input_disabled(false)  # Enable input for Player 1
+		statusTag1.text = "1"  # Update the label for Player 1
+		statusTag2.text = ""   # Clear label for Player 2
+		statusTag3.text = ""   # Clear label for Player 3
 	elif new_player == player2:
 		camera2.current = true
 		player2.set_input_disabled(false)  # Enable input for Player 2
+		statusTag1.text = ""   # Clear label for Player 1
+		statusTag2.text = "2"  # Update the label for Player 2
+		statusTag3.text = ""   # Clear label for Player 3
 	elif new_player == player3:
 		camera3.current = true
 		player3.set_input_disabled(false)  # Enable input for Player 3
+		statusTag1.text = ""   # Clear label for Player 1
+		statusTag2.text = ""   # Clear label for Player 2
+		statusTag3.text = "3"  # Update the label for Player 3
