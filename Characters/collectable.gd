@@ -1,19 +1,21 @@
 extends Node3D
 
-@onready var area = $Area3D
+@export var item_name: String = "default_item"
 @export var collect_sound: AudioStream
+@onready var area = $Area3D
 
 func _ready():
-	print("Collectible Ready!")  # Debug: Check if this script is running
-	area.body_entered.connect(_on_body_entered)  # Connect the signal
+	area.body_entered.connect(_on_body_entered)
 
-# This function is triggered when any body enters the Area3D
 func _on_body_entered(body):
-	if body.name == "Player":  # Ensure the player's name is set to "Player"
-		print("Collectible collected!")
+	if body is CharacterBody3D:
+		if body.has_method("add_item"):
+			body.add_item(item_name)
+
 		if collect_sound:
 			var audio = AudioStreamPlayer3D.new()
 			audio.stream = collect_sound
 			add_child(audio)
 			audio.play()
-		queue_free()  # Remove the collectible after collection
+
+		queue_free()

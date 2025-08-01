@@ -14,6 +14,7 @@ var input_disabled = false  # Track if input is disabled
 var can_shoot = true
 var dead = false
 
+var inventory = []
 var game_mode = 'FPS' ##
 
 func _ready():
@@ -74,7 +75,10 @@ func shoot():
 func shoot_animation_done():
 	can_shoot = true
 
-
+func add_item(item_name: String):
+	print("Picked up:", item_name)
+	inventory.append(item_name)
+	
 func kill():
 	dead = true
 	$CanvasLayer/DeathScreen.show()
