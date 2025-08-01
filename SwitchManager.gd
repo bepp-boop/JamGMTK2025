@@ -36,7 +36,7 @@ func _ready():
 	player2.visible = false
 	player3.visible = false
 	
-	# Set initial states
+	# Set initial states hud
 	player1HUD.visible = true
 	player2HUD.visible = false
 	player3HUD.visible = false
@@ -104,6 +104,12 @@ func _switch_to_player(new_player):
 	player2.visible = false
 	player3.visible = false
 	
+	# Deactivate all players HUD(hide them)
+	player1HUD.visible = false
+	player2HUD.visible = false
+	player3HUD.visible = false
+	
+	
 	# Disable input for all players
 	player1.set_input_disabled(true)
 	player2.set_input_disabled(true)
@@ -111,8 +117,11 @@ func _switch_to_player(new_player):
 
 	# Activate the new player and its camera
 	new_player.visible = true
+	var new_player_HUD= new_player.find_child('CanvasLayer')
+	new_player_HUD.visible=true
 	if new_player == player1:
 		camera1.current = true
+		
 		player1.set_input_disabled(false)  # Enable input for Player 1
 		statusTag1.text = "1"  # Update the label for Player 1
 		statusTag2.text = ""   # Clear label for Player 2
