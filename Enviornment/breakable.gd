@@ -3,7 +3,7 @@ extends StaticBody3D
 var dead = false
 @onready var breakable: StaticBody3D = $"."
 @onready var box: MeshInstance3D = $Box
-@onready var destroy_box: MeshInstance3D = $DestroyBox
+@onready var destroy_box: MeshInstance3D = $DestroyedBox
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 
 

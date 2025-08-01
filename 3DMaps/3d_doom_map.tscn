@@ -195,7 +195,7 @@ mesh = ExtResource("5_nhcnx")
 shape = SubResource("ConcavePolygonShape3D_wromv")
 
 [node name="Breakable" parent="Environment/Testprops" instance=ExtResource("6_nhcnx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60757, 0.418555, 3.52917)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45059, -0.0976609, 6.7925)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hl680")
