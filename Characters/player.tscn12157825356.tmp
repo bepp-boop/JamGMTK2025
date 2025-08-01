@@ -1,40 +1,36 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch4j34ltuliln"]
+[gd_scene load_steps=11 format=3 uid="uid://ch4j34ltuliln"]
 
+[ext_resource type="Texture2D" uid="uid://cwvhl18embtvx" path="res://Characters/Sprites/gun_sprites.png" id="1_5mj4t"]
 [ext_resource type="AudioStream" uid="uid://b6bjirdn7ulyc" path="res://Characters/Audio/revolver_shot1.wav" id="1_eovys"]
 [ext_resource type="Script" uid="uid://dqtmjvrsa18wf" path="res://Characters/player.gd" id="1_vb825"]
-[ext_resource type="Texture2D" uid="uid://deltpsrlpbrps" path="res://Characters/Sprites/Axe.png" id="3_vb825"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ywxx0"]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_eovys"]
+atlas = ExtResource("1_5mj4t")
+region = Rect2(0, 0, 512, 512)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vb825"]
+atlas = ExtResource("1_5mj4t")
+region = Rect2(512, 0, 512, 512)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_65n15"]
-atlas = ExtResource("3_vb825")
-region = Rect2(0, 0, 540, 540)
+atlas = ExtResource("1_5mj4t")
+region = Rect2(1024, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_l48on"]
-atlas = ExtResource("3_vb825")
-region = Rect2(0, 0, 540, 540)
+atlas = ExtResource("1_5mj4t")
+region = Rect2(1536, 0, 512, 512)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4m0gv"]
-atlas = ExtResource("3_vb825")
-region = Rect2(540, 0, 540, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p728j"]
-atlas = ExtResource("3_vb825")
-region = Rect2(0, 540, 540, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5slg2"]
-atlas = ExtResource("3_vb825")
-region = Rect2(540, 540, 540, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_cbmiu"]
-atlas = ExtResource("3_vb825")
-region = Rect2(0, 0, 540, 540)
+atlas = ExtResource("1_5mj4t")
+region = Rect2(0, 0, 512, 512)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_p728j"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_65n15")
+"texture": SubResource("AtlasTexture_eovys")
 }],
 "loop": true,
 "name": &"idle",
@@ -42,19 +38,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_vb825")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_65n15")
+}, {
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_l48on")
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_4m0gv")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p728j")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5slg2")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_cbmiu")
 }],
 "loop": false,
 "name": &"shoot",
@@ -84,17 +77,6 @@ bus = &"Sfx"
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 
-[node name="ClownName" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Label" type="Label" parent="CanvasLayer/ClownName"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
-
 [node name="GunBase" type="Control" parent="CanvasLayer"]
 layout_mode = 3
 anchors_preset = 7
@@ -113,7 +95,7 @@ position = Vector2(196.5, -116.5)
 scale = Vector2(0.619141, 0.619141)
 sprite_frames = SubResource("SpriteFrames_p728j")
 animation = &"shoot"
-frame = 4
+frame = 3
 frame_progress = 1.0
 
 [node name="crosshair" type="ColorRect" parent="CanvasLayer"]
@@ -187,6 +169,12 @@ text = "Restart"
 layer = 2
 visible = false
 
+[node name="Minigame" type="Control" parent="CanvasMinigame"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
 [node name="ColorRect" type="ColorRect" parent="CanvasMinigame"]
 anchors_preset = 8
 anchor_left = 0.5
@@ -199,10 +187,3 @@ offset_right = 379.0
 offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.737879, 0.18848, 0.457453, 1)
-
-[node name="Minigame" type="Control" parent="CanvasMinigame"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
