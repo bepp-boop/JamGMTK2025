@@ -7,8 +7,6 @@ extends CharacterBody3D
 
 var minigame_instance
 
-
-
 const SPEED = 5.0
 const MOUSE_SENSITIVITY = 0.5
 
@@ -85,7 +83,7 @@ func kill():
 func restart():
 	get_tree().reload_current_scene()
 	
-func start_minigame(minigamename = "Minigame2"):
+func start_minigame(minigamename = "Minigame1"):
 	print("minigame started: %s" % minigamename)
 	$CanvasMinigame.show()
 	set_input_disabled(true)

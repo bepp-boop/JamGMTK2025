@@ -20,6 +20,8 @@ var can_change = false
 enum {CHAR_1, CHAR_2, CHAR_3}
 var state
 
+
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	time_left = max_time
@@ -118,3 +120,6 @@ func _switch_to_player(new_player):
 		statusTag1.text = ""   # Clear label for Player 1
 		statusTag2.text = ""   # Clear label for Player 2
 		statusTag3.text = "3"  # Update the label for Player 3
+
+func getState():
+	return state

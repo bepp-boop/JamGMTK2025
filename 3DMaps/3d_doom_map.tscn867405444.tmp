@@ -273,7 +273,7 @@ environment = SubResource("Environment_hl680")
 transform = Transform3D(0.999867, -0.0148756, 0.00668694, -0.0042621, 0.157436, 0.98752, -0.0157427, -0.987417, 0.157352, -1.76157, 11.6856, -1.54025)
 shadow_enabled = true
 
-[node name="SwitchManager" parent="." groups=["switch_manager"] instance=ExtResource("1_c4kt8")]
+[node name="SwitchManager" parent="." instance=ExtResource("1_c4kt8")]
 
 [node name="Player1" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06115, 0, 8.28942)
