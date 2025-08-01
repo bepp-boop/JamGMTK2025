@@ -1,0 +1,21 @@
+[gd_scene load_steps=5 format=3 uid="uid://dwcv2bmy3ctaw"]
+
+[ext_resource type="Shader" uid="uid://db0ytrnfmnq62" path="res://Enviornment/Terrain/water.gdshader" id="1_7tsqa"]
+[ext_resource type="Texture2D" uid="uid://brwjrrgwo3ugu" path="res://Enviornment/Terrain/bloodwater.png" id="2_fgdbo"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_fgdbo"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_1rsto"]
+render_priority = 0
+shader = ExtResource("1_7tsqa")
+shader_parameter/direction_and_speed = Vector2(0.1, 0)
+shader_parameter/scale = Vector2(0.5, 0.5)
+shader_parameter/flip = false
+shader_parameter/transparency = 1.0
+shader_parameter/albedo = ExtResource("2_fgdbo")
+
+[node name="Node3D" type="Node3D"]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("PlaneMesh_fgdbo")
+surface_material_override/0 = SubResource("ShaderMaterial_1rsto")
