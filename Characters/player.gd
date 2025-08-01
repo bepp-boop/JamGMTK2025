@@ -87,7 +87,7 @@ func kill():
 func restart():
 	get_tree().reload_current_scene()
 	
-func start_minigame(minigamename = "Minigame1"):
+func start_minigame(minigamename = "Minigame2"):
 	print("minigame started: %s" % minigamename)
 	$CanvasMinigame.show()
 	set_input_disabled(true)
