@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c5etwswt4korg"
+path="res://.godot/imported/spear.obj-262f3c588ff87f5645a63a9e8070b4bf.mesh"
+
+[deps]
+
+files=["res://.godot/imported/spear.obj-262f3c588ff87f5645a63a9e8070b4bf.mesh"]
+
+source_file="res://Enviornment/Props/spear.obj"
+dest_files=["res://.godot/imported/spear.obj-262f3c588ff87f5645a63a9e8070b4bf.mesh", "res://.godot/imported/spear.obj-262f3c588ff87f5645a63a9e8070b4bf.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
