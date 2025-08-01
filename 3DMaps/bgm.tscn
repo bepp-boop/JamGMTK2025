@@ -2,7 +2,7 @@
 
 [ext_resource type="AudioStream" uid="uid://dyyq010tspknv" path="res://Enviornment/Sfx/Timeline 1.mp3" id="1_xna0o"]
 
-[node name="BGM" type="AudioStreamPlayer3D"]
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D"]
 stream = ExtResource("1_xna0o")
 autoplay = true
 bus = &"Bgm"

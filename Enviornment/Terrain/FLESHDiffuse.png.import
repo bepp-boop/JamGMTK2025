@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ulvgl77gn2hu"
-path.s3tc="res://.godot/imported/TreeSheet.png-ec1ef44fe266f4b51b2cd777251e2125.s3tc.ctex"
+uid="uid://dvc6ujwh2vx7k"
+path.s3tc="res://.godot/imported/FLESHDiffuse.png-9d3d5a17be104085f880578066cb0d47.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://Enviornment/Props/TreeSheet.png"
-dest_files=["res://.godot/imported/TreeSheet.png-ec1ef44fe266f4b51b2cd777251e2125.s3tc.ctex"]
+source_file="res://Enviornment/Terrain/FLESHDiffuse.png"
+dest_files=["res://.godot/imported/FLESHDiffuse.png-9d3d5a17be104085f880578066cb0d47.s3tc.ctex"]
 
 [params]
 
