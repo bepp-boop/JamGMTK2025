@@ -87,9 +87,10 @@ func kill():
 func restart():
 	get_tree().reload_current_scene()
 	
-func start_minigame(minigamename = "Minigame2"):
+func start_minigame(minigamename = "EyePoker"):
 	print("minigame started: %s" % minigamename)
 	$CanvasMinigame.show()
+	$CanvasLayer.hide()
 	set_input_disabled(true)
 	var minigame_chosen = load("res://Minigames/%s/%s.tscn" % [minigamename, minigamename])
 	minigame_instance = minigame_chosen.instantiate()
@@ -100,5 +101,6 @@ func end_minigame():
 	print("minigame closed")
 	set_input_disabled(false)
 	$CanvasMinigame.hide()
+	$CanvasLayer.show()
 	minigame_instance.queue_free()
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED

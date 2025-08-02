@@ -90,6 +90,12 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="Hud1" type="Sprite2D" parent="CanvasLayer/ClownName"]
+position = Vector2(579.5, 323)
+scale = Vector2(0.483668, 0.392086)
+texture = ExtResource("4_65n15")
 
 [node name="Label" type="Label" parent="CanvasLayer/ClownName"]
 layout_mode = 0
@@ -130,6 +136,7 @@ offset_right = 5.5
 offset_bottom = 5.5
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(1, 1, 1, 0.427451)
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer"]
@@ -140,6 +147,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Panel" type="Panel" parent="CanvasLayer/DeathScreen"]
 layout_mode = 1
@@ -185,12 +193,8 @@ grow_horizontal = 2
 grow_vertical = 2
 text = "Restart"
 
-[node name="Hud1" type="Sprite2D" parent="CanvasLayer"]
-position = Vector2(579.5, 323)
-scale = Vector2(0.483668, 0.392086)
-texture = ExtResource("4_65n15")
-
 [node name="CanvasMinigame" type="CanvasLayer" parent="."]
+process_priority = 1
 layer = 2
 visible = false
 
@@ -206,6 +210,7 @@ offset_right = 379.0
 offset_bottom = 252.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0.737879, 0.18848, 0.457453, 1)
 
 [node name="Minigame" type="Control" parent="CanvasMinigame"]
