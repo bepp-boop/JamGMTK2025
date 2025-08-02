@@ -1,0 +1,53 @@
+[gd_scene load_steps=6 format=3 uid="uid://fx5qaek2lss1"]
+
+[ext_resource type="Texture2D" uid="uid://08vyxo4evf2" path="res://Minigames/EyePoker/Sprites/eyepoke_0.png" id="1_bpxbt"]
+[ext_resource type="Script" uid="uid://bdwiw5mob1l7k" path="res://Minigames/EyePoker/eye.gd" id="1_kng1a"]
+[ext_resource type="Texture2D" uid="uid://cxji3fvpejwa6" path="res://Minigames/EyePoker/Sprites/eyepoke_1.png" id="2_kng1a"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xbgy0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bpxbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bpxbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("1_bpxbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_kng1a")
+}],
+"loop": true,
+"name": &"blinking",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kng1a")
+}],
+"loop": false,
+"name": &"poked",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_kng1a"]
+radius = 70.0643
+
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_kng1a")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xbgy0")
+animation = &"blinking"
+autoplay = "blinking"
+frame_progress = 0.742436
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(15, 0)
+shape = SubResource("CircleShape2D_kng1a")
+
+[node name="Eye" type="Node2D" parent="."]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

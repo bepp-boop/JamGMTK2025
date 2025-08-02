@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://c327kq7jr0jov"
+path="res://.godot/imported/maptest.obj-3ae1aa6bcc7bae5e303d8e33b7586712.mesh"
+
+[deps]
+
+files=["res://.godot/imported/maptest.obj-3ae1aa6bcc7bae5e303d8e33b7586712.mesh"]
+
+source_file="res://5Enviornment3D/Terrain/maptest.obj"
+dest_files=["res://.godot/imported/maptest.obj-3ae1aa6bcc7bae5e303d8e33b7586712.mesh", "res://.godot/imported/maptest.obj-3ae1aa6bcc7bae5e303d8e33b7586712.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

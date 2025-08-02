@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://dmo0kfca2p00a"
+path="res://.godot/imported/mfloor3.obj-5427df211b1c46d6be2323bf68eb443e.mesh"
+
+[deps]
+
+files=["res://.godot/imported/mfloor3.obj-5427df211b1c46d6be2323bf68eb443e.mesh"]
+
+source_file="res://5Enviornment3D/Terrain/mfloor3.obj"
+dest_files=["res://.godot/imported/mfloor3.obj-5427df211b1c46d6be2323bf68eb443e.mesh", "res://.godot/imported/mfloor3.obj-5427df211b1c46d6be2323bf68eb443e.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false

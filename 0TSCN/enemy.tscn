@@ -1,0 +1,85 @@
+[gd_scene load_steps=12 format=3 uid="uid://kthv83n7dlnx"]
+
+[ext_resource type="Script" uid="uid://0ba0wrpebeb0" path="res://1Scripts/enemy.gd" id="1_sdfay"]
+[ext_resource type="Texture2D" uid="uid://bhqvgkr001qdd" path="res://4Sprites/Enviro/NakedClowns.png" id="2_857e7"]
+[ext_resource type="AudioStream" uid="uid://bospva6trl0wt" path="res://6Audio/monster_die.wav" id="2_rtu5t"]
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_rtu5t"]
+height = 2.04492
+radius = 0.68457
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5sh1"]
+atlas = ExtResource("2_857e7")
+region = Rect2(0, 810, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xcnaf"]
+atlas = ExtResource("2_857e7")
+region = Rect2(270, 810, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ahkho"]
+atlas = ExtResource("2_857e7")
+region = Rect2(0, 810, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gh7xh"]
+atlas = ExtResource("2_857e7")
+region = Rect2(270, 810, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7bs2j"]
+atlas = ExtResource("2_857e7")
+region = Rect2(540, 810, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty117"]
+atlas = ExtResource("2_857e7")
+region = Rect2(810, 810, 270, 270)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rq3xi"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t5sh1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xcnaf")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 7.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ahkho")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gh7xh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7bs2j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty117")
+}],
+"loop": false,
+"name": &"kill",
+"speed": 5.0
+}]
+
+[node name="Enemy" type="CharacterBody3D" groups=["enemy"]]
+collision_layer = 2
+collision_mask = 3
+script = ExtResource("1_sdfay")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.09005, 0)
+shape = SubResource("CylinderShape3D_rtu5t")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.18378, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_rq3xi")
+animation = &"kill"
+autoplay = "idle"
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_rtu5t")
+unit_size = 2.39
+bus = &"Sfx"

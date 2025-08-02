@@ -1,0 +1,25 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://23ih3e0hwvwm"
+path="res://.godot/imported/fountain.obj-6059dffa6433c45a057ec80a55f198c9.mesh"
+
+[deps]
+
+files=["res://.godot/imported/fountain.obj-6059dffa6433c45a057ec80a55f198c9.mesh"]
+
+source_file="res://5Enviornment3D/3DProps/fountain.obj"
+dest_files=["res://.godot/imported/fountain.obj-6059dffa6433c45a057ec80a55f198c9.mesh", "res://.godot/imported/fountain.obj-6059dffa6433c45a057ec80a55f198c9.mesh"]
+
+[params]
+
+generate_tangents=true
+generate_lods=true
+generate_shadow_mesh=true
+generate_lightmap_uv2=false
+generate_lightmap_uv2_texel_size=0.2
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+force_disable_mesh_compression=false
