@@ -1,10 +1,12 @@
-[gd_scene load_steps=12 format=3 uid="uid://ch4j34ltuliln"]
+[gd_scene load_steps=13 format=3 uid="uid://ch4j34ltuliln"]
 
 [ext_resource type="AudioStream" uid="uid://b6bjirdn7ulyc" path="res://Characters/Audio/revolver_shot1.wav" id="1_eovys"]
 [ext_resource type="Script" uid="uid://dqtmjvrsa18wf" path="res://Characters/player.gd" id="1_vb825"]
 [ext_resource type="Texture2D" uid="uid://deltpsrlpbrps" path="res://Characters/Sprites/Axe.png" id="3_vb825"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ywxx0"]
+
+[sub_resource type="ImageTexture" id="ImageTexture_vb825"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_65n15"]
 atlas = ExtResource("3_vb825")
@@ -92,8 +94,12 @@ offset_bottom = 40.0
 
 [node name="Label" type="Label" parent="CanvasLayer/ClownName"]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 23.0
+offset_right = 133.0
+offset_bottom = 62.0
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ClownName"]
+scale = Vector2(1151, 648)
+texture = SubResource("ImageTexture_vb825")
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -112,9 +118,7 @@ grow_vertical = 0
 position = Vector2(196.5, -116.5)
 scale = Vector2(0.619141, 0.619141)
 sprite_frames = SubResource("SpriteFrames_p728j")
-animation = &"shoot"
-frame = 4
-frame_progress = 1.0
+animation = &"idle"
 
 [node name="crosshair" type="ColorRect" parent="CanvasLayer"]
 anchors_preset = 8
