@@ -8,7 +8,6 @@ extends Node
 func _physics_process(delta: float) -> void:
 	var input = Input.get_vector("ui_left","ui_right","ui_up","ui_down")
 	if input.length() > 0:
-		actor.velocity = actor.velocity.move_toward(input * top_down_movement_stats.max_speed, top_down_movement_stats.accelaration * delta)
+		actor.velocity = actor.velocity.move_toward(input * top_down_movement_stat.max_speed, top_down_movement_stat.accelaration * delta)
 	else:
-		actor.velocity = actor.velocity.move_toward(Vector2.ZERO,top_down_movement_stats.friction * delta)
-
+		actor.velocity = actor.velocity.move_toward(Vector2.ZERO,top_down_movement_stat.friction * delta)

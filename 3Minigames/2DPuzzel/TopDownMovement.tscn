@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://crwk1e2vv44ay"]
+
+[ext_resource type="Script" uid="uid://d0vhvs0lqirx1" path="res://3Minigames/2DPuzzel/Script/TopDownMovement.gd" id="1_bvv7o"]
+
+[node name="TopDownMovement" type="Node2D"]
+script = ExtResource("1_bvv7o")

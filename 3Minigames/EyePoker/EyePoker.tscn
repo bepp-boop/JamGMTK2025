@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://cmov3efbufbdb"]
 
-[ext_resource type="Script" uid="uid://t7gvf8alm754" path="res://Minigames/EyePoker/eye_poker.gd" id="1_ksvnm"]
-[ext_resource type="Texture2D" uid="uid://be8syqkbjivtt" path="res://Enviornment/Terrain/textures/Floor.png" id="2_ryfa3"]
+[ext_resource type="Script" uid="uid://t7gvf8alm754" path="res://3Minigames/EyePoker/eye_poker.gd" id="1_ksvnm"]
+[ext_resource type="Texture2D" uid="uid://be8syqkbjivtt" path="res://5Enviornment3D/Terrain/textures/Floor.png" id="2_ryfa3"]
 
 [node name="EyePoker" type="Node2D" groups=["EyePoker"]]
 script = ExtResource("1_ksvnm")

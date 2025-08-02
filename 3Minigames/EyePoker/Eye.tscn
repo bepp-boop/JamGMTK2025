@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://fx5qaek2lss1"]
 
-[ext_resource type="Texture2D" uid="uid://08vyxo4evf2" path="res://Minigames/EyePoker/Sprites/eyepoke_0.png" id="1_bpxbt"]
-[ext_resource type="Script" uid="uid://bdwiw5mob1l7k" path="res://Minigames/EyePoker/eye.gd" id="1_kng1a"]
-[ext_resource type="Texture2D" uid="uid://cxji3fvpejwa6" path="res://Minigames/EyePoker/Sprites/eyepoke_1.png" id="2_kng1a"]
+[ext_resource type="Texture2D" uid="uid://08vyxo4evf2" path="res://3Minigames/EyePoker/Sprites/eyepoke_0.png" id="1_bpxbt"]
+[ext_resource type="Script" uid="uid://bdwiw5mob1l7k" path="res://3Minigames/EyePoker/eye.gd" id="1_kng1a"]
+[ext_resource type="Texture2D" uid="uid://cxji3fvpejwa6" path="res://3Minigames/EyePoker/Sprites/eyepoke_1.png" id="2_kng1a"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_xbgy0"]
 animations = [{

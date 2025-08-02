@@ -24,6 +24,10 @@ Bgm="*res://3DMaps/bgm.tscn"
 window/size/mode=1
 window/stretch/mode="canvas_items"
 
+[dotnet]
+
+project/assembly_name="Game-Jam-2025"
+
 [input]
 
 move_left={

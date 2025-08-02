@@ -1,0 +1,38 @@
+[gd_scene load_steps=7 format=3 uid="uid://c6xekrrhn1ycg"]
+
+[ext_resource type="Script" uid="uid://d0vhvs0lqirx1" path="res://3Minigames/2DPuzzel/Script/TopDownMovement.gd" id="1_m4sdk"]
+[ext_resource type="Texture2D" uid="uid://b7bl8kwrnm5eu" path="res://3Minigames/2DPuzzel/Sprite/Untitled_Artwork_1.png" id="1_u0vai"]
+[ext_resource type="Script" uid="uid://b0w3sq8d16ldu" path="res://3Minigames/2DPuzzel/Script/top_down_movement_velocity_input.gd" id="2_sq3bc"]
+[ext_resource type="Script" uid="uid://cyjyddv32jvjt" path="res://3Minigames/2DPuzzel/Script/movementstat.gd" id="3_4s570"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dd"]
+size = Vector2(47, 44)
+
+[sub_resource type="Resource" id="Resource_u0vai"]
+script = ExtResource("3_4s570")
+max_speed = 100.0
+accelaration = 1000.0
+friction = 500.0
+metadata/_custom_type_script = "uid://cyjyddv32jvjt"
+
+[node name="2DPlayer" type="CharacterBody2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(5, -2)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_u0vai")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
+shape = SubResource("RectangleShape2D_2d8dd")
+
+[node name="TopDownMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("1_m4sdk")
+actor = NodePath("..")
+metadata/_custom_type_script = "uid://d0vhvs0lqirx1"
+
+[node name="TopDownMovementVelocityInput" type="Node" parent="." node_paths=PackedStringArray("actor")]
+script = ExtResource("2_sq3bc")
+actor = NodePath("..")
+top_down_movement_stat = SubResource("Resource_u0vai")
+metadata/_custom_type_script = "uid://b0w3sq8d16ldu"
