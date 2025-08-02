@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c6xekrrhn1ycg"]
 
-[ext_resource type="Texture2D" uid="uid://b4genuy600yui" path="res://4Sprites/Minigame/handsheet.png" id="1_bh31q"]
+[ext_resource type="Texture2D" uid="uid://drn0h2vso47yl" path="res://4Sprites/Minigame/Hand1.png" id="1_bh31q"]
 [ext_resource type="Script" uid="uid://d0vhvs0lqirx1" path="res://3Minigames/HandPuzzle/Script/TopDownMovement.gd" id="1_m4sdk"]
 [ext_resource type="Script" uid="uid://b0w3sq8d16ldu" path="res://3Minigames/HandPuzzle/Script/top_down_movement_velocity_input.gd" id="2_sq3bc"]
 [ext_resource type="Script" uid="uid://cyjyddv32jvjt" path="res://3Minigames/HandPuzzle/Script/movementstat.gd" id="3_4s570"]
@@ -10,7 +10,7 @@ atlas = ExtResource("1_bh31q")
 region = Rect2(1104, 559, 263, 253)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dd"]
-size = Vector2(35, 48)
+size = Vector2(37.5, 22)
 
 [sub_resource type="Resource" id="Resource_u0vai"]
 script = ExtResource("3_4s570")
@@ -24,10 +24,10 @@ metadata/_custom_type_script = "uid://cyjyddv32jvjt"
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(5, -2)
 scale = Vector2(0.2, 0.2)
-texture = SubResource("AtlasTexture_3dndy")
+texture = ExtResource("1_bh31q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, 0)
+position = Vector2(-2.75, 0)
 shape = SubResource("RectangleShape2D_2d8dd")
 
 [node name="TopDownMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
