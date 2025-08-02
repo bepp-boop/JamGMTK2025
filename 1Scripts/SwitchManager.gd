@@ -127,20 +127,18 @@ func _switch_to_player(new_player):
 		camera1.current = true
 		player1.set_input_disabled(false)  # Enable input for Player 1
 		statusTag1.text = "1"  # Update the label for Player 1
-		statusTag2.text = ""   # Clear label for Player 2
-		statusTag3.text = ""   # Clear label for Player 3
+		face1.play("idleClown1")
+
 	elif new_player == player2:
 		camera2.current = true
 		player2.set_input_disabled(false)  # Enable input for Player 2
-		statusTag1.text = ""   # Clear label for Player 1
 		statusTag2.text = "2"  # Update the label for Player 2
-		statusTag3.text = ""   # Clear label for Player 3
+		face2.play("idleClown2")
 	elif new_player == player3:
 		camera3.current = true
 		player3.set_input_disabled(false)  # Enable input for Player 3
-		statusTag1.text = ""   # Clear label for Player 1
-		statusTag2.text = ""   # Clear label for Player 2
 		statusTag3.text = "3"  # Update the label for Player 3
+		face3.play("idleClown3")
 
 func getState():
 	return state

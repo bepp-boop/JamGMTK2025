@@ -1,13 +1,9 @@
-[gd_scene load_steps=8 format=3 uid="uid://c6xekrrhn1ycg"]
+[gd_scene load_steps=7 format=3 uid="uid://c6xekrrhn1ycg"]
 
 [ext_resource type="Texture2D" uid="uid://drn0h2vso47yl" path="res://4Sprites/Minigame/Hand1.png" id="1_bh31q"]
 [ext_resource type="Script" uid="uid://d0vhvs0lqirx1" path="res://3Minigames/HandPuzzle/Script/TopDownMovement.gd" id="1_m4sdk"]
 [ext_resource type="Script" uid="uid://b0w3sq8d16ldu" path="res://3Minigames/HandPuzzle/Script/top_down_movement_velocity_input.gd" id="2_sq3bc"]
 [ext_resource type="Script" uid="uid://cyjyddv32jvjt" path="res://3Minigames/HandPuzzle/Script/movementstat.gd" id="3_4s570"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_3dndy"]
-atlas = ExtResource("1_bh31q")
-region = Rect2(1104, 559, 263, 253)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dd"]
 size = Vector2(37.5, 22)

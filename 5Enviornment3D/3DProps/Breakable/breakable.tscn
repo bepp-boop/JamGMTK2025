@@ -124,7 +124,7 @@ script = ExtResource("1_gmecg")
 sprite_frames = SubResource("SpriteFrames_7ifbu")
 animation = &"death"
 autoplay = "idle"
-frame_progress = 0.465401
+frame_progress = 0.0687846
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0132053, 0, 0.0674563)
