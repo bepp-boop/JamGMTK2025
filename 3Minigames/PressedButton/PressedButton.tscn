@@ -1,16 +1,21 @@
-[gd_scene load_steps=13 format=4 uid="uid://dbr0hq1ta4aib"]
+[gd_scene load_steps=15 format=4 uid="uid://dbr0hq1ta4aib"]
 
 [ext_resource type="Script" uid="uid://diytbnkw6cofw" path="res://3Minigames/PressedButton/finger.gd" id="1_n14hp"]
+[ext_resource type="Texture2D" uid="uid://b4genuy600yui" path="res://4Sprites/Minigame/handsheet.png" id="2_2m5b5"]
 [ext_resource type="Texture2D" uid="uid://c2q6mlrwu0s06" path="res://4Sprites/Minigame/fingersheet.png" id="2_j63nx"]
 [ext_resource type="Script" uid="uid://bkejrkgwv5ipw" path="res://3Minigames/PressedButton/fall_rock.gd" id="3_1v7x7"]
 [ext_resource type="Script" uid="uid://wrunkirm33ub" path="res://3Minigames/PressedButton/button.gd" id="3_h4xhf"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_j63nx"]
-atlas = ExtResource("2_j63nx")
-region = Rect2(464, 1662, 666, 498)
+[sub_resource type="AtlasTexture" id="AtlasTexture_jsdx4"]
+atlas = ExtResource("2_2m5b5")
+region = Rect2(-14, 2182, 2165, 486)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_j63nx"]
-radius = 208.94
+[sub_resource type="AtlasTexture" id="AtlasTexture_fe3he"]
+atlas = ExtResource("2_2m5b5")
+region = Rect2(0, 1627, 1088, 524)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2m5b5"]
+size = Vector2(4232.82, 370)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1v7x7"]
 size = Vector2(467.5, 352.5)
@@ -14500,16 +14505,37 @@ region = Rect2(0, 0, 450, 450)
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 z_index = 4
-position = Vector2(55, 313)
+position = Vector2(-30, 313)
 scale = Vector2(0.2, 0.2)
 script = ExtResource("1_n14hp")
 
 [node name="Point" type="Sprite2D" parent="CharacterBody2D"]
-texture = SubResource("AtlasTexture_j63nx")
+texture = SubResource("AtlasTexture_jsdx4")
+
+[node name="Back" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-1600, -25)
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_fe3he")
+
+[node name="Back2" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-2655, -15)
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_fe3he")
+
+[node name="Back3" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-3660, -25)
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_fe3he")
+
+[node name="Back4" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(-4725, -20)
+scale = Vector2(1, 1)
+texture = SubResource("AtlasTexture_fe3he")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(-2102.5, -5)
 scale = Vector2(1.499, 1)
-shape = SubResource("CircleShape2D_j63nx")
+shape = SubResource("RectangleShape2D_2m5b5")
 
 [node name="Button" type="Area2D" parent="."]
 z_index = 3
@@ -14541,7 +14567,7 @@ position = Vector2(35, 40)
 shape = SubResource("RectangleShape2D_h4xhf")
 
 [node name="RayCast2D" type="RayCast2D" parent="Rocks/FallRock"]
-position = Vector2(-11, 0)
+position = Vector2(-59.9999, 55)
 target_position = Vector2(61.0001, 1900)
 
 [node name="Sprite2D" type="Sprite2D" parent="Rocks/FallRock"]
@@ -14580,6 +14606,11 @@ target_position = Vector2(61.0001, 1900)
 
 [node name="Sprite2D" type="Sprite2D" parent="Rocks/FallRock3"]
 texture = SubResource("AtlasTexture_h4xhf")
+
+[node name="Label" type="Label" parent="."]
+offset_right = 40.0
+offset_bottom = 23.0
+text = "Pressed SpaceBar to Move Foward"
 
 [connection signal="body_entered" from="Button" to="CharacterBody2D" method="_on_button_body_entered"]
 [connection signal="body_entered" from="Rocks/FallRock" to="CharacterBody2D" method="_on_fall_rock_body_entered"]
