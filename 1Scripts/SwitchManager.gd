@@ -13,9 +13,9 @@ extends Node3D
 @onready var camera2 = get_node("Player2/Camera3D")  # Camera attached to Player 2
 @onready var camera3 = get_node("Player3/Camera3D")  # Camera attached to Player 3
 
-#@onready var statusTag1 = get_node("Player1/CanvasLayer/ClownName/Label")  # Label for Player 1
-#@onready var statusTag2 = get_node("Player2/CanvasLayer/ClownName/Label")  # Label for Player 2
-#@onready var statusTag3 = get_node("Player3/CanvasLayer/ClownName/Label")  # Label for Player 3
+@onready var statusTag1 = get_node("Player1/CanvasLayer/ClownName/Label")  # Label for Player 1
+@onready var statusTag2 = get_node("Player2/CanvasLayer/ClownName/Label")  # Label for Player 2
+@onready var statusTag3 = get_node("Player3/CanvasLayer/ClownName/Label")  # Label for Player 3
 
 var max_time = 1.0
 var time_left = 0.0

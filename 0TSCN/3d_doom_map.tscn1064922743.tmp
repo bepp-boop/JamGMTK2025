@@ -204,7 +204,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8384, 50.6526, -4.36115)
 visible = false
 
-[node name="Enemy" parent="." instance=ExtResource("9_b1foq")]
+[node name="Enemy" parent="SwitchManager" instance=ExtResource("9_b1foq")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.94462, -0.47014, 2.98008)
 
 [node name="coin_need_gate" type="Node3D" parent="."]

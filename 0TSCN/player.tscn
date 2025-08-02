@@ -165,10 +165,6 @@ layout_mode = 0
 offset_right = 133.0
 offset_bottom = 62.0
 
-[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer/ClownName"]
-scale = Vector2(1151, 648)
-texture = SubResource("ImageTexture_vb825")
-
 [node name="PlayerFace" type="AnimatedSprite2D" parent="CanvasLayer/ClownName"]
 position = Vector2(584, 584)
 scale = Vector2(0.6, 0.6)
