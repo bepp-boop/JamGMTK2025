@@ -5,7 +5,7 @@ var dead = false
 @onready var box: MeshInstance3D = $Box
 @onready var destroy_box: MeshInstance3D = $DestroyedBox
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
-
+@onready var animate = $Sprite2D
 
 
 func kill():
