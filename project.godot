@@ -17,7 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
-Bgm="*res://3DMaps/bgm.tscn"
+Bgm="*res://0TSCN/bgm.tscn"
 
 [display]
 

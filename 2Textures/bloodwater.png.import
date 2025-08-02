@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brwjrrgwo3ugu"
-path.s3tc="res://.godot/imported/bloodwater.png-437867d744d05e7330fd9a76ff2e1966.s3tc.ctex"
+path.s3tc="res://.godot/imported/bloodwater.png-5a15d05b85727d7eeb93f05c4d9ac4ba.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://5Enviornment3D/Terrain/bloodwater.png"
-dest_files=["res://.godot/imported/bloodwater.png-437867d744d05e7330fd9a76ff2e1966.s3tc.ctex"]
+source_file="res://2Textures/bloodwater.png"
+dest_files=["res://.godot/imported/bloodwater.png-5a15d05b85727d7eeb93f05c4d9ac4ba.s3tc.ctex"]
 
 [params]
 

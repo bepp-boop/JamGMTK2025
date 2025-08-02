@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://dwcv2bmy3ctaw"]
 
 [ext_resource type="Shader" uid="uid://db0ytrnfmnq62" path="res://5Enviornment3D/Terrain/water.gdshader" id="1_7tsqa"]
-[ext_resource type="Texture2D" uid="uid://brwjrrgwo3ugu" path="res://5Enviornment3D/Terrain/bloodwater.png" id="2_fgdbo"]
+[ext_resource type="Texture2D" uid="uid://brwjrrgwo3ugu" path="res://2Textures/bloodwater.png" id="2_fgdbo"]
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_fgdbo"]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7bl8kwrnm5eu"
-path="res://.godot/imported/Untitled_Artwork_1.png-30242b9fda20f7e71ec0fd9371ff88e9.ctex"
+uid="uid://cxu33kil5xwed"
+path="res://.godot/imported/Floor.png-e7b4068d5459ba75fe827f0e4ff0a384.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3Minigames/HandPuzzle/Sprite/Untitled_Artwork_1.png"
-dest_files=["res://.godot/imported/Untitled_Artwork_1.png-30242b9fda20f7e71ec0fd9371ff88e9.ctex"]
+source_file="res://2Textures/Floor.png"
+dest_files=["res://.godot/imported/Floor.png-e7b4068d5459ba75fe827f0e4ff0a384.ctex"]
 
 [params]
 

@@ -3,7 +3,7 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dvc6ujwh2vx7k"
-path.s3tc="res://.godot/imported/FLESHDiffuse.png-fcbe635bff7ed773cddcb6e0465094ce.s3tc.ctex"
+path.s3tc="res://.godot/imported/FLESHDiffuse.png-f1a937dae8831b132f1da27cfcdac89d.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -12,8 +12,8 @@ generator_parameters={}
 
 [deps]
 
-source_file="res://5Enviornment3D/Terrain/FLESHDiffuse.png"
-dest_files=["res://.godot/imported/FLESHDiffuse.png-fcbe635bff7ed773cddcb6e0465094ce.s3tc.ctex"]
+source_file="res://2Textures/FLESHDiffuse.png"
+dest_files=["res://.godot/imported/FLESHDiffuse.png-f1a937dae8831b132f1da27cfcdac89d.s3tc.ctex"]
 
 [params]
 
