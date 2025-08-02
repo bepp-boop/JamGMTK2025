@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://ch4j34ltuliln"]
+[gd_scene load_steps=34 format=3 uid="uid://ch4j34ltuliln"]
 
 [ext_resource type="Script" uid="uid://dqtmjvrsa18wf" path="res://1Scripts/player.gd" id="1_vb825"]
 [ext_resource type="AudioStream" uid="uid://dqu5gehhs22li" path="res://6Audio/HonkOnah.mp3" id="2_bae66"]
@@ -20,6 +20,30 @@ region = Rect2(400, 0, 200, 200)
 atlas = ExtResource("4_bae66")
 region = Rect2(800, 0, 200, 200)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_bae66"]
+atlas = ExtResource("4_bae66")
+region = Rect2(400, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4tkma"]
+atlas = ExtResource("4_bae66")
+region = Rect2(600, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q4g4l"]
+atlas = ExtResource("4_bae66")
+region = Rect2(800, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4g4pa"]
+atlas = ExtResource("4_bae66")
+region = Rect2(400, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0a23y"]
+atlas = ExtResource("4_bae66")
+region = Rect2(600, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_60aoo"]
+atlas = ExtResource("4_bae66")
+region = Rect2(800, 400, 200, 200)
+
 [sub_resource type="AtlasTexture" id="AtlasTexture_fy8ux"]
 atlas = ExtResource("4_bae66")
 region = Rect2(600, 0, 200, 200)
@@ -36,6 +60,30 @@ region = Rect2(0, 0, 200, 200)
 atlas = ExtResource("4_bae66")
 region = Rect2(600, 0, 200, 200)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_i64gd"]
+atlas = ExtResource("4_bae66")
+region = Rect2(600, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vjp04"]
+atlas = ExtResource("4_bae66")
+region = Rect2(200, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_64ohc"]
+atlas = ExtResource("4_bae66")
+region = Rect2(0, 200, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mtsel"]
+atlas = ExtResource("4_bae66")
+region = Rect2(600, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j0wc"]
+atlas = ExtResource("4_bae66")
+region = Rect2(200, 400, 200, 200)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3jqh"]
+atlas = ExtResource("4_bae66")
+region = Rect2(0, 400, 200, 200)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_q4g4l"]
 animations = [{
 "frames": [{
@@ -49,7 +97,35 @@ animations = [{
 "texture": SubResource("AtlasTexture_sl0t7")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idleClown1",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bae66")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4tkma")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q4g4l")
+}],
+"loop": true,
+"name": &"idleClown2",
+"speed": 0.5
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4g4pa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0a23y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_60aoo")
+}],
+"loop": true,
+"name": &"idleClown3",
 "speed": 0.5
 }, {
 "frames": [{
@@ -66,7 +142,41 @@ animations = [{
 "texture": SubResource("AtlasTexture_3qd3c")
 }],
 "loop": false,
-"name": &"shoot",
+"name": &"shootClown1",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i64gd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vjp04")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_64ohc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i64gd")
+}],
+"loop": true,
+"name": &"shootClown2",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtsel")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j0wc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3jqh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mtsel")
+}],
+"loop": true,
+"name": &"shootClown3",
 "speed": 3.0
 }]
 
@@ -169,8 +279,8 @@ offset_bottom = 62.0
 position = Vector2(584, 584)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q4g4l")
-animation = &"idle"
-autoplay = "idle"
+animation = &"shootClown3"
+autoplay = "idleClown1"
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
 layout_mode = 3
