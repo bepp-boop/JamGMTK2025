@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqtmjvrsa18wf" path="res://1Scripts/player.gd" id="1_vb825"]
 [ext_resource type="AudioStream" uid="uid://dqu5gehhs22li" path="res://6Audio/HonkOnah.mp3" id="2_bae66"]
-[ext_resource type="Texture2D" uid="uid://cqymdj6yuxs86" path="res://4Sprites/UI/HUD1.png" id="4_65n15"]
+[ext_resource type="Texture2D" uid="uid://0pkutrf1otl6" path="res://4Sprites/UI/PHud3.png" id="3_bae66"]
 [ext_resource type="Texture2D" uid="uid://dt0s5cc4eibf" path="res://4Sprites/UI/PlayerFaces.png" id="4_bae66"]
 [ext_resource type="Texture2D" uid="uid://bl1fb6ak6jgwi" path="res://4Sprites/UI/AxeSheet.png" id="5_4tkma"]
 
@@ -267,8 +267,8 @@ mouse_filter = 2
 
 [node name="Hud1" type="Sprite2D" parent="CanvasLayer/ClownName"]
 position = Vector2(579.5, 323)
-scale = Vector2(0.483668, 0.392086)
-texture = ExtResource("4_65n15")
+scale = Vector2(0.483668, 0.592086)
+texture = ExtResource("3_bae66")
 
 [node name="Label" type="Label" parent="CanvasLayer/ClownName"]
 layout_mode = 0

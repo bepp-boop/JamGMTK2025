@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://265wq11wcr02"
-path="res://.godot/imported/HexClue.png-1c5d2b902d9d73989dd531b037f49e7a.ctex"
+uid="uid://drn0h2vso47yl"
+path="res://.godot/imported/Hand1.png-6d81c58c48d3396f80d5d0562e157246.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3Minigames/HexTile/HexClue.png"
-dest_files=["res://.godot/imported/HexClue.png-1c5d2b902d9d73989dd531b037f49e7a.ctex"]
+source_file="res://4Sprites/Minigame/Hand1.png"
+dest_files=["res://.godot/imported/Hand1.png-6d81c58c48d3396f80d5d0562e157246.ctex"]
 
 [params]
 

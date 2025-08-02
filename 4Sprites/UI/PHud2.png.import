@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ch4l2bmg2en88"
-path="res://.godot/imported/HexWhole.png-d0b650916cc1e953c3cbdbca5ca7ff27.ctex"
+uid="uid://c7kkbexbfs5nj"
+path="res://.godot/imported/PHud2.png-7cb4b2dfee64683b3a35815dd850f88d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3Minigames/HexTile/HexWhole.png"
-dest_files=["res://.godot/imported/HexWhole.png-d0b650916cc1e953c3cbdbca5ca7ff27.ctex"]
+source_file="res://4Sprites/UI/PHud2.png"
+dest_files=["res://.godot/imported/PHud2.png-7cb4b2dfee64683b3a35815dd850f88d.ctex"]
 
 [params]
 
