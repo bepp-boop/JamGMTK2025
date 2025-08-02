@@ -17,6 +17,10 @@ extends Node3D
 @onready var statusTag2 = get_node("Player2/CanvasLayer/ClownName/Label")  # Label for Player 2
 @onready var statusTag3 = get_node("Player3/CanvasLayer/ClownName/Label")  # Label for Player 3
 
+@onready var face1 = get_node("Player1/CanvasLayer/ClownName/PlayerFace")  # Label for Player 1
+@onready var face2 = get_node("Player2/CanvasLayer/ClownName/PlayerFace")  # Label for Player 2
+@onready var face3 = get_node("Player3/CanvasLayer/ClownName/PlayerFace")  # Label for Player 3
+
 var max_time = 1.0
 var time_left = 0.0
 var can_change = false
