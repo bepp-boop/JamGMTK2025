@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://dqtmjvrsa18wf" path="res://1Scripts/player.gd" id="1_vb825"]
 [ext_resource type="AudioStream" uid="uid://dqu5gehhs22li" path="res://6Audio/HonkOnah.mp3" id="2_bae66"]
-[ext_resource type="Texture2D" uid="uid://0pkutrf1otl6" path="res://4Sprites/UI/PHud3.png" id="3_bae66"]
+[ext_resource type="Texture2D" uid="uid://dv7wfjeknuqv" path="res://4Sprites/UI/PHud1.png" id="3_bae66"]
 [ext_resource type="Texture2D" uid="uid://dt0s5cc4eibf" path="res://4Sprites/UI/PlayerFaces.png" id="4_bae66"]
 [ext_resource type="Texture2D" uid="uid://bl1fb6ak6jgwi" path="res://4Sprites/UI/AxeSheet.png" id="5_4tkma"]
 
@@ -279,7 +279,7 @@ offset_bottom = 62.0
 position = Vector2(584, 584)
 scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q4g4l")
-animation = &"shootClown3"
+animation = &"idleClown1"
 autoplay = "idleClown1"
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
