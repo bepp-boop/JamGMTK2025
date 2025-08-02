@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dsxgv6ceu7qbv"]
 
-[ext_resource type="Script" uid="uid://emmyit1i24wl" path="res://Menus/MainMenu/main_menu.gd" id="1_0bhet"]
+[ext_resource type="Script" uid="uid://emmyit1i24wl" path="res://1Scripts/main_menu.gd" id="1_0bhet"]
 
 [sub_resource type="SystemFont" id="SystemFont_xpqx0"]
 font_names = PackedStringArray("Book Antiqua")
