@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvhv83m7vgeyq"
-path.s3tc="res://.godot/imported/flesh1.png-fcea4e2de177918f2a2ef457682adec5.s3tc.ctex"
+uid="uid://clr008rhakdpa"
+path.s3tc="res://.godot/imported/skybox.png-d4b81974346ec4766265e62da0fa4e56.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://4Sprites/Textures/flesh1.png"
-dest_files=["res://.godot/imported/flesh1.png-fcea4e2de177918f2a2ef457682adec5.s3tc.ctex"]
+source_file="res://2Textures/skybox.png"
+dest_files=["res://.godot/imported/skybox.png-d4b81974346ec4766265e62da0fa4e56.s3tc.ctex"]
 
 [params]
 
