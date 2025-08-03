@@ -1,0 +1,105 @@
+[gd_scene load_steps=12 format=3 uid="uid://srl8kxw35r6a"]
+
+[ext_resource type="Script" uid="uid://c6ickyws7rkpf" path="res://draggable_piece.gd" id="1_13lvp"]
+[ext_resource type="Texture2D" uid="uid://beiwsll4vdcci" path="res://3Minigames/CubePuzzle/CubePieces.png" id="2_ifm0v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_13lvp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wium0"]
+atlas = ExtResource("2_ifm0v")
+region = Rect2(0, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4vlxy"]
+atlas = ExtResource("2_ifm0v")
+region = Rect2(1080, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nr7ku"]
+atlas = ExtResource("2_ifm0v")
+region = Rect2(2160, 0, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j8sjt"]
+atlas = ExtResource("2_ifm0v")
+region = Rect2(0, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6mtmf"]
+atlas = ExtResource("2_ifm0v")
+region = Rect2(1080, 1080, 1080, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvtfm"]
+atlas = ExtResource("2_ifm0v")
+region = Rect2(2160, 1080, 1080, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kw2lr"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wium0")
+}],
+"loop": true,
+"name": &"piece0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4vlxy")
+}],
+"loop": true,
+"name": &"piece1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nr7ku")
+}],
+"loop": true,
+"name": &"piece2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j8sjt")
+}],
+"loop": true,
+"name": &"piece3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6mtmf")
+}],
+"loop": true,
+"name": &"piece4",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bvtfm")
+}],
+"loop": true,
+"name": &"piece5",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_m327o"]
+radius = 100.08
+
+[node name="DraggablePiece" type="Area2D"]
+script = ExtResource("1_13lvp")
+
+[node name="puzzle_check" type="Area2D" parent="."]
+position = Vector2(196, 149)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="puzzle_check"]
+shape = SubResource("CircleShape2D_13lvp")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+position = Vector2(199, 171)
+scale = Vector2(0.200003, 0.198236)
+sprite_frames = SubResource("SpriteFrames_kw2lr")
+animation = &"piece5"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(196, 149)
+shape = SubResource("CircleShape2D_m327o")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

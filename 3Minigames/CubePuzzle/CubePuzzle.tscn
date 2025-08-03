@@ -1,94 +1,30 @@
-[gd_scene load_steps=14 format=3 uid="uid://p3cmobrta343"]
+[gd_scene load_steps=9 format=3 uid="uid://p3cmobrta343"]
 
 [ext_resource type="Texture2D" uid="uid://b1dewotk25dv4" path="res://3Minigames/CubePuzzle/PuzzleSolved.png" id="1_ku1k6"]
+[ext_resource type="Script" uid="uid://bdrtw81j33534" path="res://3Minigames/CubePuzzle/cube_puzzle.gd" id="1_nr7ku"]
+[ext_resource type="PackedScene" uid="uid://srl8kxw35r6a" path="res://3Minigames/CubePuzzle/draggable_piece.tscn" id="1_wium0"]
 [ext_resource type="Texture2D" uid="uid://cuhvi0wkgw8nm" path="res://3Minigames/CubePuzzle/faces2.png" id="2_wium0"]
-[ext_resource type="Texture2D" uid="uid://beiwsll4vdcci" path="res://3Minigames/CubePuzzle/CubePieces.png" id="2_yi1wl"]
 [ext_resource type="Texture2D" uid="uid://d06f0c4txq5l1" path="res://3Minigames/CubePuzzle/faces.png" id="3_4vlxy"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wium0"]
-atlas = ExtResource("2_yi1wl")
-region = Rect2(0, 0, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4vlxy"]
-atlas = ExtResource("2_yi1wl")
-region = Rect2(1080, 0, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_nr7ku"]
-atlas = ExtResource("2_yi1wl")
-region = Rect2(2160, 0, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_j8sjt"]
-atlas = ExtResource("2_yi1wl")
-region = Rect2(0, 1080, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_6mtmf"]
-atlas = ExtResource("2_yi1wl")
-region = Rect2(1080, 1080, 1080, 1080)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_bvtfm"]
-atlas = ExtResource("2_yi1wl")
-region = Rect2(2160, 1080, 1080, 1080)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_nbm8x"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wium0")
-}],
-"loop": true,
-"name": &"piece0",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4vlxy")
-}],
-"loop": true,
-"name": &"piece1",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_nr7ku")
-}],
-"loop": true,
-"name": &"piece2",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_j8sjt")
-}],
-"loop": true,
-"name": &"piece3",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_6mtmf")
-}],
-"loop": true,
-"name": &"piece4",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bvtfm")
-}],
-"loop": true,
-"name": &"piece5",
-"speed": 5.0
-}]
+[ext_resource type="Script" uid="uid://2h7qhi1xmn7v" path="res://1Scripts/give_item.gd" id="6_j8sjt"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_nr7ku"]
 animations = [{
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_wium0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
 }],
-"loop": true,
+"loop": false,
 "name": &"right",
-"speed": 5.0
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -99,62 +35,58 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_j8sjt"]
-size = Vector2(186.5, 189.5)
+[sub_resource type="CircleShape2D" id="CircleShape2D_nr7ku"]
+radius = 27.074
 
 [node name="CubePuzzle" type="Node2D"]
-
-[node name="Node2D" type="Node2D" parent="."]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(883, 513)
-scale = Vector2(0.200003, 0.198236)
-sprite_frames = SubResource("SpriteFrames_nbm8x")
-animation = &"piece0"
-
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(405, 520)
-scale = Vector2(0.200003, 0.198236)
-sprite_frames = SubResource("SpriteFrames_nbm8x")
-animation = &"piece5"
-
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(846, 184)
-scale = Vector2(0.200003, 0.198236)
-sprite_frames = SubResource("SpriteFrames_nbm8x")
-animation = &"piece4"
-
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(975, 362)
-scale = Vector2(0.200003, 0.198236)
-sprite_frames = SubResource("SpriteFrames_nbm8x")
-animation = &"piece2"
-
-[node name="AnimatedSprite2D6" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(187, 426)
-scale = Vector2(0.200003, 0.198236)
-sprite_frames = SubResource("SpriteFrames_nbm8x")
-animation = &"piece3"
-
-[node name="AnimatedSprite2D4" type="AnimatedSprite2D" parent="Node2D"]
-position = Vector2(274, 182)
-scale = Vector2(0.200003, 0.198236)
-sprite_frames = SubResource("SpriteFrames_nbm8x")
-animation = &"piece1"
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(576, 528)
-scale = Vector2(0.440002, 0.440002)
-sprite_frames = SubResource("SpriteFrames_nr7ku")
-animation = &"right"
+script = ExtResource("1_nr7ku")
 
 [node name="Solution" type="Area2D" parent="."]
 
-[node name="SolutionCollisionShape" type="CollisionShape2D" parent="Solution"]
-position = Vector2(576.75, 332.25)
-shape = SubResource("RectangleShape2D_j8sjt")
+[node name="Face" type="AnimatedSprite2D" parent="Solution"]
+position = Vector2(576, 528)
+scale = Vector2(0.440002, 0.440002)
+sprite_frames = SubResource("SpriteFrames_nr7ku")
+animation = &"wrong"
+autoplay = "wrong"
 
 [node name="Sprite2D" type="Sprite2D" parent="Solution"]
 position = Vector2(575, 339)
 scale = Vector2(0.200003, 0.198236)
 texture = ExtResource("1_ku1k6")
+
+[node name="SolutionCollisionShape" type="CollisionShape2D" parent="Solution"]
+position = Vector2(578, 331)
+shape = SubResource("CircleShape2D_nr7ku")
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="DraggablePiece0" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(73, -24)
+piecenumber = 0
+
+[node name="DraggablePiece2" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(120, 370)
+piecenumber = 2
+
+[node name="DraggablePiece3" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(639, 348)
+piecenumber = 3
+
+[node name="DraggablePiece4" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(-68, 191)
+piecenumber = 4
+
+[node name="DraggablePiece5" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(629, -2)
+piecenumber = 5
+
+[node name="DraggablePiece1" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(821, 168)
+
+[node name="GiveItem" type="Node" parent="."]
+script = ExtResource("6_j8sjt")
+metadata/_custom_type_script = "uid://2h7qhi1xmn7v"
+
+[connection signal="area_shape_entered" from="Solution" to="." method="_on_solution_area_shape_entered"]
+[connection signal="area_shape_exited" from="Solution" to="." method="_on_solution_area_shape_exited"]

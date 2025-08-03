@@ -5,7 +5,7 @@ var number_of_eyes = 8
 var poked_count = 0
 @onready var eyes_Node: Node = $Eyes
 
-
+@onready var worm_object: StaticBody3D = get_tree().get_first_node_in_group("worm")
 @onready var player: CharacterBody3D 
 @onready var switch_manager: Node3D =  get_tree().get_first_node_in_group("switch_manager")
 @onready var give_item = $GiveItem
@@ -29,6 +29,8 @@ func _ready():
 		
 		
 func finish_game():
+	worm_object.visible = false
+	worm_object.get_child(1).disabled = true
 	var character_num = switch_manager.getState()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]

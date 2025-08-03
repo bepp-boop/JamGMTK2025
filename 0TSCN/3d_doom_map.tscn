@@ -1,4 +1,4 @@
-[gd_scene load_steps=105 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=106 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -18,6 +18,7 @@
 [ext_resource type="ArrayMesh" uid="uid://6wlkwkeryw1i" path="res://5Enviornment3D/3DProps/altarFull.obj" id="9_s6477"]
 [ext_resource type="Texture2D" uid="uid://bhqvgkr001qdd" path="res://4Sprites/Enviro/NakedClowns.png" id="10_cpiko"]
 [ext_resource type="PackedScene" uid="uid://d4eopkvqx3p20" path="res://0TSCN/magicwall.tscn" id="10_orrd0"]
+[ext_resource type="Script" uid="uid://de2dm4obbpw0r" path="res://0TSCN/altar_empty.gd" id="10_qdb8b"]
 [ext_resource type="Texture2D" uid="uid://da17q5u3jj62l" path="res://4Sprites/Enviro/TreeSheet.png" id="10_s6477"]
 [ext_resource type="PackedScene" uid="uid://bakp0ypdgc3sg" path="res://0TSCN/hungrybaby.tscn" id="11_fpmej"]
 [ext_resource type="ArrayMesh" uid="uid://dibwa0r8jiuwb" path="res://5Enviornment3D/3DProps/hand2.obj" id="11_y6i7p"]
@@ -96,6 +97,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_riorx"]
+height = 6.58344
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ndw85"]
 
@@ -477,11 +479,11 @@ visible = false
 
 [node name="Lvl1" type="Node" parent="Environment/World"]
 
-[node name="WormObject" type="StaticBody3D" parent="Environment/World/Lvl1"]
+[node name="WormObject" type="StaticBody3D" parent="Environment/World/Lvl1" groups=["worm"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1112, 5.50492, 0.141649)
 script = ExtResource("4_rqjlu")
 
-[node name="Worm" type="MeshInstance3D" parent="Environment/World/Lvl1/WormObject"]
+[node name="WormMesh" type="MeshInstance3D" parent="Environment/World/Lvl1/WormObject"]
 mesh = ExtResource("15_36sln")
 skeleton = NodePath("../../../../..")
 
@@ -506,14 +508,15 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, -1, -5)
 
 [node name="Lvl2" type="Node" parent="Environment/World"]
 
-[node name="AltarEmpty" type="MeshInstance3D" parent="Environment/World/Lvl2"]
+[node name="AltarEmpty" type="StaticBody3D" parent="Environment/World/Lvl2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 33.9643, 18.6437, -42.6248)
+script = ExtResource("10_qdb8b")
+
+[node name="AltarEmptyMesh" type="MeshInstance3D" parent="Environment/World/Lvl2/AltarEmpty"]
 mesh = ExtResource("8_riorx")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Lvl2/AltarEmpty"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl2/AltarEmpty/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl2/AltarEmpty"]
 transform = Transform3D(2, 0, -5.8268e-08, 0, 2, 0, 5.8268e-08, 0, 2, 0, 0.972998, 0)
 shape = SubResource("CapsuleShape3D_riorx")
 
