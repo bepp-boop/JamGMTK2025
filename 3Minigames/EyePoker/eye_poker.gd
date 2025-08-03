@@ -30,7 +30,7 @@ func _ready():
 		
 func finish_game():
 	worm_object.visible = false
-	worm_object.get_child(1).disabled = true
+	worm_object.get_child(0).disabled = true
 	var character_num = switch_manager.getState()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]
