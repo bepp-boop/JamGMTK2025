@@ -1,7 +1,10 @@
 [gd_scene load_steps=9 format=3 uid="uid://7vmf3vvc6oot"]
 
-[ext_resource type="Script" uid="uid://cpqkl40pdnbv0" path="res://1scripts/faucet.gd" id="1_jqtci"]
+[ext_resource type="Script" uid="uid://bljtawexf438p" path="res://0TSCN/faucet.gd" id="1_jqtci"]
 [ext_resource type="Texture2D" uid="uid://04qcht2w1xg4" path="res://4Sprites/Enviro/Faucet.png" id="2_lv8xg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_y7js8"]
+size = Vector3(2, 4.28809, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_1hq3e"]
 atlas = ExtResource("2_lv8xg")
@@ -44,10 +47,12 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="BoxShape3D" id="BoxShape3D_y7js8"]
-
-[node name="Faucet" type="Node3D"]
+[node name="StaticBody3D" type="StaticBody3D"]
 script = ExtResource("1_jqtci")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.18226, 1.89369, 0.5)
+shape = SubResource("BoxShape3D_y7js8")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.25818, 0)
@@ -55,10 +60,4 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_26ny0")
 animation = &"off"
 autoplay = "off"
-frame_progress = 0.509314
-
-[node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.68226, 0.249648, 0)
-shape = SubResource("BoxShape3D_y7js8")
+frame_progress = 0.171831
