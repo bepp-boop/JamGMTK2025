@@ -104,7 +104,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_4re12")
 }],
 "loop": true,
-"name": &"idle",
+"name": &"idletree",
 "speed": 4.0
 }]
 
@@ -122,9 +122,8 @@ script = ExtResource("1_gmecg")
 
 [node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_7ifbu")
-animation = &"death"
-autoplay = "idle"
-frame_progress = 0.0687846
+animation = &"idletree"
+frame_progress = 0.880776
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0132053, 0, 0.0674563)

@@ -8,7 +8,7 @@ var dead = false
 @onready var animate: AnimatedSprite2D = $Sprite2D  # Ensure this is AnimatedSprite2D
 
 func _ready():
-	animate.play("idle")  # Play idle animation when spawned
+	animate.play("idletree")  # Play idle animation when spawned
 	
 func kill():
 	if dead:

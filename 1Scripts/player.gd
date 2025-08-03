@@ -73,6 +73,8 @@ func shoot():
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		ray_cast_3d.get_collider().kill()
 	
+func has_item(item_name: String) -> bool:
+	return inventory.has(item_name)  # assuming `inventory` is a Dictionary or Array
 
 func shoot_animation_done():
 	can_shoot = true

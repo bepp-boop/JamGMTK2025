@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://cwdvae1ds3svm"]
+[gd_scene load_steps=4 format=3 uid="uid://cwdvae1ds3svm"]
 
-[ext_resource type="Script" uid="uid://bkhyd57masw4k" path="res://Characters/collectable.gd" id="1_w1sef"]
+[ext_resource type="Script" uid="uid://bkhyd57masw4k" path="res://1Scripts/collectable.gd" id="1_w1sef"]
+[ext_resource type="Script" uid="uid://2h7qhi1xmn7v" path="res://1Scripts/give_item.gd" id="2_itu2m"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_v41mi"]
 height = 3.75952
@@ -18,3 +19,7 @@ shape = SubResource("CylinderShape3D_v41mi")
 debug_color = Color(0.991938, 0, 0.258897, 0.42)
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
+
+[node name="GiveItem" type="Node" parent="."]
+script = ExtResource("2_itu2m")
+metadata/_custom_type_script = "uid://2h7qhi1xmn7v"

@@ -3,6 +3,7 @@ extends Node2D
 @onready var character = $"2DPlayer"  # Reference to the 2DPlayer node (CharacterBody2D)
 @onready var key = $Area2D            # Reference to the Area2D that triggers the event
 @onready var switch_manager: Node3D = get_tree().get_first_node_in_group("switch_manager")  # Switch Manager to get the state
+@onready var give_item = $GiveItem
 
 var player: CharacterBody3D  # We'll get the player instance when needed
 
@@ -19,6 +20,8 @@ func finish_game():
 	
 	# Find the player in the "player" group and call end_minigame() for them
 	player = get_tree().get_nodes_in_group("player")[character_num]
+	# Give a specific item to player
+	give_item.give_item_to(player)
 	player.end_minigame()
 
 # This function is used to manually check if the player enters the area

@@ -1,10 +1,10 @@
 [gd_scene load_steps=15 format=4 uid="uid://dbr0hq1ta4aib"]
 
-[ext_resource type="Script" uid="uid://diytbnkw6cofw" path="res://3Minigames/PressedButton/finger.gd" id="1_n14hp"]
+[ext_resource type="Script" uid="uid://diytbnkw6cofw" path="res://3Minigames/FingerPuzzle/finger.gd" id="1_n14hp"]
 [ext_resource type="Texture2D" uid="uid://b4genuy600yui" path="res://4Sprites/Minigame/handsheet.png" id="2_2m5b5"]
 [ext_resource type="Texture2D" uid="uid://c2q6mlrwu0s06" path="res://4Sprites/Minigame/fingersheet.png" id="2_j63nx"]
-[ext_resource type="Script" uid="uid://bkejrkgwv5ipw" path="res://3Minigames/PressedButton/fall_rock.gd" id="3_1v7x7"]
-[ext_resource type="Script" uid="uid://wrunkirm33ub" path="res://3Minigames/PressedButton/button.gd" id="3_h4xhf"]
+[ext_resource type="Script" uid="uid://bkejrkgwv5ipw" path="res://3Minigames/FingerPuzzle/fall_rock.gd" id="3_1v7x7"]
+[ext_resource type="Script" uid="uid://wrunkirm33ub" path="res://3Minigames/FingerPuzzle/button.gd" id="3_h4xhf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_jsdx4"]
 atlas = ExtResource("2_2m5b5")
@@ -14514,22 +14514,18 @@ texture = SubResource("AtlasTexture_jsdx4")
 
 [node name="Back" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-1600, -25)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_fe3he")
 
 [node name="Back2" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-2655, -15)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_fe3he")
 
 [node name="Back3" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-3660, -25)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_fe3he")
 
 [node name="Back4" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(-4725, -20)
-scale = Vector2(1, 1)
 texture = SubResource("AtlasTexture_fe3he")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
