@@ -94,7 +94,7 @@ func kill():
 func restart():
 	get_tree().reload_current_scene()
 	
-func start_minigame(minigamename = "HandPuzzle"):
+func start_minigame(minigamename = "FingerPuzzle"):
 	switch_manager.inMinigame = true
 	print("minigame started: %s" % minigamename)
 	$CanvasMinigame.show()

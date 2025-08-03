@@ -2,7 +2,8 @@ extends CharacterBody2D
 
 @onready var player: CharacterBody3D 
 @onready var switch_manager: Node3D =  get_tree().get_first_node_in_group("switch_manager")
-@onready var give_item = $GiveItem
+@onready var give_item: GiveItem = $"../GiveItem"
+
 
 # Variables to control movement speed and direction
 const SPEED = 130  # Speed when moving right

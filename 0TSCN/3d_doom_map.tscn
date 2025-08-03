@@ -362,9 +362,11 @@ ambient_light_energy = 10.34
 
 [node name="Breakable" parent="Environment/Testprops" instance=ExtResource("6_nhcnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60757, 1.08266, 3.52917)
+visible = false
 
 [node name="Breakable2" parent="Environment/Testprops" instance=ExtResource("6_nhcnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9096, 21.5734, -6.51785)
+visible = false
 
 [node name="World" type="Node" parent="Environment"]
 
