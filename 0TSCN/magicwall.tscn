@@ -27,6 +27,9 @@ script = ExtResource("1_x5mbi")
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 sprite_frames = SubResource("SpriteFrames_rvvg3")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+transform = Transform3D(1.29812, 0, 0, 0, 1.29812, 0, 0, 0, 1.29812, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0297495, 0, 0)
 shape = SubResource("BoxShape3D_x5mbi")
