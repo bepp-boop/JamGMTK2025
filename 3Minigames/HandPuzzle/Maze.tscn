@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://bw264b2kpqmu7"]
+[gd_scene load_steps=11 format=4 uid="uid://d1j64cgxatojc"]
 
 [ext_resource type="Script" uid="uid://bl6ep31dll6mn" path="res://maze.gd" id="1_tq0k4"]
 [ext_resource type="PackedScene" uid="uid://c6xekrrhn1ycg" path="res://3Minigames/HandPuzzle/2DPlayer.tscn" id="2_habtl"]

@@ -96,6 +96,7 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_riorx"]
+height = 6.58344
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdb8b"]
 albedo_color = Color(0.278431, 0.0980392, 0.168627, 1)
@@ -510,7 +511,7 @@ frame_progress = 0.210946
 [node name="Lvl1Exit" parent="Environment/World/Lvl1" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3815, -0.943324, -14.373)
 
-[node name="Burgerwall" parent="Environment/World/Lvl1" instance=ExtResource("7_s5s3l")]
+[node name="Burgerwall" parent="Environment/World/Lvl1" groups=["burgerwall"] instance=ExtResource("7_s5s3l")]
 transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 22.6136, -1, -4.22163)
 
 [node name="Lvl2" type="Node" parent="Environment/World"]
@@ -539,8 +540,8 @@ shape = SubResource("CapsuleShape3D_riorx")
 [node name="Breakable" parent="Environment/World/Lvl2" instance=ExtResource("6_nhcnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -55.8205, 21.3499, 2.80751)
 
-[node name="Magicwall" parent="Environment/World/Lvl2" instance=ExtResource("10_orrd0")]
-transform = Transform3D(0.800292, 0, -0.28326, 0, 1, 0, 0.59961, 0, 0.378063, 41.2612, 19.4431, -40.6199)
+[node name="Magicwall" parent="Environment/World/Lvl2" groups=["magicwall"] instance=ExtResource("10_orrd0")]
+transform = Transform3D(0.800292, 0, -0.28326, 0, 1, 0, 0.59961, 0, 0.378063, 41.2612, 21.4299, -40.6199)
 
 [node name="Lvl_Exit2" parent="Environment/World/Lvl2" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 42.8026, 19.2866, -42.8895)
@@ -573,7 +574,7 @@ transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -43.5409, 40.3789, 58.9894)
 [node name="Faucet" parent="Environment/World/Lvl3" instance=ExtResource("3_y0ok8")]
 transform = Transform3D(1.99937, 0, 0, 0, 1.99937, 0, 0, 0, 1.99937, -53.1338, 50.8051, -78.4725)
 
-[node name="Burgerwall" parent="Environment/World/Lvl3" instance=ExtResource("7_s5s3l")]
+[node name="Burgerwall" parent="Environment/World/Lvl3" groups=["burgerwall"] instance=ExtResource("7_s5s3l")]
 transform = Transform3D(4.1832, 0, 0.547753, 0, 5, 0, -2.73877, 0, 0.83664, -44.0729, 39.7713, 76.5004)
 
 [node name="Lvl_Exit" parent="Environment/World/Lvl3" instance=ExtResource("6_vnqse")]
@@ -593,8 +594,8 @@ skeleton = NodePath("../../../..")
 surface_material_override/9 = SubResource("StandardMaterial3D_qdb8b")
 surface_material_override/10 = SubResource("StandardMaterial3D_tykyk")
 
-[node name="Magicwall" parent="Environment/World/Lvl3" instance=ExtResource("10_orrd0")]
-transform = Transform3D(1.93563, 0, -0.251664, 0, 2, 0, 0.503328, 0, 0.967815, -71.0034, 41.7856, -10.3986)
+[node name="Magicwall" parent="Environment/World/Lvl3" groups=["magicwall"] instance=ExtResource("10_orrd0")]
+transform = Transform3D(1.93563, 0, -0.251664, 0, 2, 0, 0.503328, 0, 0.967815, -71.0034, 45.9637, -10.3986)
 
 [node name="Terrain1" type="Node" parent="Environment/World"]
 
@@ -1061,6 +1062,7 @@ shape = SubResource("ConcavePolygonShape3D_orrd0")
 transform = Transform3D(36.8006, 0, 0, 0, 36.8006, 0, 0, 0, 36.8006, -1.45519e-11, 19.4273, -0.829913)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Invsible Walls/BFloor2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00679896, -0.00655311, -0.00922084)
 shape = SubResource("ConcavePolygonShape3D_fpmej")
 
 [node name="BFloor3" type="StaticBody3D" parent="Environment/World/Invsible Walls"]
