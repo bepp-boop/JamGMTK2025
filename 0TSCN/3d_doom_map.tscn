@@ -1104,7 +1104,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8106, 21.5813, 14.1139)
 visible = false
 
 [node name="Player3" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8384, 50.6526, -4.36115)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8384, 45.0236, -25.6374)
 visible = false
 SPEED = 8.0
 
