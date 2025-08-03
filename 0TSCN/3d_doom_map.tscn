@@ -649,7 +649,7 @@ sprite_frames = SubResource("SpriteFrames_s6dqg")
 autoplay = "default"
 
 [node name="Meatrocks" type="MeshInstance3D" parent="Environment/World/Terrain1"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 13.071, -0.793233, -9.99054)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.4646, -0.793233, -9.99054)
 mesh = ExtResource("18_osegs")
 skeleton = NodePath("../../../..")
 surface_material_override/0 = ExtResource("19_mk7xb")
@@ -696,7 +696,7 @@ mesh = ExtResource("21_2qfij")
 shape = SubResource("ConvexPolygonShape3D_bn0p2")
 
 [node name="Skull" type="MeshInstance3D" parent="Environment/World/Terrain1"]
-transform = Transform3D(0.974691, 0.106706, 0.196447, 0, 0.878734, -0.477312, -0.223556, 0.465232, 0.856494, 14.27, -0.993727, -8.10309)
+transform = Transform3D(1.46204, 0.160059, 0.294669, 0, 1.3181, -0.715968, -0.335334, 0.697848, 1.28474, 13.5213, -2.27573, -9.95927)
 mesh = ExtResource("33_wp3fr")
 skeleton = NodePath("../..")
 

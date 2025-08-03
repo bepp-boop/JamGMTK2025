@@ -42,6 +42,5 @@ func count_poke():
 	print("poked count %s" % poked_count)
 	if poked_count == number_of_eyes:
 		print("got them all")
-		worm_scream.play()
 		finish_game()
 	
