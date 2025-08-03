@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=111 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://udkimivua158" path="res://0TSCN/altar.gd" id="11_tykyk"]
 [ext_resource type="ArrayMesh" uid="uid://dibwa0r8jiuwb" path="res://5Enviornment3D/3DProps/hand2.obj" id="11_y6i7p"]
 [ext_resource type="ArrayMesh" uid="uid://c5etwswt4korg" path="res://5Enviornment3D/3DProps/spear.obj" id="12_kcv67"]
+[ext_resource type="PackedScene" uid="uid://jnw22lofhtip" path="res://1Scripts/check_item.tscn" id="13_kd77u"]
 [ext_resource type="ArrayMesh" uid="uid://br56imqn41spj" path="res://5Enviornment3D/KeyMarkers/worm.obj" id="15_36sln"]
 [ext_resource type="ArrayMesh" uid="uid://db7bhteih2e5p" path="res://5Enviornment3D/KeyMarkers/river.obj" id="15_rqdm6"]
 [ext_resource type="Material" uid="uid://e0hsuiptiotu" path="res://2Textures/watershader.tres" id="16_rqjlu"]
@@ -509,14 +510,17 @@ frame_progress = 0.210946
 [node name="Lvl1Exit" parent="Environment/World/Lvl1" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3815, -0.943324, -14.373)
 
+[node name="Check_Item" parent="Environment/World/Lvl1/Lvl1Exit" instance=ExtResource("13_kd77u")]
+
 [node name="Area3D" type="Area3D" parent="Environment/World/Lvl1/Lvl1Exit"]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl1/Lvl1Exit/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24048, 0.485107)
 shape = SubResource("BoxShape3D_rqdm6")
 
 [node name="Burgerwall" parent="Environment/World/Lvl1" groups=["burgerwall"] instance=ExtResource("7_s5s3l")]
-transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 23.3118, -0.932156, -3.79954)
+transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 23.0602, -0.235506, -3.79954)
 
 [node name="Lvl2" type="Node" parent="Environment/World"]
 
@@ -593,7 +597,7 @@ skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("16_rqjlu")
 
 [node name="Forkhole" parent="Environment/World/Lvl3" instance=ExtResource("18_qdb8b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.289, 41.3319, 53.6215)
+transform = Transform3D(-0.801494, 0, 0.598003, 0, 1, 0, -0.598003, 0, -0.801494, -39.3846, 39.5376, 55.2682)
 
 [node name="Magicwall" parent="Environment/World/Lvl3" groups=["magicwall"] instance=ExtResource("10_orrd0")]
 transform = Transform3D(1.93563, 0, -0.251664, 0, 2, 0, 0.503328, 0, 0.967815, -71.0491, 45.9637, -10.403)
@@ -678,7 +682,7 @@ mesh = ExtResource("20_nyatc")
 skeleton = NodePath("../Meatrocks/StaticBody3D")
 
 [node name="Obelisk2" type="MeshInstance3D" parent="Environment/World/Terrain1"]
-transform = Transform3D(1.61971, 4.5192, 1.39764, -4.70682, 1.68696, 0, -0.47155, -1.31569, 4.80069, 24.8568, -1.98016, -1.54079)
+transform = Transform3D(1.61971, 4.5192, 1.39764, -4.70682, 1.68696, 0, -0.47155, -1.31569, 4.80069, 24.8568, -0.582698, -1.13813)
 mesh = ExtResource("4_nkqoi")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Terrain1/Obelisk2"]
@@ -928,7 +932,7 @@ transform = Transform3D(2, 0, 0, 0, 1.95151, -0.437751, 0, 0.437751, 1.95151, -6
 mesh = ExtResource("12_kcv67")
 
 [node name="Obelisk" type="MeshInstance3D" parent="Environment/World/Terrain3"]
-transform = Transform3D(9.93421, 1.14521, 0, -1.14521, 9.93421, 0, 0, 0, 10, -78.6037, 39.5215, -10.4662)
+transform = Transform3D(10.9276, 1.25973, 0, -1.25973, 10.9276, 0, 0, 0, 11, -78.8812, 37.751, -10.4662)
 mesh = ExtResource("4_nkqoi")
 skeleton = NodePath("../..")
 
@@ -938,7 +942,7 @@ skeleton = NodePath("../..")
 shape = SubResource("ConcavePolygonShape3D_qdb8b")
 
 [node name="Obelisk2" type="MeshInstance3D" parent="Environment/World/Terrain3"]
-transform = Transform3D(8.89214, -1.35768, 0.294332, 1.38897, 8.65332, -2.04718, 0.0258281, 2.06806, 8.75914, -63.2484, 39.1008, -10.6943)
+transform = Transform3D(9.88015, -1.50852, 0.327034, 1.5433, 9.61479, -2.27463, 0.0286979, 2.29784, 9.73237, -64.0221, 39.1008, -10.6943)
 mesh = ExtResource("4_nkqoi")
 skeleton = NodePath("../..")
 
@@ -1040,5 +1044,7 @@ mesh = ExtResource("33_wp3fr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skull/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ylidm")
+
+[connection signal="body_shape_entered" from="Environment/World/Lvl1/Lvl1Exit/Area3D" to="Environment/World/Lvl1/Lvl1Exit" method="_on_area_3d_body_shape_entered"]
 
 [editable path="Environment/World/Master/map"]

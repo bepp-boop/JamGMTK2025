@@ -5,6 +5,7 @@ extends CharacterBody2D
 @onready var give_item: GiveItem = $"../GiveItem"
 
 
+
 # Variables to control movement speed and direction
 const SPEED = 130  # Speed when moving right
 const SLOW_SPEED = 60  # Slow speed when moving back
@@ -14,6 +15,7 @@ var original_position : Vector2  # To store the original position of the charact
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_position = position  # Store the initial position when the scene starts
+	give_item.item_name="key"
 
 # Called every frame
 func _process(delta: float) -> void:
