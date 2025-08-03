@@ -1,0 +1,49 @@
+[gd_scene load_steps=9 format=3 uid="uid://cjrms2jeg3q4h"]
+
+[ext_resource type="Script" uid="uid://dxs2md8o00wgy" path="res://1scripts/forkhole.gd" id="1_5oo3e"]
+[ext_resource type="ArrayMesh" uid="uid://c1c0ljg1xbbud" path="res://5Enviornment3D/KeyMarkers/forkhole.obj" id="1_8lo8h"]
+[ext_resource type="Texture2D" uid="uid://82udi1sc1j8s" path="res://4Sprites/Enviro/silverware.png" id="3_t75q5"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5oo3e"]
+albedo_color = Color(0.19, 0.140347, 0.0969, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t75q5"]
+albedo_color = Color(0.576115, 0.492582, 0.284432, 1)
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_44n58"]
+radius = 1.5
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_44n58"]
+atlas = ExtResource("3_t75q5")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_c12h8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_44n58")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="Forkhole" type="Node3D"]
+script = ExtResource("1_5oo3e")
+
+[node name="Forkhole" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.490235, 0.326988, -0.258888)
+mesh = ExtResource("1_8lo8h")
+surface_material_override/9 = SubResource("StandardMaterial3D_5oo3e")
+surface_material_override/10 = SubResource("StandardMaterial3D_t75q5")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="Forkhole"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.490235, -0.326988, 0.258888)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Forkhole/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.43911, 0.852179, 0)
+shape = SubResource("SphereShape3D_44n58")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.250259, 0.175255, 0.121595, -0.0158565, 0.0954777, -0.737178, -0.190641, 0.22212, 0.220935, -1.42865, 0.520948, 0)
+sprite_frames = SubResource("SpriteFrames_c12h8")
