@@ -24,6 +24,27 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.330456, 0.0204326, 0.157882, 1)
 
+[node name="ColorRect2" type="ColorRect" parent="CanvasLayer"]
+offset_left = 7.0
+offset_top = 7.0
+offset_right = 47.0
+offset_bottom = 47.0
+scale = Vector2(28.4, 15.8)
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect3" type="ColorRect" parent="CanvasLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 21.0
+offset_top = 24.0
+offset_right = 21.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.96, 0.926)
+color = Color(0.330456, 0.0204326, 0.157882, 1)
+
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
 anchor_right = 1.0
