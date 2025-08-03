@@ -96,7 +96,7 @@ func start_minigame(minigamename = "EyePoker"):
 	$CanvasMinigame.show()
 	$CanvasLayer.hide()
 	set_input_disabled(true)
-	var minigame_chosen = load("res://Minigames/%s/%s.tscn" % [minigamename, minigamename])
+	var minigame_chosen = load("res://3Minigames/%s/%s.tscn" % [minigamename, minigamename])
 	minigame_instance = minigame_chosen.instantiate()
 	minigame.add_child(minigame_instance)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE

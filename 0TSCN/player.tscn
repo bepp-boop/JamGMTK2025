@@ -98,7 +98,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"idleClown1",
-"speed": 0.5
+"speed": 1.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -265,12 +265,13 @@ offset_right = 40.0
 offset_bottom = 40.0
 mouse_filter = 2
 
-[node name="Hud1" type="Sprite2D" parent="CanvasLayer/ClownName"]
+[node name="Hud" type="Sprite2D" parent="CanvasLayer/ClownName"]
 position = Vector2(579.5, 323)
 scale = Vector2(0.483668, 0.592086)
 texture = ExtResource("3_bae66")
 
 [node name="Label" type="Label" parent="CanvasLayer/ClownName"]
+visible = false
 layout_mode = 0
 offset_right = 133.0
 offset_bottom = 62.0
@@ -281,6 +282,7 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q4g4l")
 animation = &"idleClown1"
 autoplay = "idleClown1"
+frame_progress = 0.439322
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
 layout_mode = 3

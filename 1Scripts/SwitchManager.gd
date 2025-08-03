@@ -121,20 +121,30 @@ func _switch_to_player(new_player):
 
 	# Activate the new player and its camera
 	new_player.visible = true
-	var new_player_HUD= new_player.find_child('CanvasLayer')
+	var new_player_CanvasLayer= new_player.find_child('CanvasLayer')
+	var new_player_HUD= new_player_CanvasLayer.find_child('Hud')
+	var new_player_label= new_player_CanvasLayer.find_child('Label')
+	new_player_CanvasLayer.visible=true
 	new_player_HUD.visible=true
 	if new_player == player1:
+		var texture = load("res://4Sprites/UI/PHud1.png")
+		new_player_HUD.texture = texture
 		camera1.current = true
 		player1.set_input_disabled(false)  # Enable input for Player 1
 		statusTag1.text = "1"  # Update the label for Player 1
 		face1.play("idleClown1")
 
 	elif new_player == player2:
+		var texture = load("res://4Sprites/UI/PHud2.png")
+		new_player_HUD.texture = texture
 		camera2.current = true
 		player2.set_input_disabled(false)  # Enable input for Player 2
 		statusTag2.text = "2"  # Update the label for Player 2
 		face2.play("idleClown2")
+		
 	elif new_player == player3:
+		var texture = load("res://4Sprites/UI/PHud3.png")
+		new_player_HUD.texture = texture
 		camera3.current = true
 		player3.set_input_disabled(false)  # Enable input for Player 3
 		statusTag3.text = "3"  # Update the label for Player 3
