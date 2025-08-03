@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://cd3ei8ic1jgph" path="res://5Enviornment3D/3DProps/Breakable/breakable.gd" id="1_gmecg"]
 [ext_resource type="AudioStream" uid="uid://cits2aogokbmo" path="res://6Audio/PanicScream1.wav" id="2_ae6fg"]
-[ext_resource type="SpriteFrames" uid="uid://c42pxsmnhf2ib" path="res://5Enviornment3D/3DProps/Breakable/breakable.tres" id="2_jbmed"]
+[ext_resource type="SpriteFrames" uid="uid://brduhuuqxh6mc" path="res://5Enviornment3D/3DProps/Breakable/breakable.tres" id="2_jbmed"]
 
 [sub_resource type="BoxMesh" id="BoxMesh_ae6fg"]
 
@@ -38,5 +38,5 @@ mesh = SubResource("PrismMesh_gw77s")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, -0.849912, 3.88141, 0)
 billboard = 2
 sprite_frames = ExtResource("2_jbmed")
-animation = &"idletree"
+animation = &"death"
 autoplay = "idletree"

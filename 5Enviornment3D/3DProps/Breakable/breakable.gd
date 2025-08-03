@@ -26,10 +26,7 @@ func kill():
 	print("You can walk past")
 	
 	# Change the sprite animation to a permanent death state
-	animated_sprite_3d.play("death")  # Make sure this animation exists
-	animated_sprite_3d.animation_finished.connect(_on_death_animation_finished)
+	animated_sprite_3d.animation = "death"
+	animated_sprite_3d.frame = 0  # or whichever frame you want
+	animated_sprite_3d.stop() # Make sure this animation exists
 	
-func _on_death_animation_finished():
-	# Stop the animation and set it to the last frame
-	animated_sprite_3d.stop()
-	animated_sprite_3d.frame = animated_sprite_3d.sprite_frames.get_frame_count("death") - 1

@@ -87,6 +87,10 @@ func shoot():
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("activateInteractable"):
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		ray_cast_3d.get_collider().activateInteractable()
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
+		print("hit collider of"+ray_cast_3d.get_collider().name)
+		ray_cast_3d.get_collider().kill()
+		
 
 	
 func has_item(item_name: String) -> bool:

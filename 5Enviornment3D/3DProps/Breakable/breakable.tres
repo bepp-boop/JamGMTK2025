@@ -1,18 +1,6 @@
-[gd_resource type="SpriteFrames" load_steps=11 format=3 uid="uid://brduhuuqxh6mc"]
+[gd_resource type="SpriteFrames" load_steps=8 format=3 uid="uid://brduhuuqxh6mc"]
 
 [ext_resource type="Texture2D" uid="uid://da17q5u3jj62l" path="res://4Sprites/Enviro/TreeSheet.png" id="1_50lcc"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_wro47"]
-atlas = ExtResource("1_50lcc")
-region = Rect2(0, 540, 540, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_njfkj"]
-atlas = ExtResource("1_50lcc")
-region = Rect2(540, 540, 540, 540)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b6vw7"]
-atlas = ExtResource("1_50lcc")
-region = Rect2(0, 1080, 540, 540)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_x804u"]
 atlas = ExtResource("1_50lcc")
@@ -41,15 +29,6 @@ region = Rect2(0, 1080, 540, 540)
 [resource]
 animations = [{
 "frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_wro47")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_njfkj")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b6vw7")
-}, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_x804u")
 }],

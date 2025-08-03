@@ -22,6 +22,10 @@ func _process(delta: float) -> void:
 
 func finish_game():
 	var character_num = switch_manager.getState()
+	var magic_walls = get_tree().get_nodes_in_group("magicwall")
+	for wall in magic_walls:
+		print(wall.name)
+		wall.queue_free()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]
 	give_item.give_item_to(player)
