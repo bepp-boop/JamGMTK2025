@@ -17,7 +17,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_rxaqa"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_ldq47"]
 
 [node name="DecoyTree" type="Node3D"]
 
@@ -27,8 +27,8 @@ billboard = 2
 sprite_frames = SubResource("SpriteFrames_p1rxa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
-transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.406467, -1.00838, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961539, 0.111284, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-shape = SubResource("CylinderShape3D_rxaqa")
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.823336, -1.84245, 0)
+shape = SubResource("SphereShape3D_ldq47")
