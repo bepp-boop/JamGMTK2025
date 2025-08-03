@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://6ripwwkf86uc"]
+[gd_scene load_steps=15 format=4 uid="uid://6ripwwkf86uc"]
 
 [ext_resource type="Script" uid="uid://diytbnkw6cofw" path="res://3Minigames/FingerPuzzle/finger.gd" id="1_n14hp"]
 [ext_resource type="Texture2D" uid="uid://c2q6mlrwu0s06" path="res://4Sprites/Minigame/fingersheet.png" id="2_xy6db"]
@@ -26,6 +26,32 @@ size = Vector2(145, 215)
 atlas = ExtResource("2_xy6db")
 region = Rect2(0, 0, 535.071, 498.971)
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_xy6db"]
+texture = ExtResource("2_xy6db")
+texture_region_size = Vector2i(540, 540)
+2:0/0 = 0
+3:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_xa385"]
+tile_size = Vector2i(270, 270)
+sources/0 = SubResource("TileSetAtlasSource_xy6db")
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hf0k7"]
+texture = ExtResource("2_xy6db")
+texture_region_size = Vector2i(270, 270)
+0:2/size_in_atlas = Vector2i(4, 4)
+0:2/0 = 0
+4:2/size_in_atlas = Vector2i(4, 4)
+4:2/0 = 0
+4:0/size_in_atlas = Vector2i(2, 2)
+4:0/0 = 0
+6:0/size_in_atlas = Vector2i(2, 2)
+6:0/0 = 0
+
+[sub_resource type="TileSet" id="TileSet_7ivqg"]
+tile_size = Vector2i(270, 270)
+sources/0 = SubResource("TileSetAtlasSource_hf0k7")
+
 [node name="PressedButton" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -52,7 +78,6 @@ script = ExtResource("3_h4xhf")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Button"]
 position = Vector2(0, 37.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_7ivqg")
 
 [node name="Sprite2D" type="Sprite2D" parent="Button"]
@@ -68,7 +93,6 @@ script = ExtResource("3_1v7x7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/FallRock"]
 position = Vector2(-47.5, -7.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_orggo")
 
 [node name="RayCast2D" type="RayCast2D" parent="Rocks/FallRock"]
@@ -86,7 +110,6 @@ script = ExtResource("3_1v7x7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/FallRock2"]
 position = Vector2(-47.5, -7.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_orggo")
 
 [node name="RayCast2D" type="RayCast2D" parent="Rocks/FallRock2"]
@@ -104,7 +127,6 @@ script = ExtResource("3_1v7x7")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Rocks/FallRock3"]
 position = Vector2(-47.5, -7.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_orggo")
 
 [node name="RayCast2D" type="RayCast2D" parent="Rocks/FallRock3"]
@@ -115,9 +137,25 @@ target_position = Vector2(61.0001, 1900)
 texture = SubResource("AtlasTexture_pxtxw")
 
 [node name="Label" type="Label" parent="."]
-offset_right = 40.0
-offset_bottom = 23.0
-text = "Pressed SpaceBar to Move Foward"
+offset_top = 44.0
+offset_right = 248.0
+offset_bottom = 67.0
+text = "Press spacebar to extend finger"
+
+[node name="TileMapLayer" type="TileMapLayer" parent="."]
+position = Vector2(363, 0)
+scale = Vector2(0.3, 0.3)
+tile_map_data = PackedByteArray("AAAAAP//AAACAAAAAAACAP//AAACAAAAAAAEAP//AAACAAAAAAAGAP//AAACAAAAAAD+////AAACAAAAAAAIAP//AAACAAAAAAD8////AAACAAAAAAD8/wcAAAADAAAAACD+/wcAAAADAAAAACAAAAcAAAADAAAAACACAAcAAAADAAAAACAEAAcAAAADAAAAACAGAAcAAAADAAAAACAIAAcAAAADAAAAACAKAAcAAAADAAAAACAKAP//AAACAAAAAAD6////AAACAAAAAAD6/wcAAAACAAAAACA=")
+tile_set = SubResource("TileSet_xa385")
+
+[node name="TileMapBG" type="TileMapLayer" parent="TileMapLayer"]
+visible = false
+z_index = -1
+y_sort_enabled = true
+position = Vector2(-1400, -3570)
+scale = Vector2(2.5, 2.5)
+tile_map_data = PackedByteArray("AAD8/woAAAAAAAIAAAD+/woAAAAAAAIAAAD//woAAAAAAAIAAAAAAAoAAAAAAAIAAAABAAoAAAAAAAIAAAACAAoAAAAAAAIAAAADAAoAAAAAAAIAAAAEAAoAAAAAAAIAAAAFAAoAAAAAAAIAAAAGAAoAAAAAAAIAAAAHAAoAAAAAAAIAAAAIAAoAAAAAAAIAAAAJAAoAAAAAAAIAAAD9/wcAAAAEAAIAAAABAAcAAAAEAAIAAAAFAAcAAAAEAAIAAAAJAAcAAAAEAAIAAAD9/wMAAAAAAAIAAAABAAMAAAAAAAIAAAAFAAMAAAAAAAIAAAAJAAMAAAAAAAIAAAAKAAsAAAAAAAIAAAAGAAsAAAAAAAIAAAAFAAsAAAAAAAIAAAAEAAsAAAAAAAIAAAADAAsAAAAAAAIAAAACAAsAAAAAAAIAAAABAAsAAAAAAAIAAAAAAAsAAAAAAAIAAAD//wsAAAAAAAIAAAD+/wsAAAAAAAIAAAD9/wsAAAAAAAIAAAD8/wsAAAAAAAIAAAD7/wsAAAAAAAIAAAA=")
+tile_set = SubResource("TileSet_7ivqg")
 
 [connection signal="body_entered" from="Button" to="CharacterBody2D" method="_on_button_body_entered"]
 [connection signal="body_entered" from="Rocks/FallRock" to="CharacterBody2D" method="_on_fall_rock_body_entered"]

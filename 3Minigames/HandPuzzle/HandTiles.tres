@@ -1,0 +1,46 @@
+[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://coa77r77v1qtg"]
+
+[ext_resource type="Texture2D" uid="uid://b4genuy600yui" path="res://4Sprites/Minigame/handsheet.png" id="1_4l4ta"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_habtl"]
+texture = ExtResource("1_4l4ta")
+texture_region_size = Vector2i(270, 270)
+0:0/0 = 0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 78.4607, 135, 72.1839, 135, 135, -135, 135)
+0:1/0 = 0
+0:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, -135, -78.4607, -135, -73.5198, 135, -135, 135)
+0:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(75.2914, 135, 77.0629, -135, 135, -135, 135, 135)
+1:0/0 = 0
+1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(78.8345, 135, 78.8345, -74.4056, 135, -67.3193, 135, 135)
+1:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(135, -74.4056, -135, -77.9487, -135, -135, 135, -135)
+1:1/0 = 0
+1:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, -135, -78.4607, -135, -73.5198, 135, -135, 135)
+1:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-75.2914, 135, -75.2913, 76.1771, 135, 69.0909, 135, 135)
+1:1/0/physics_layer_0/polygon_2/points = PackedVector2Array(135, -74.4056, -75.2914, -77.9487, -75.2914, -135, 135, -135)
+1:2/0 = 0
+1:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, -135, -78.8345, -135, -75.2914, 135)
+0:2/0 = 0
+0:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(78.8345, 135, 75.2913, 76.1771, 135, 76.1771, 135, 135)
+2:1/0 = 0
+2:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, 73.5198, 135, 69.9767, 135, 135)
+2:1/0/physics_layer_0/polygon_1/points = PackedVector2Array(-135, -73.5198, -135, -135, 135, -135, 135, -77.0629)
+2:0/0 = 0
+2:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, -135, -75.2914, -135, -75.2914, 135)
+2:0/0/physics_layer_0/polygon_1/points = PackedVector2Array(78.8345, 135, 75.2913, -135, 135, -135, 135, 135)
+2:0/0/physics_layer_0/polygon_2/points = PackedVector2Array(-71.7482, -74.4056, -78.8345, -135, 78.8345, -135, 85.9207, -74.4056)
+5:1/0 = 0
+3:2/0 = 0
+3:0/next_alternative_id = 2
+3:0/0 = 0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, -135, 135, -135, 135, 135)
+3:1/0 = 0
+3:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, -135, 135, -135, 135, 135)
+4:0/0 = 0
+4:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, -135, 135, -135, 135, 135)
+4:1/0 = 0
+4:1/0/physics_layer_0/polygon_0/points = PackedVector2Array(-135, 135, -135, -135, 135, -135, 135, 135)
+
+[resource]
+tile_size = Vector2i(270, 270)
+physics_layer_0/collision_layer = 1
+sources/0 = SubResource("TileSetAtlasSource_habtl")
