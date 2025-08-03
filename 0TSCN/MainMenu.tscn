@@ -22,7 +22,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0, 0.202967, 0.202975, 1)
+color = Color(0.330456, 0.0204326, 0.157882, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer"]
 anchors_preset = 15
@@ -44,7 +44,8 @@ alignment = 1
 layout_mode = 2
 theme_override_fonts/font = SubResource("SystemFont_xpqx0")
 theme_override_font_sizes/font_size = 60
-text = "THIS IS OUR GAME"
+text = "YOU ARE THREE CLOWNS.
+ESCAPE FROM HELL."
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -59,9 +60,9 @@ theme_override_constants/separation = 30
 [node name="StartButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Start Game"
+text = "START"
 
 [node name="ExitButton" type="Button" parent="CanvasLayer/MarginContainer/VBoxContainer/HBoxContainer/VBoxContainer"]
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-text = "Exit"
+text = "EXIT GAME"

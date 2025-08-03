@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=3 uid="uid://cjrms2jeg3q4h"]
 
-[ext_resource type="Script" uid="uid://dxs2md8o00wgy" path="res://1scripts/forkhole.gd" id="1_5oo3e"]
+[ext_resource type="Script" uid="uid://dxs2md8o00wgy" path="res://1Scripts/forkhole.gd" id="1_5oo3e"]
 [ext_resource type="ArrayMesh" uid="uid://c1c0ljg1xbbud" path="res://5Enviornment3D/KeyMarkers/forkhole.obj" id="1_8lo8h"]
 [ext_resource type="Texture2D" uid="uid://82udi1sc1j8s" path="res://4Sprites/Enviro/silverware.png" id="3_t75q5"]
 
