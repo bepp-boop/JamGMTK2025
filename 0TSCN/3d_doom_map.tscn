@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=108 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -28,8 +28,8 @@
 [ext_resource type="Script" uid="uid://ckohc082l6bae" path="res://CheckItem.gd" id="15_umwb1"]
 [ext_resource type="Material" uid="uid://e0hsuiptiotu" path="res://2Textures/watershader.tres" id="16_rqjlu"]
 [ext_resource type="Script" uid="uid://2h7qhi1xmn7v" path="res://1Scripts/give_item.gd" id="17_riorx"]
-[ext_resource type="ArrayMesh" uid="uid://c1c0ljg1xbbud" path="res://5Enviornment3D/KeyMarkers/forkhole.obj" id="17_rqjlu"]
 [ext_resource type="ArrayMesh" uid="uid://bjixe6ts5ochv" path="res://5Enviornment3D/3DProps/meatrocks.obj" id="18_osegs"]
+[ext_resource type="PackedScene" uid="uid://cjrms2jeg3q4h" path="res://0TSCN/forkhole.tscn" id="18_qdb8b"]
 [ext_resource type="Material" uid="uid://bsssgv0h8aae3" path="res://2Textures/meat.tres" id="19_mk7xb"]
 [ext_resource type="PackedScene" uid="uid://ddega0gmahsy1" path="res://0TSCN/chokingclown.tscn" id="19_w08s7"]
 [ext_resource type="ArrayMesh" uid="uid://bndq8ayjevcck" path="res://5Enviornment3D/3DProps/sword.obj" id="20_nyatc"]
@@ -98,12 +98,6 @@ animations = [{
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_riorx"]
 height = 6.58344
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_qdb8b"]
-albedo_color = Color(0.278431, 0.0980392, 0.168627, 1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tykyk"]
-albedo_color = Color(1, 1, 0.337255, 1)
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_ndw85"]
 
@@ -489,13 +483,13 @@ visible = false
 
 [node name="Lvl1" type="Node" parent="Environment/World"]
 
-[node name="Worm" type="MeshInstance3D" parent="Environment/World/Lvl1"]
+[node name="Worm" type="MeshInstance3D" parent="Environment/World/Lvl1" groups=["worm"]]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1112, 5.50492, 0.141649)
 mesh = ExtResource("15_36sln")
 skeleton = NodePath("../../../..")
-script = ExtResource("4_rqjlu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Lvl1/Worm"]
+script = ExtResource("4_rqjlu")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl1/Worm/StaticBody3D"]
 shape = SubResource("ConcavePolygonShape3D_vnqse")
@@ -589,12 +583,8 @@ mesh = ExtResource("15_rqdm6")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("16_rqjlu")
 
-[node name="Forkhole" type="MeshInstance3D" parent="Environment/World/Lvl3"]
+[node name="Forkhole" parent="Environment/World/Lvl3" instance=ExtResource("18_qdb8b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4013, 41.3319, 53.6454)
-mesh = ExtResource("17_rqjlu")
-skeleton = NodePath("../../../..")
-surface_material_override/9 = SubResource("StandardMaterial3D_qdb8b")
-surface_material_override/10 = SubResource("StandardMaterial3D_tykyk")
 
 [node name="Magicwall" parent="Environment/World/Lvl3" groups=["magicwall"] instance=ExtResource("10_orrd0")]
 transform = Transform3D(1.93563, 0, -0.251664, 0, 2, 0, 0.503328, 0, 0.967815, -71.0034, 45.9637, -10.3986)

@@ -1,4 +1,9 @@
 
 extends Node3D
 
-#this is the location for the maze puzzle.
+
+func activateMinigame():
+	#Worm dies after poking
+	#$CollisionShape3D.disabled=true
+	#$WormMesh.visible=false
+	return "HandPuzzle"
