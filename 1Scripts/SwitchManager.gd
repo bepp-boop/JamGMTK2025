@@ -81,7 +81,7 @@ func _process(delta):
 	
 	if time_left > 0.0:
 		time_left -= delta
-		print(time_left)
+		#print(time_left)
 	elif time_left <= 0.0 and can_change == false:
 		print("Can now change characters")
 		can_change = true
@@ -89,10 +89,21 @@ func _process(delta):
 	if inMinigame:
 		#Disable cahnging while in a minigame
 		return
-		
+	if Input.is_action_just_pressed("ui_accept") and can_change:
+		check_switch()
+	
+	
+
+
+func reset_char_switch_delay():
+	time_left = max_time
+	can_change = false
+
+
+func check_switch():
 	match state:
 		CHAR_1:
-			if Input.is_action_just_pressed("ui_accept") and can_change:
+			if can_change:
 				if player2_active:
 					state = CHAR_2
 					_switch_to_player(player2)
@@ -101,10 +112,11 @@ func _process(delta):
 					_switch_to_player(player3)
 				else:
 					print("No other active characters.")
+					get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
 					return
 				reset_char_switch_delay()
 		CHAR_2:
-			if Input.is_action_just_pressed("ui_accept") and can_change:
+			if can_change:
 				if player3_active:
 					state = CHAR_3
 					_switch_to_player(player3)
@@ -113,10 +125,11 @@ func _process(delta):
 					_switch_to_player(player1)
 				else:
 					print("No other active characters.")
+					get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
 					return
 				reset_char_switch_delay()
 		CHAR_3:
-			if Input.is_action_just_pressed("ui_accept") and can_change:
+			if can_change:
 				if player1_active:
 					state = CHAR_1
 					_switch_to_player(player1)
@@ -125,6 +138,7 @@ func _process(delta):
 					_switch_to_player(player2)
 				else:
 					print("No other active characters.")
+					get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
 					return
 				reset_char_switch_delay()
 	if not player1_active and not player2_active and not player3_active:
@@ -177,10 +191,6 @@ func end_current_player():
 
 	print("Player %s has been ended externally." % state)
 
-func reset_char_switch_delay():
-	time_left = max_time
-	can_change = false
-
 # Function to handle switching to a new player
 func _switch_to_player(new_player):
 	# Deactivate all players' cameras
@@ -211,6 +221,9 @@ func _switch_to_player(new_player):
 	new_player_CanvasLayer.visible=true
 	new_player_HUD.visible=true
 	if new_player == player1:
+		if player1_active == false:
+			_switch_to_player(player2)
+			
 		var texture = load("res://4Sprites/UI/PHud1.png")
 		new_player_HUD.texture = texture
 		camera1.current = true
@@ -233,6 +246,29 @@ func _switch_to_player(new_player):
 		player3.set_input_disabled(false)  # Enable input for Player 3
 		statusTag3.text = "3"  # Update the label for Player 3
 		face3.play("idleClown3")
+
+
+var players_outside = []
+	
+func finish_player(player):
+	name=player.name
+	print("name: " % name)
+	match state:
+		'Player1':
+			player1_active=false
+			print('clown 1 escaped')
+		'Player2':
+			player2_active=false
+			print('clown 2 escaped')
+		'Player3':
+			player3_active=false
+			print('clown 3 escaped')
+			
+	check_switch()	
+
+
+
+
 
 func getState():
 	return state

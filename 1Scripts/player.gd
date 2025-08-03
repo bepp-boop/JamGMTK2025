@@ -8,6 +8,7 @@ extends CharacterBody3D
 @onready var switch_manager: Node3D = $".."
 @onready var interact_label: Label = $CanvasLayer/InteractLabel
 @onready var item_inventory: AnimatedSprite2D = $CanvasLayer/ItemInventory
+@onready var player: CharacterBody3D = $"."
 
 
 var minigame_instance
@@ -121,7 +122,7 @@ func kill():
 func finish_player():
 	var controller = get_parent()
 	if controller and controller.has_method("finish_player"):
-		controller.finish_player(self)
+		controller.finish_player(player)
 	else:
 		push_warning("Controller not found or doesn't have finish_player() method.")
 
