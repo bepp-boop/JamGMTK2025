@@ -5,6 +5,8 @@ extends CharacterBody3D
 @onready var shoot_sound = $ShootSound
 @onready var minigame: Control = $CanvasMinigame/Minigame
 @onready var player_face: AnimatedSprite2D = $CanvasLayer/ClownName/PlayerFace
+@onready var switch_manager: Node3D = $".."
+
 
 var minigame_instance
 
@@ -67,6 +69,7 @@ func shoot():
 		return
 	can_shoot = false
 	animated_sprite_2d.play("shoot")
+	
 	player_face.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
@@ -91,7 +94,8 @@ func kill():
 func restart():
 	get_tree().reload_current_scene()
 	
-func start_minigame(minigamename = "EyePoker"):
+func start_minigame(minigamename = "HandPuzzle"):
+	switch_manager.inMinigame = true
 	print("minigame started: %s" % minigamename)
 	$CanvasMinigame.show()
 	$CanvasLayer.hide()
@@ -102,6 +106,7 @@ func start_minigame(minigamename = "EyePoker"):
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 func end_minigame():
+	switch_manager.inMinigame = false
 	print("minigame closed")
 	set_input_disabled(false)
 	$CanvasMinigame.hide()

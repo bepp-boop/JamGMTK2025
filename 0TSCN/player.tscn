@@ -282,7 +282,7 @@ scale = Vector2(0.6, 0.6)
 sprite_frames = SubResource("SpriteFrames_q4g4l")
 animation = &"idleClown1"
 autoplay = "idleClown1"
-frame_progress = 0.439322
+frame_progress = 0.126857
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
 layout_mode = 3
@@ -377,21 +377,6 @@ text = "Restart"
 process_priority = 1
 layer = 2
 visible = false
-
-[node name="ColorRect" type="ColorRect" parent="CanvasMinigame"]
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -379.0
-offset_top = -252.0
-offset_right = 379.0
-offset_bottom = 252.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0.737879, 0.18848, 0.457453, 1)
 
 [node name="Minigame" type="Control" parent="CanvasMinigame"]
 layout_mode = 3

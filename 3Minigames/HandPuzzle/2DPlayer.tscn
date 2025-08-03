@@ -5,8 +5,9 @@
 [ext_resource type="Script" uid="uid://b0w3sq8d16ldu" path="res://3Minigames/HandPuzzle/Script/top_down_movement_velocity_input.gd" id="2_sq3bc"]
 [ext_resource type="Script" uid="uid://cyjyddv32jvjt" path="res://3Minigames/HandPuzzle/Script/movementstat.gd" id="3_4s570"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_2d8dd"]
-size = Vector2(37.5, 22)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bh31q"]
+radius = 12.9365
+height = 40.591
 
 [sub_resource type="Resource" id="Resource_u0vai"]
 script = ExtResource("3_4s570")
@@ -23,8 +24,8 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_bh31q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-2.75, 0)
-shape = SubResource("RectangleShape2D_2d8dd")
+rotation = 1.54457
+shape = SubResource("CapsuleShape2D_bh31q")
 
 [node name="TopDownMovement" type="Node" parent="." node_paths=PackedStringArray("actor")]
 script = ExtResource("1_m4sdk")

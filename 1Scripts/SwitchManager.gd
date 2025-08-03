@@ -25,6 +25,7 @@ extends Node3D
 var max_time = 1.0
 var time_left = 0.0
 var can_change = false
+var inMinigame = false
 
 enum {CHAR_1, CHAR_2, CHAR_3}
 var state
@@ -63,13 +64,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	
 	if time_left > 0.0:
 		time_left -= delta
 		print(time_left)
 	elif time_left <= 0.0 and can_change == false:
 		print("Can now change characters")
 		can_change = true
-	
+		
+	if inMinigame:
+		#Disable cahnging while in a minigame
+		return
+		
 	match state:
 		CHAR_1:
 			if Input.is_action_just_pressed("ui_accept") and can_change == true:

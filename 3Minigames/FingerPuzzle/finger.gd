@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var player: CharacterBody3D 
 @onready var switch_manager: Node3D =  get_tree().get_first_node_in_group("switch_manager")
+@onready var give_item = $GiveItem
 
 # Variables to control movement speed and direction
 const SPEED = 130  # Speed when moving right
@@ -37,10 +38,12 @@ func finish_game():
 	var character_num = switch_manager.getState()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]
-	player.end_minigame()	
+	give_item.give_item_to(player)
+	player.end_minigame()
 
 func _on_button_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:  # Ensure the body is of type CharacterBody2D
+		finish_game()
 		print("Game Done give special Item")
 		
 		
