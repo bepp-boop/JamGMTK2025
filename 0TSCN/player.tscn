@@ -1,10 +1,12 @@
-[gd_scene load_steps=34 format=3 uid="uid://ch4j34ltuliln"]
+[gd_scene load_steps=40 format=3 uid="uid://ch4j34ltuliln"]
 
 [ext_resource type="Script" uid="uid://dqtmjvrsa18wf" path="res://1Scripts/player.gd" id="1_vb825"]
 [ext_resource type="AudioStream" uid="uid://dqu5gehhs22li" path="res://6Audio/HonkOnah.mp3" id="2_bae66"]
 [ext_resource type="Texture2D" uid="uid://dv7wfjeknuqv" path="res://4Sprites/UI/PHud1.png" id="3_bae66"]
 [ext_resource type="Texture2D" uid="uid://dt0s5cc4eibf" path="res://4Sprites/UI/PlayerFaces.png" id="4_bae66"]
 [ext_resource type="Texture2D" uid="uid://bl1fb6ak6jgwi" path="res://4Sprites/UI/AxeSheet.png" id="5_4tkma"]
+[ext_resource type="Texture2D" uid="uid://b4genuy600yui" path="res://4Sprites/Minigame/handsheet.png" id="6_2dtub"]
+[ext_resource type="Texture2D" uid="uid://dd4igy6ccu0o6" path="res://4Sprites/Minigame/BranchIcon.png" id="7_dlwuj"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_ywxx0"]
 
@@ -235,6 +237,45 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_imoo5"]
+atlas = ExtResource("6_2dtub")
+region = Rect2(1350, 270, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8wy7"]
+atlas = ExtResource("6_2dtub")
+region = Rect2(1350, 810, 270, 270)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xg3sk"]
+atlas = ExtResource("7_dlwuj")
+region = Rect2(512, 512, 512, 512)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_q8wy7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_imoo5")
+}],
+"loop": false,
+"name": &"fork",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8wy7")
+}],
+"loop": false,
+"name": &"nothing",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xg3sk")
+}],
+"loop": false,
+"name": &"stick",
+"speed": 5.0
+}]
+
 [node name="Player" type="CharacterBody3D" groups=["player"]]
 collision_layer = 2
 collision_mask = 3
@@ -285,6 +326,7 @@ autoplay = "idleClown1"
 frame_progress = 0.795488
 
 [node name="GunBase" type="Control" parent="CanvasLayer"]
+visible = false
 layout_mode = 3
 anchors_preset = 7
 anchor_left = 0.5
@@ -305,6 +347,7 @@ animation = &"shoot"
 autoplay = "idle"
 
 [node name="InteractLabel" type="Label" parent="CanvasLayer"]
+visible = false
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
@@ -332,6 +375,52 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 color = Color(1, 1, 1, 0.427451)
+
+[node name="ItemInventory" type="AnimatedSprite2D" parent="CanvasLayer"]
+position = Vector2(1002, 497)
+scale = Vector2(0.460151, 0.460151)
+sprite_frames = SubResource("SpriteFrames_q8wy7")
+animation = &"stick"
+autoplay = "nothing"
+
+[node name="ItemGet" type="Control" parent="CanvasLayer"]
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="Panel" type="Panel" parent="CanvasLayer/ItemGet"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 323.0
+offset_top = -46.0
+offset_right = 524.0
+offset_bottom = 35.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="CanvasLayer/ItemGet/Panel"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -36.0
+offset_top = -12.5
+offset_right = 36.0
+offset_bottom = 12.5
+grow_horizontal = 2
+grow_vertical = 2
+text = "Got item!"
 
 [node name="DeathScreen" type="Control" parent="CanvasLayer"]
 visible = false

@@ -7,6 +7,7 @@ extends CharacterBody3D
 @onready var player_face: AnimatedSprite2D = $CanvasLayer/ClownName/PlayerFace
 @onready var switch_manager: Node3D = $".."
 @onready var interact_label: Label = $CanvasLayer/InteractLabel
+@onready var item_inventory: AnimatedSprite2D = $CanvasLayer/ItemInventory
 
 
 var minigame_instance
@@ -42,7 +43,8 @@ func _process(delta: float) -> void:
 		return
 	if input_disabled:
 		return
-		
+	if len(inventory) > 0:
+		$CanvasLayer/ItemInventory.play(inventory[0])
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
@@ -102,6 +104,10 @@ func shoot_animation_done():
 func add_item(item_name: String):
 	print("Picked up:", item_name)
 	inventory.append(item_name)
+	$CanvasLayer/ItemGet.show()
+	await get_tree().create_timer(4.0).timeout
+	$CanvasLayer/ItemGet.hide()
+	
 	
 func kill():
 	dead = true

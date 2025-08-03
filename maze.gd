@@ -11,6 +11,7 @@ var player: CharacterBody3D  # We'll get the player instance when needed
 # Called when the body enters the Area2D
 func _ready():
 	# Ensure the Area2D is monitoring bodies
+	$GiveItem.item_name = "fork"
 	key.monitoring = true
 	key.monitorable = true
 
@@ -25,6 +26,7 @@ func finish_game():
 	
 	# Find the player in the "player" group and call end_minigame() for them
 	player = get_tree().get_nodes_in_group("player")[character_num]
+	player.itemget()
 	# Give a specific item to player
 	give_item.give_item_to(player)
 	player.end_minigame()	

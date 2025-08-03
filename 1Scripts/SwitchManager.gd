@@ -22,6 +22,10 @@ extends Node3D
 @onready var face2 = get_node("Player2/CanvasLayer/ClownName/PlayerFace")  # Label for Player 2
 @onready var face3 = get_node("Player3/CanvasLayer/ClownName/PlayerFace")  # Label for Player 3
 
+@onready var gun1 = get_node("Player1/CanvasLayer/GunBase")  # Label for Player 1
+@onready var gun2 = get_node("Player2/CanvasLayer/GunBase")  # Label for Player 2
+@onready var gun3 = get_node("Player3/CanvasLayer/GunBase")  # Label for Player 3
+
 #Check if they are still player
 var player1_active := true
 var player2_active := true
@@ -50,6 +54,11 @@ func _ready():
 	player1HUD.visible = true
 	player2HUD.visible = false
 	player3HUD.visible = false
+	
+	# show axe only for player 2
+	gun1.visible = false
+	gun2.visible = true
+	gun3.visible = false
 	
 	# Set all cameras to be initially off (not active)
 	camera1.current = true

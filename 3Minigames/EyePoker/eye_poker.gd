@@ -13,7 +13,7 @@ var poked_count = 0
 
 func _ready():
 	poked_count = 0
-	
+	$GiveItem.item_name = "fork"
 	for i in range(number_of_eyes):
 		var x_areaspawn=0.7*$TextureRect.size.x
 		var y_areaspawn=0.7*$TextureRect.size.y
@@ -34,7 +34,7 @@ func finish_game():
 	var character_num = switch_manager.getState()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]
-	give_item.give_item_to(player)
+	#give_item.give_item_to(player)
 	player.end_minigame()	
 	
 func count_poke():

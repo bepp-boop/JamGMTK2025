@@ -28,7 +28,7 @@ func finish_game():
 		wall.queue_free()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]
-	give_item.give_item_to(player)
+	#give_item.give_item_to(player)
 	player.end_minigame()	
 	
 	
