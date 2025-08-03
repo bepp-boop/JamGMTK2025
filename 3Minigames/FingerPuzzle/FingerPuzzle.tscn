@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=4 uid="uid://6ripwwkf86uc"]
+[gd_scene load_steps=16 format=4 uid="uid://6ripwwkf86uc"]
 
 [ext_resource type="Script" uid="uid://diytbnkw6cofw" path="res://3Minigames/FingerPuzzle/finger.gd" id="1_fff2g"]
 [ext_resource type="Texture2D" uid="uid://c2q6mlrwu0s06" path="res://4Sprites/Minigame/fingersheet.png" id="2_h3unf"]
 [ext_resource type="Script" uid="uid://wrunkirm33ub" path="res://3Minigames/FingerPuzzle/button.gd" id="3_f3rd8"]
 [ext_resource type="Script" uid="uid://bkejrkgwv5ipw" path="res://3Minigames/FingerPuzzle/fall_rock.gd" id="4_xahk0"]
+[ext_resource type="PackedScene" uid="uid://da1hlpltdsxec" path="res://1Scripts/give_item.tscn" id="5_h3unf"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa385"]
 atlas = ExtResource("2_h3unf")
@@ -156,6 +157,8 @@ position = Vector2(-1400, -3570)
 scale = Vector2(2.5, 2.5)
 tile_map_data = PackedByteArray("AAD8/woAAAAAAAIAAAD+/woAAAAAAAIAAAD//woAAAAAAAIAAAAAAAoAAAAAAAIAAAABAAoAAAAAAAIAAAACAAoAAAAAAAIAAAADAAoAAAAAAAIAAAAEAAoAAAAAAAIAAAAFAAoAAAAAAAIAAAAGAAoAAAAAAAIAAAAHAAoAAAAAAAIAAAAIAAoAAAAAAAIAAAAJAAoAAAAAAAIAAAD9/wcAAAAEAAIAAAABAAcAAAAEAAIAAAAFAAcAAAAEAAIAAAAJAAcAAAAEAAIAAAD9/wMAAAAAAAIAAAABAAMAAAAAAAIAAAAFAAMAAAAAAAIAAAAJAAMAAAAAAAIAAAAKAAsAAAAAAAIAAAAGAAsAAAAAAAIAAAAFAAsAAAAAAAIAAAAEAAsAAAAAAAIAAAADAAsAAAAAAAIAAAACAAsAAAAAAAIAAAABAAsAAAAAAAIAAAAAAAsAAAAAAAIAAAD//wsAAAAAAAIAAAD+/wsAAAAAAAIAAAD9/wsAAAAAAAIAAAD8/wsAAAAAAAIAAAD7/wsAAAAAAAIAAAA=")
 tile_set = SubResource("TileSet_7ivqg")
+
+[node name="GiveItem" parent="." instance=ExtResource("5_h3unf")]
 
 [connection signal="body_entered" from="Button" to="CharacterBody2D" method="_on_button_body_entered"]
 [connection signal="body_entered" from="Rocks/FallRock" to="CharacterBody2D" method="_on_fall_rock_body_entered"]

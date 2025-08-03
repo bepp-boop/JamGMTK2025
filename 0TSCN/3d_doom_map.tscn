@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=111 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -25,6 +25,7 @@
 [ext_resource type="Script" uid="uid://udkimivua158" path="res://0TSCN/altar.gd" id="11_tykyk"]
 [ext_resource type="ArrayMesh" uid="uid://dibwa0r8jiuwb" path="res://5Enviornment3D/3DProps/hand2.obj" id="11_y6i7p"]
 [ext_resource type="ArrayMesh" uid="uid://c5etwswt4korg" path="res://5Enviornment3D/3DProps/spear.obj" id="12_kcv67"]
+[ext_resource type="PackedScene" uid="uid://jnw22lofhtip" path="res://1Scripts/check_item.tscn" id="13_kd77u"]
 [ext_resource type="ArrayMesh" uid="uid://br56imqn41spj" path="res://5Enviornment3D/KeyMarkers/worm.obj" id="15_36sln"]
 [ext_resource type="ArrayMesh" uid="uid://db7bhteih2e5p" path="res://5Enviornment3D/KeyMarkers/river.obj" id="15_rqdm6"]
 [ext_resource type="Material" uid="uid://e0hsuiptiotu" path="res://2Textures/watershader.tres" id="16_rqjlu"]
@@ -509,7 +510,10 @@ frame_progress = 0.210946
 [node name="Lvl1Exit" parent="Environment/World/Lvl1" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3815, -0.943324, -14.373)
 
+[node name="Check_Item" parent="Environment/World/Lvl1/Lvl1Exit" instance=ExtResource("13_kd77u")]
+
 [node name="Area3D" type="Area3D" parent="Environment/World/Lvl1/Lvl1Exit"]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl1/Lvl1Exit/Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24048, 0.485107)
@@ -1040,5 +1044,7 @@ mesh = ExtResource("33_wp3fr")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Skull/StaticBody3D"]
 shape = SubResource("ConvexPolygonShape3D_ylidm")
+
+[connection signal="body_shape_entered" from="Environment/World/Lvl1/Lvl1Exit/Area3D" to="Environment/World/Lvl1/Lvl1Exit" method="_on_area_3d_body_shape_entered"]
 
 [editable path="Environment/World/Master/map"]
