@@ -1,9 +1,9 @@
 extends Node2D
 
 @onready var character = $"2DPlayer"  # Reference to the 2DPlayer node (CharacterBody2D)
-@onready var key = $Area2D            # Reference to the Area2D that triggers the event
+@onready var key = $Node2D/Area2D            # Reference to the Area2D that triggers the event
 @onready var switch_manager: Node3D = get_tree().get_first_node_in_group("switch_manager")  # Switch Manager to get the state
-@onready var give_item = $GiveItem
+@onready var give_item = $Node2D/GiveItem
 
 
 var player: CharacterBody3D  # We'll get the player instance when needed
@@ -11,7 +11,7 @@ var player: CharacterBody3D  # We'll get the player instance when needed
 # Called when the body enters the Area2D
 func _ready():
 	# Ensure the Area2D is monitoring bodies
-	$GiveItem.item_name = "fork"
+	give_item.item_name = "fork"
 	key.monitoring = true
 	key.monitorable = true
 
@@ -33,3 +33,8 @@ func _process(delta):
 	# Check if the player character overlaps the Area2D
 	if key.get_overlapping_bodies().has(character):
 		finish_game()  # Call finish_game when 2DPlayer enters the area
+
+
+func _on_area_2d_body_entered(body: Node2D) -> void:
+	finish_game()
+	pass # Replace with function body.
