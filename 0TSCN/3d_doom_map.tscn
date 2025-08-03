@@ -504,7 +504,7 @@ frame_progress = 0.210946
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3815, -0.943324, -14.373)
 
 [node name="Burgerwall" parent="Environment/World/Lvl1" instance=ExtResource("7_s5s3l")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, -1, -5)
+transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 22.6136, -1, -4.22163)
 
 [node name="Lvl2" type="Node" parent="Environment/World"]
 
@@ -571,7 +571,7 @@ transform = Transform3D(1.99937, 0, 0, 0, 1.99937, 0, 0, 0, 1.99937, -53.1338, 5
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.1418, 43.252, -13.8114)
 
 [node name="Burgerwall" parent="Environment/World/Lvl3" instance=ExtResource("7_s5s3l")]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 1, -41.4176, 39.7713, 72.5876)
+transform = Transform3D(4.1832, 0, 0.547753, 0, 5, 0, -2.73877, 0, 0.83664, -44.0729, 39.7713, 76.5004)
 
 [node name="Lvl_Exit" parent="Environment/World/Lvl3" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2555, 45.7242, 78.5444)
@@ -1064,11 +1064,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.06115, 0, 8.28942)
 [node name="Player2" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -38.8106, 21.5813, 14.1139)
 visible = false
+SPEED = 8.0
 
 [node name="Player3" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8384, 50.6526, -4.36115)
 visible = false
-SPEED = 8.0
+SPEED = 11.0
 
 [node name="coin_need_gate" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42147, 0, 2.29818)
