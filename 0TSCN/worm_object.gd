@@ -1,4 +1,4 @@
-extends StaticBody3D
+extends MeshInstance3D
 
 @onready var switch_manager: Node3D = get_tree().get_first_node_in_group("switch_manager")  # Switch Manager to get the state
 

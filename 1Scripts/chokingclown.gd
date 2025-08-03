@@ -1,4 +1,8 @@
 extends Node3D
 
-#this is the clown who chokes and coughs.
-#you reach into his mouth for the finger puzzle.
+
+func activateMinigame():
+	#Worm dies after poking
+	#$CollisionShape3D.disabled=true
+	#$WormMesh.visible=false
+	return "FingerPuzzle"

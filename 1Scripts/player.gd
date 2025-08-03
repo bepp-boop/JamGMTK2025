@@ -6,6 +6,7 @@ extends CharacterBody3D
 @onready var minigame: Control = $CanvasMinigame/Minigame
 @onready var player_face: AnimatedSprite2D = $CanvasLayer/ClownName/PlayerFace
 @onready var switch_manager: Node3D = $".."
+@onready var interact_label: Label = $CanvasLayer/InteractLabel
 
 
 var minigame_instance
@@ -41,6 +42,7 @@ func _process(delta: float) -> void:
 		return
 	if input_disabled:
 		return
+		
 	if Input.is_action_just_pressed("exit"):
 		get_tree().quit()
 	if Input.is_action_just_pressed("restart"):
@@ -63,6 +65,10 @@ func _physics_process(delta: float):
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 	move_and_slide()
+	if ray_cast_3d.is_colliding() and (ray_cast_3d.get_collider().has_method("activateMinigame") or ray_cast_3d.get_collider().has_method("activateInteractable")):
+		$CanvasLayer/InteractLabel.visible = true
+	else:
+		$CanvasLayer/InteractLabel.visible = false
 
 func shoot():
 	if !can_shoot:
@@ -73,7 +79,7 @@ func shoot():
 	player_face.play("shoot")
 	shoot_sound.play()
 	if ray_cast_3d.is_colliding():
-		print("looking at collider of"+ray_cast_3d.get_collider().name)
+		print("attempt collider of"+ray_cast_3d.get_collider().name)
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("activateMinigame"):
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		var minigame_name = ray_cast_3d.get_collider().activateMinigame()

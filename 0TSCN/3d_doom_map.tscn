@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=110 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://btiui8q711cw5" path="res://5Enviornment3D/3DProps/hand.obj" id="3_hsryo"]
 [ext_resource type="PackedScene" uid="uid://7vmf3vvc6oot" path="res://0TSCN/faucet.tscn" id="3_y0ok8"]
 [ext_resource type="ArrayMesh" uid="uid://b11qpmfs4c0fk" path="res://5Enviornment3D/3DProps/obelisk.obj" id="4_nkqoi"]
+[ext_resource type="Script" uid="uid://c2a4itg0gnowq" path="res://0TSCN/worm_object.gd" id="4_rqjlu"]
 [ext_resource type="PackedScene" uid="uid://ball51xonh4ng" path="res://5Enviornment3D/3DProps/Breakable/breakable.tscn" id="6_nhcnx"]
 [ext_resource type="PackedScene" uid="uid://bw4ypctsgggae" path="res://0TSCN/lvl_exit.tscn" id="6_vnqse"]
 [ext_resource type="PackedScene" uid="uid://d2pr3hg7rbn1r" path="res://0TSCN/burgerwall.tscn" id="7_s5s3l"]
@@ -492,6 +493,7 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1112, 5.50492, 0.141649)
 mesh = ExtResource("15_36sln")
 skeleton = NodePath("../../../..")
+script = ExtResource("4_rqjlu")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Lvl1/Worm"]
 
@@ -499,7 +501,7 @@ skeleton = NodePath("../../../..")
 shape = SubResource("ConcavePolygonShape3D_vnqse")
 
 [node name="ChokingClown" parent="Environment/World/Lvl1" instance=ExtResource("19_w08s7")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8165, -0.982358, -16.6103)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 18.8165, -0.835599, -16.6103)
 
 [node name="AnimatedSprite3D2" type="AnimatedSprite3D" parent="Environment/World/Lvl1/ChokingClown"]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 1, -1.99649, 0.669622, 0.0391693)
@@ -512,7 +514,7 @@ frame_progress = 0.210946
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3815, -0.943324, -14.373)
 
 [node name="Burgerwall" parent="Environment/World/Lvl1" groups=["burgerwall"] instance=ExtResource("7_s5s3l")]
-transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 22.6136, -1, -4.22163)
+transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 23.3118, -0.932156, -3.79954)
 
 [node name="Lvl2" type="Node" parent="Environment/World"]
 
@@ -572,7 +574,7 @@ mesh = ExtResource("20_nyatc")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -43.5409, 40.3789, 58.9894)
 
 [node name="Faucet" parent="Environment/World/Lvl3" instance=ExtResource("3_y0ok8")]
-transform = Transform3D(1.99937, 0, 0, 0, 1.99937, 0, 0, 0, 1.99937, -53.1338, 50.8051, -78.4725)
+transform = Transform3D(1.99937, 0, 0, 0, 1.99937, 0, 0, 0, 1.99937, -53.1338, 43.7353, -78.4725)
 
 [node name="Burgerwall" parent="Environment/World/Lvl3" groups=["burgerwall"] instance=ExtResource("7_s5s3l")]
 transform = Transform3D(4.1832, 0, 0.547753, 0, 5, 0, -2.73877, 0, 0.83664, -44.0729, 39.7713, 76.5004)
