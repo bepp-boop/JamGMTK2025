@@ -4,4 +4,3 @@
 
 [node name="GiveItem" type="Node2D"]
 script = ExtResource("1_5uuu0")
-item_name = null

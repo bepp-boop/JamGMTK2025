@@ -1,6 +1,5 @@
 extends Node3D
 
-@export var item_name: String = "default_item"
 @export var collect_sound: AudioStream
 @onready var area = $Area3D
 @onready var give_item = $GiveItem
