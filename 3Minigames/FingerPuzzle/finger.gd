@@ -11,7 +11,7 @@ const SPEED = 130  # Speed when moving right
 const SLOW_SPEED = 60  # Slow speed when moving back
 
 var original_position : Vector2  # To store the original position of the character
-
+var win = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	original_position = position  # Store the initial position when the scene starts
@@ -36,20 +36,24 @@ func _process(delta: float) -> void:
 	if abs(velocity.x) < 1:
 		velocity.x = 0  # Stop moving once the velocity is small enough
 
-
-func finish_game():
+func finish_game(give_reward: bool = true):
 	var character_num = switch_manager.getState()
 	print("deleting minigame for player %s" % character_num)
 	player = get_tree().get_nodes_in_group("player")[character_num]
-	give_item.give_item_to(player)
+	
+	if give_reward:
+		give_item.give_item_to(player)
+	
 	player.end_minigame()
 
+
 func _on_button_body_entered(body: Node2D) -> void:
-	if body is CharacterBody2D:  # Ensure the body is of type CharacterBody2D
-		finish_game()
-		print("Game Done give special Item")
-		
-		
+	if body is CharacterBody2D:
+		finish_game(true)
+		print("Game Done - gave special item")
+
+
 func _on_fall_rock_body_entered(body: Node2D) -> void:
 	if body is CharacterBody2D:
-		print("Game Lost")
+		finish_game(false)
+		print("Game Lost - no item given")
