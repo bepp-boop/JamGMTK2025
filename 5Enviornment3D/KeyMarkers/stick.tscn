@@ -9,10 +9,12 @@ height = 8.0
 radius = 5.0
 
 [node name="Stick" type="Node3D"]
+visible = false
 script = ExtResource("1_bqjuc")
 
 [node name="Area3D" type="Area3D" parent="."]
 collision_mask = 3
+monitoring = false
 
 [node name="Sprite3D" type="Sprite3D" parent="Area3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0448718, 3.54379, 9.53674e-07)

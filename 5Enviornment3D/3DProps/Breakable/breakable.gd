@@ -1,21 +1,35 @@
 extends StaticBody3D
 
-var dead = false
+var dead = true
 @onready var breakable: StaticBody3D = $"."
 @onready var box: MeshInstance3D = $Box
 @onready var destroy_box: MeshInstance3D = $DestroyedBox
 @onready var audio_stream_player_3d: AudioStreamPlayer3D = $AudioStreamPlayer3D
 @onready var animated_sprite_3d: AnimatedSprite3D = $AnimatedSprite3D
 
+@onready var stick: Node3D =  get_tree().get_first_node_in_group("stick")
+
+
 
 func _ready():
-	animated_sprite_3d.play("idletree")  # Play idle animation when spawned
+	if dead:
+		animated_sprite_3d.play("death")
+	else:
+		animated_sprite_3d.play("idletree")  # Play idle animation when spawned
+		
+func _physics_process(delta: float) -> void:
+	if dead:
+		animated_sprite_3d.play("death")
+	else:
+		animated_sprite_3d.play("idletree")  # Play idle animation when spawned
 	
-func kill():
+func activateInteractable():	
 	if dead:
 		return  # Prevent double-kill
 	print("kill() method triggered")
 	dead = true
+	stick.visible = true
+	stick.get_child(0).monitoring = true
 	
 	audio_stream_player_3d.play()  # Play death sound
 	
