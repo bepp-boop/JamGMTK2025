@@ -127,7 +127,55 @@ func _process(delta):
 					print("No other active characters.")
 					return
 				reset_char_switch_delay()
+	if not player1_active and not player2_active and not player3_active:
+		endgame()
+	
+func _force_switch():
+	match state:
+		CHAR_1:
+			if player2_active:
+				state = CHAR_2
+				_switch_to_player(player2)
+			elif player3_active:
+				state = CHAR_3
+				_switch_to_player(player3)
+		CHAR_2:
+			if player3_active:
+				state = CHAR_3
+				_switch_to_player(player3)
+			elif player1_active:
+				state = CHAR_1
+				_switch_to_player(player1)
+		CHAR_3:
+			if player1_active:
+				state = CHAR_1
+				_switch_to_player(player1)
+			elif player2_active:
+				state = CHAR_2
+				_switch_to_player(player2)
 
+	reset_char_switch_delay()
+
+
+func end_current_player():
+	match state:
+		CHAR_1:
+			player1_active = false
+			statusTag1.text = "X"
+			player1.set_input_disabled(true)
+			_force_switch()
+		CHAR_2:
+			player2_active = false
+			statusTag2.text = "X"
+			player2.set_input_disabled(true)
+			_force_switch()
+		CHAR_3:
+			player3_active = false
+			statusTag3.text = "X"
+			player3.set_input_disabled(true)
+			_force_switch()
+
+	print("Player %s has been ended externally." % state)
 
 func reset_char_switch_delay():
 	time_left = max_time
@@ -188,3 +236,7 @@ func _switch_to_player(new_player):
 
 func getState():
 	return state
+	
+func endgame():
+	get_tree().change_scene_to_file("res://path_to_your_end_scene.tscn")
+	

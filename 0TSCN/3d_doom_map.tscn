@@ -34,7 +34,7 @@
 [ext_resource type="ArrayMesh" uid="uid://bndq8ayjevcck" path="res://5Enviornment3D/3DProps/sword.obj" id="20_nyatc"]
 [ext_resource type="ArrayMesh" uid="uid://23ih3e0hwvwm" path="res://5Enviornment3D/3DProps/fountain.obj" id="21_2qfij"]
 [ext_resource type="ArrayMesh" uid="uid://brqjlguok287q" path="res://5Enviornment3D/Terrain/rockarchcoll.obj" id="23_2qfij"]
-[ext_resource type="PackedScene" path="res://0TSCN/decoy_tree.tscn" id="31_rqdm6"]
+[ext_resource type="PackedScene" uid="uid://bypse50beiqrr" path="res://0TSCN/decoy_tree.tscn" id="31_rqdm6"]
 [ext_resource type="PackedScene" uid="uid://be1jnw3kw1k3q" path="res://0TSCN/decoy_stump.tscn" id="32_rqjlu"]
 [ext_resource type="ArrayMesh" uid="uid://b63tjabv8ekej" path="res://5Enviornment3D/3DProps/rocks.obj" id="32_s6dqg"]
 [ext_resource type="ArrayMesh" uid="uid://dysidy50xncrc" path="res://5Enviornment3D/3DProps/skull.obj" id="33_wp3fr"]

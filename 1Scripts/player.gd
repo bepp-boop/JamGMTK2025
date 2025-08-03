@@ -94,6 +94,8 @@ func shoot():
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("kill"):
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		ray_cast_3d.get_collider().kill()
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("end"):
+		ray_cast_3d.get_collider().end()
 		
 
 	
