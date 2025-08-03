@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=105 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -93,6 +93,9 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_rqdm6"]
+size = Vector3(1, 3.48096, 1.97021)
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_riorx"]
 
@@ -361,7 +364,7 @@ ambient_light_energy = 10.34
 [node name="Testprops" type="Node" parent="Environment"]
 
 [node name="Breakable" parent="Environment/Testprops" instance=ExtResource("6_nhcnx")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.60757, 1.08266, 3.52917)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.41685, 0.276216, -2.42017)
 
 [node name="Breakable2" parent="Environment/Testprops" instance=ExtResource("6_nhcnx")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.9096, 21.5734, -6.51785)
@@ -496,6 +499,12 @@ frame_progress = 0.210946
 
 [node name="Lvl1Exit" parent="Environment/World/Lvl1" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 27.3815, -0.943324, -14.373)
+
+[node name="Area3D" type="Area3D" parent="Environment/World/Lvl1/Lvl1Exit"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl1/Lvl1Exit/Area3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.24048, 0.485107)
+shape = SubResource("BoxShape3D_rqdm6")
 
 [node name="Burgerwall" parent="Environment/World/Lvl1" instance=ExtResource("7_s5s3l")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 23, -1, -5)
