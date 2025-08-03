@@ -250,10 +250,11 @@ func _switch_to_player(new_player):
 
 var players_outside = []
 	
-func finish_player(player):
-	name=player.name
-	print("name: " % name)
-	match state:
+func finish_player(player_name):
+	var player_name_simple=str(player_name).left(7)
+	print("name: %s, %s " % [player_name_simple,player_name])
+
+	match player_name_simple:
 		'Player1':
 			player1_active=false
 			print('clown 1 escaped')

@@ -30,6 +30,7 @@ sprite_frames = SubResource("SpriteFrames_rqmi1")
 autoplay = "default"
 
 [node name="Area3D" type="Area3D" parent="AnimatedSprite3D"]
+collision_mask = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/Area3D"]
 shape = SubResource("CapsuleShape3D_s36jq")
