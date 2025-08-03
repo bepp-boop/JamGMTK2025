@@ -1,0 +1,47 @@
+[gd_scene load_steps=8 format=3 uid="uid://ddega0gmahsy1"]
+
+[ext_resource type="Script" uid="uid://3qjgplbss7ma" path="res://1Scripts/chokingclown.gd" id="1_c8b68"]
+[ext_resource type="Texture2D" uid="uid://b7bw1gf3y60ri" path="res://4Sprites/Minigame/Choking clown.png" id="1_dnowh"]
+[ext_resource type="AudioStream" uid="uid://bxilxakr6fpqw" path="res://6Audio/Copy of Cough.mp3" id="2_bfbo8"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfbo8"]
+atlas = ExtResource("1_dnowh")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c8b68"]
+atlas = ExtResource("1_dnowh")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rmo72"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfbo8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c8b68")
+}],
+"loop": true,
+"name": &"default",
+"speed": 1.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_hki3w"]
+
+[node name="ChokingClown" type="Node3D"]
+script = ExtResource("1_c8b68")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(0.72715, 0, 0.686479, 0, 1, 0, -0.686479, 0, 0.72715, 0, 2.38621, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_rmo72")
+autoplay = "default"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
+shape = SubResource("CapsuleShape3D_hki3w")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="AnimatedSprite3D"]
+stream = ExtResource("2_bfbo8")
+bus = &"Sfx"

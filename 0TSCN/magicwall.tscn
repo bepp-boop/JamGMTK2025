@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://d4eopkvqx3p20"]
+
+[ext_resource type="Script" uid="uid://cx8caxtk13kvc" path="res://1scripts/magicwall.gd" id="1_x5mbi"]
+[ext_resource type="Texture2D" uid="uid://ca7155atrh1yv" path="res://2Textures/magic1.png" id="2_7v7ig"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_toxtp"]
+atlas = ExtResource("2_7v7ig")
+region = Rect2(0, 0, 540, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_rvvg3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_toxtp")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kagrm"]
+
+[node name="Magicwall" type="Node3D"]
+script = ExtResource("1_x5mbi")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.08819, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_rvvg3")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
+shape = SubResource("BoxShape3D_kagrm")

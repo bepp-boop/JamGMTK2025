@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da17q5u3jj62l"
-path.s3tc="res://.godot/imported/TreeSheet.png-16f5335893702acd82753c4e78673d6b.s3tc.ctex"
+uid="uid://drjvgbila1rkh"
+path.s3tc="res://.godot/imported/StarvingBaby.png-c46f99ef63f901a3d38ef73bd50881f1.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://4Sprites/Enviro/TreeSheet.png"
-dest_files=["res://.godot/imported/TreeSheet.png-16f5335893702acd82753c4e78673d6b.s3tc.ctex"]
+source_file="res://4Sprites/Minigame/StarvingBaby.png"
+dest_files=["res://.godot/imported/StarvingBaby.png-c46f99ef63f901a3d38ef73bd50881f1.s3tc.ctex"]
 
 [params]
 

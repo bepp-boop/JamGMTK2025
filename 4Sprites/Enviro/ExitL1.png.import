@@ -2,8 +2,8 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://da17q5u3jj62l"
-path.s3tc="res://.godot/imported/TreeSheet.png-16f5335893702acd82753c4e78673d6b.s3tc.ctex"
+uid="uid://csgbxs121yqa0"
+path.s3tc="res://.godot/imported/ExitL1.png-9c3a83dff09dfdd58af23a567948dc4a.s3tc.ctex"
 metadata={
 "imported_formats": ["s3tc_bptc"],
 "vram_texture": true
@@ -11,8 +11,8 @@ metadata={
 
 [deps]
 
-source_file="res://4Sprites/Enviro/TreeSheet.png"
-dest_files=["res://.godot/imported/TreeSheet.png-16f5335893702acd82753c4e78673d6b.s3tc.ctex"]
+source_file="res://4Sprites/Enviro/ExitL1.png"
+dest_files=["res://.godot/imported/ExitL1.png-9c3a83dff09dfdd58af23a567948dc4a.s3tc.ctex"]
 
 [params]
 

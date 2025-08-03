@@ -1,0 +1,63 @@
+[gd_scene load_steps=9 format=3 uid="uid://bakp0ypdgc3sg"]
+
+[ext_resource type="Texture2D" uid="uid://drjvgbila1rkh" path="res://4Sprites/Minigame/StarvingBaby.png" id="1_mikyi"]
+[ext_resource type="Script" uid="uid://dingfbs12h0h1" path="res://1Scripts/hungrybaby.gd" id="1_rmo4y"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rmo4y"]
+atlas = ExtResource("1_mikyi")
+region = Rect2(0, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oyjj6"]
+atlas = ExtResource("1_mikyi")
+region = Rect2(500, 0, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_s5lfq"]
+atlas = ExtResource("1_mikyi")
+region = Rect2(0, 500, 500, 500)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_snaoy"]
+atlas = ExtResource("1_mikyi")
+region = Rect2(500, 500, 500, 500)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4igsy"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rmo4y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_oyjj6")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s5lfq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_snaoy")
+}],
+"loop": true,
+"name": &"success",
+"speed": 2.0
+}]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_oyjj6"]
+
+[node name="hungrybaby" type="Node3D"]
+script = ExtResource("1_rmo4y")
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.46007, 0)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_4igsy")
+animation = &"idle"
+autoplay = "idle"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("CapsuleShape3D_oyjj6")
