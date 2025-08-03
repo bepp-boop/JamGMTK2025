@@ -8,7 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dvhv83m7vgeyq" path="res://2Textures/flesh1.png" id="6_0fusi"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_nj0gw"]
-radius = 104.043
+radius = 66.0695
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_habtl"]
 atlas = ExtResource("3_0fusi")
