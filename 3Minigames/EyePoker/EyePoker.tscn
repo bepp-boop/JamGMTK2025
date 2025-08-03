@@ -27,6 +27,7 @@ expand_mode = 3
 
 [node name="GiveItem" type="Node" parent="."]
 script = ExtResource("3_egmpm")
+item_name = ""
 metadata/_custom_type_script = "uid://2h7qhi1xmn7v"
 
 [node name="WormScream" type="AudioStreamPlayer2D" parent="."]
