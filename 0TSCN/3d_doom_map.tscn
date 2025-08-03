@@ -1,4 +1,4 @@
-[gd_scene load_steps=114 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=115 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -850,10 +850,10 @@ transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, 
 transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, -42.0366, 20.1318, -24.083)
 
 [node name="DecoyTree4" parent="Environment/World/Terrain2" instance=ExtResource("31_rqdm6")]
-transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, -42.0366, 20.1318, -0.13854)
+transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, -37.245, 20.1318, -0.13854)
 
 [node name="DecoyTree5" parent="Environment/World/Terrain2" instance=ExtResource("31_rqdm6")]
-transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, -45.6674, 20.1318, -11.5459)
+transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, -37.3864, 20.1318, -11.5459)
 
 [node name="DecoyTree6" parent="Environment/World/Terrain2" instance=ExtResource("31_rqdm6")]
 transform = Transform3D(0.640445, 0, 0.768004, 0, 1, 0, -0.768004, 0, 0.640445, -45.5765, 20.1318, 23.0002)
