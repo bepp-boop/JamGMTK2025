@@ -20,7 +20,7 @@ func _ready():
 		var starting_x=randi_range($TextureRect.position.x+0.15*$TextureRect.size.x,$TextureRect.position.x+0.8*$TextureRect.size.x)
 		var starting_y=randi_range($TextureRect.position.y+0.15*$TextureRect.size.y,$TextureRect.position.y+0.8*$TextureRect.size.y)
 		var startingVector = Vector2(starting_x,starting_y)
-		var eye_scene = load("res://Minigames/EyePoker/Eye.tscn")
+		var eye_scene = load("res://3Minigames/EyePoker/Eye.tscn")
 		var eye_instance = eye_scene.instantiate()
 		eye_instance.position = startingVector
 		var scalefactor = randf_range(0.2,0.7)

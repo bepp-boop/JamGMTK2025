@@ -5,6 +5,7 @@ extends Node2D
 @onready var switch_manager: Node3D = get_tree().get_first_node_in_group("switch_manager")  # Switch Manager to get the state
 @onready var give_item = $GiveItem
 
+
 var player: CharacterBody3D  # We'll get the player instance when needed
 
 # Called when the body enters the Area2D
@@ -22,7 +23,7 @@ func finish_game():
 	player = get_tree().get_nodes_in_group("player")[character_num]
 	# Give a specific item to player
 	give_item.give_item_to(player)
-	player.end_minigame()
+	player.end_minigame()	
 
 # This function is used to manually check if the player enters the area
 func _process(delta):

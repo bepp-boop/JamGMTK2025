@@ -30,6 +30,7 @@ var player3_active := true
 var max_time = 1.0
 var time_left = 0.0
 var can_change = false
+var inMinigame = false
 
 enum {CHAR_1, CHAR_2, CHAR_3}
 var state
@@ -67,13 +68,19 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
+	
+	
 	if time_left > 0.0:
 		time_left -= delta
 		print(time_left)
 	elif time_left <= 0.0 and can_change == false:
 		print("Can now change characters")
 		can_change = true
-	
+		
+	if inMinigame:
+		#Disable cahnging while in a minigame
+		return
+		
 	match state:
 		CHAR_1:
 			if Input.is_action_just_pressed("ui_accept") and can_change:
@@ -141,20 +148,30 @@ func _switch_to_player(new_player):
 
 	# Activate the new player and its camera
 	new_player.visible = true
-	var new_player_HUD= new_player.find_child('CanvasLayer')
+	var new_player_CanvasLayer= new_player.find_child('CanvasLayer')
+	var new_player_HUD= new_player_CanvasLayer.find_child('Hud')
+	var new_player_label= new_player_CanvasLayer.find_child('Label')
+	new_player_CanvasLayer.visible=true
 	new_player_HUD.visible=true
 	if new_player == player1:
+		var texture = load("res://4Sprites/UI/PHud1.png")
+		new_player_HUD.texture = texture
 		camera1.current = true
 		player1.set_input_disabled(false)  # Enable input for Player 1
 		statusTag1.text = "1"  # Update the label for Player 1
 		face1.play("idleClown1")
 
 	elif new_player == player2:
+		var texture = load("res://4Sprites/UI/PHud2.png")
+		new_player_HUD.texture = texture
 		camera2.current = true
 		player2.set_input_disabled(false)  # Enable input for Player 2
 		statusTag2.text = "2"  # Update the label for Player 2
 		face2.play("idleClown2")
+		
 	elif new_player == player3:
+		var texture = load("res://4Sprites/UI/PHud3.png")
+		new_player_HUD.texture = texture
 		camera3.current = true
 		player3.set_input_disabled(false)  # Enable input for Player 3
 		statusTag3.text = "3"  # Update the label for Player 3
