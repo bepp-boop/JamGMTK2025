@@ -112,7 +112,8 @@ func check_switch():
 					_switch_to_player(player3)
 				else:
 					print("No other active characters.")
-					get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
+					if 	not player1_active:
+						endgame()
 					return
 				reset_char_switch_delay()
 		CHAR_2:
@@ -125,7 +126,8 @@ func check_switch():
 					_switch_to_player(player1)
 				else:
 					print("No other active characters.")
-					get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
+					if 	not player2_active:
+						endgame()
 					return
 				reset_char_switch_delay()
 		CHAR_3:
@@ -138,7 +140,8 @@ func check_switch():
 					_switch_to_player(player2)
 				else:
 					print("No other active characters.")
-					get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
+					if 	not player3_active:
+						endgame()
 					return
 				reset_char_switch_delay()
 	if not player1_active and not player2_active and not player3_active:
@@ -275,5 +278,6 @@ func getState():
 	return state
 	
 func endgame():
-	get_tree().change_scene_to_file("res://path_to_your_end_scene.tscn")
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://0TSCN/EndingScene.tscn")
 	

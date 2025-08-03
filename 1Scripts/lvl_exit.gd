@@ -15,36 +15,16 @@ func _on_body_entered(body: Node):
 	var character_num = switch_manager.getState()  # Get the active character number (state)
 	print("giving food to baby")
 	var player = get_tree().get_nodes_in_group("player")[character_num]
-	var hasKey = has_required_items(player)
-	if body is CharacterBody3D and body.get_parent().has_method("finish_player") and hasKey:
+	if body is CharacterBody3D and body.get_parent().has_method("finish_player"):
 		print("You exist")
 		body.get_parent().finish_player(body)
 		print("Player finished their part at the door.")
 
 
-func has_required_items(target: Node) -> bool:
-	if target is CharacterBody3D and target.has_method("has_item"):
-		if require_all:
-			for item in required_items:
-				if not target.has_item(item):
-					return false
-			return true
-		else:
-			for item in required_items:
-				if target.has_item(item):
-					return true
-			return false
-	else:
-		push_warning("Target does not support inventory checking.")
-		return false
-
-
 func _on_area_3d_body_shape_entered(body_rid: RID, body: Node3D, body_shape_index: int, local_shape_index: int) -> void:
 	var character_num = switch_manager.getState()  # Get the active character number (state)
 	var player = get_tree().get_nodes_in_group("player")[character_num]
-	var hasKey = has_required_items(player)
-	print("has Key:%s" % hasKey)
-	if body.get_parent().has_method("finish_player") and hasKey:
+	if body.get_parent().has_method("finish_player") :
 		print("You exist")
 		body.get_parent().finish_player(body)
 		print("Player finished their part at the door.")
