@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=110 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -20,6 +20,7 @@
 [ext_resource type="PackedScene" uid="uid://d4eopkvqx3p20" path="res://0TSCN/magicwall.tscn" id="10_orrd0"]
 [ext_resource type="Texture2D" uid="uid://da17q5u3jj62l" path="res://4Sprites/Enviro/TreeSheet.png" id="10_s6477"]
 [ext_resource type="PackedScene" uid="uid://bakp0ypdgc3sg" path="res://0TSCN/hungrybaby.tscn" id="11_fpmej"]
+[ext_resource type="Script" uid="uid://udkimivua158" path="res://0TSCN/altar.gd" id="11_tykyk"]
 [ext_resource type="ArrayMesh" uid="uid://dibwa0r8jiuwb" path="res://5Enviornment3D/3DProps/hand2.obj" id="11_y6i7p"]
 [ext_resource type="ArrayMesh" uid="uid://c5etwswt4korg" path="res://5Enviornment3D/3DProps/spear.obj" id="12_kcv67"]
 [ext_resource type="Script" uid="uid://cpdk3yuyso00w" path="res://5Enviornment3D/activate.gd" id="12_wromv"]
@@ -528,6 +529,7 @@ mesh = ExtResource("8_riorx")
 skeleton = NodePath("../../../..")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Lvl2/AltarEmpty"]
+script = ExtResource("11_tykyk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl2/AltarEmpty/StaticBody3D"]
 transform = Transform3D(2, 0, -5.8268e-08, 0, 2, 0, 5.8268e-08, 0, 2, 0, 0.972998, 0)
