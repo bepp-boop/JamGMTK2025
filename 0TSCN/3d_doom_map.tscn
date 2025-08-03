@@ -1,4 +1,4 @@
-[gd_scene load_steps=113 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=114 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -27,6 +27,7 @@
 [ext_resource type="ArrayMesh" uid="uid://c5etwswt4korg" path="res://5Enviornment3D/3DProps/spear.obj" id="12_kcv67"]
 [ext_resource type="PackedScene" uid="uid://bofxsibc7lcp6" path="res://0TSCN/lvl_exit_locked.tscn" id="12_ylidm"]
 [ext_resource type="PackedScene" uid="uid://jnw22lofhtip" path="res://1Scripts/check_item.tscn" id="13_kd77u"]
+[ext_resource type="Script" uid="uid://c2kaqemid7xea" path="res://0TSCN/lvl_exit_locked.gd" id="13_q24lv"]
 [ext_resource type="ArrayMesh" uid="uid://br56imqn41spj" path="res://5Enviornment3D/KeyMarkers/worm.obj" id="15_36sln"]
 [ext_resource type="ArrayMesh" uid="uid://db7bhteih2e5p" path="res://5Enviornment3D/KeyMarkers/river.obj" id="15_rqdm6"]
 [ext_resource type="Material" uid="uid://e0hsuiptiotu" path="res://2Textures/watershader.tres" id="16_rqjlu"]
@@ -511,6 +512,7 @@ frame_progress = 0.210946
 
 [node name="Lvl_Exit_locked" parent="Environment/World/Lvl1" instance=ExtResource("12_ylidm")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.3141, -9.53674e-07, -9.79845)
+script = ExtResource("13_q24lv")
 
 [node name="Check_Item" parent="Environment/World/Lvl1/Lvl_Exit_locked" instance=ExtResource("13_kd77u")]
 
@@ -525,6 +527,7 @@ shape = SubResource("BoxShape3D_rqdm6")
 [node name="Lvl1Exit" parent="Environment/World/Lvl1" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1.09475, 0, -0.836889, 0, 2, 0, 1.67378, 0, 0.547373, 27.3815, -0.943324, -14.373)
 visible = false
+script = null
 
 [node name="Burgerwall" parent="Environment/World/Lvl1" groups=["burgerwall"] instance=ExtResource("7_s5s3l")]
 transform = Transform3D(0.880568, 0, -0.473919, 0, 1, 0, 0.473919, 0, 0.880568, 23.0602, -0.235506, -3.79954)
