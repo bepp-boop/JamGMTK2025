@@ -1,4 +1,4 @@
-[gd_scene load_steps=104 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=105 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
@@ -8,6 +8,7 @@
 [ext_resource type="ArrayMesh" uid="uid://btiui8q711cw5" path="res://5Enviornment3D/3DProps/hand.obj" id="3_hsryo"]
 [ext_resource type="PackedScene" uid="uid://7vmf3vvc6oot" path="res://0TSCN/faucet.tscn" id="3_y0ok8"]
 [ext_resource type="ArrayMesh" uid="uid://b11qpmfs4c0fk" path="res://5Enviornment3D/3DProps/obelisk.obj" id="4_nkqoi"]
+[ext_resource type="Script" uid="uid://c2a4itg0gnowq" path="res://0TSCN/worm_object.gd" id="4_rqjlu"]
 [ext_resource type="PackedScene" uid="uid://ball51xonh4ng" path="res://5Enviornment3D/3DProps/Breakable/breakable.tscn" id="6_nhcnx"]
 [ext_resource type="PackedScene" uid="uid://bw4ypctsgggae" path="res://0TSCN/lvl_exit.tscn" id="6_vnqse"]
 [ext_resource type="PackedScene" uid="uid://d2pr3hg7rbn1r" path="res://0TSCN/burgerwall.tscn" id="7_s5s3l"]
@@ -476,14 +477,15 @@ visible = false
 
 [node name="Lvl1" type="Node" parent="Environment/World"]
 
-[node name="Worm" type="MeshInstance3D" parent="Environment/World/Lvl1"]
+[node name="WormObject" type="StaticBody3D" parent="Environment/World/Lvl1"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.1112, 5.50492, 0.141649)
+script = ExtResource("4_rqjlu")
+
+[node name="Worm" type="MeshInstance3D" parent="Environment/World/Lvl1/WormObject"]
 mesh = ExtResource("15_36sln")
-skeleton = NodePath("../../../..")
+skeleton = NodePath("../../../../..")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Lvl1/Worm"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl1/Worm/StaticBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Lvl1/WormObject"]
 shape = SubResource("ConcavePolygonShape3D_vnqse")
 
 [node name="ChokingClown" parent="Environment/World/Lvl1" instance=ExtResource("19_w08s7")]
