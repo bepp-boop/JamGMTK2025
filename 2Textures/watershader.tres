@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=3 uid="uid://e0hsuiptiotu"]
+
+[ext_resource type="Shader" uid="uid://db0ytrnfmnq62" path="res://5Enviornment3D/Terrain/water.gdshader" id="1_ffs3c"]
+[ext_resource type="Texture2D" uid="uid://brwjrrgwo3ugu" path="res://2Textures/bloodwater.png" id="2_nodtq"]
+
+[resource]
+render_priority = 0
+shader = ExtResource("1_ffs3c")
+shader_parameter/direction_and_speed = Vector2(0.1, 0)
+shader_parameter/scale = Vector2(0.5, 0.5)
+shader_parameter/flip = false
+shader_parameter/transparency = 1.0
+shader_parameter/albedo = ExtResource("2_nodtq")
