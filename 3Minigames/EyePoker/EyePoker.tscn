@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmov3efbufbdb"]
+[gd_scene load_steps=5 format=3 uid="uid://cmov3efbufbdb"]
 
 [ext_resource type="Script" uid="uid://t7gvf8alm754" path="res://3Minigames/EyePoker/eye_poker.gd" id="1_ksvnm"]
 [ext_resource type="Texture2D" uid="uid://be8syqkbjivtt" path="res://5Enviornment3D/Terrain/textures/Floor.png" id="2_ryfa3"]
 [ext_resource type="Script" uid="uid://2h7qhi1xmn7v" path="res://1Scripts/give_item.gd" id="3_egmpm"]
+[ext_resource type="AudioStream" uid="uid://dbtvvvwp40b7s" path="res://6Audio/WormScream.mp3" id="4_6uk3d"]
 
 [node name="EyePoker" type="Node2D" groups=["EyePoker"]]
 script = ExtResource("1_ksvnm")
@@ -27,3 +28,7 @@ expand_mode = 3
 [node name="GiveItem" type="Node" parent="."]
 script = ExtResource("3_egmpm")
 metadata/_custom_type_script = "uid://2h7qhi1xmn7v"
+
+[node name="WormScream" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_6uk3d")
+bus = &"Sfx"
