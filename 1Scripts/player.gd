@@ -104,6 +104,13 @@ func kill():
 	$CanvasLayer/DeathScreen.show()
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
+func finish_player():
+	var controller = get_parent()
+	if controller and controller.has_method("finish_player"):
+		controller.finish_player(self)
+	else:
+		push_warning("Controller not found or doesn't have finish_player() method.")
+
 func restart():
 	get_tree().reload_current_scene()
 	

@@ -22,6 +22,11 @@ extends Node3D
 @onready var face2 = get_node("Player2/CanvasLayer/ClownName/PlayerFace")  # Label for Player 2
 @onready var face3 = get_node("Player3/CanvasLayer/ClownName/PlayerFace")  # Label for Player 3
 
+#Check if they are still player
+var player1_active := true
+var player2_active := true
+var player3_active := true
+
 var max_time = 1.0
 var time_left = 0.0
 var can_change = false
@@ -29,7 +34,6 @@ var inMinigame = false
 
 enum {CHAR_1, CHAR_2, CHAR_3}
 var state
-
 
 
 # Called when the node enters the scene tree for the first time.
@@ -79,26 +83,42 @@ func _process(delta):
 		
 	match state:
 		CHAR_1:
-			if Input.is_action_just_pressed("ui_accept") and can_change == true:
-				state = CHAR_2
-				print(state)
-				print("char 2 active")
-				_switch_to_player(player2)
+			if Input.is_action_just_pressed("ui_accept") and can_change:
+				if player2_active:
+					state = CHAR_2
+					_switch_to_player(player2)
+				elif player3_active:
+					state = CHAR_3
+					_switch_to_player(player3)
+				else:
+					print("No other active characters.")
+					return
 				reset_char_switch_delay()
 		CHAR_2:
-			if Input.is_action_just_pressed("ui_accept") and can_change == true:
-				state = CHAR_3
-				print(state)
-				print("char 3 active")
-				_switch_to_player(player3)
+			if Input.is_action_just_pressed("ui_accept") and can_change:
+				if player3_active:
+					state = CHAR_3
+					_switch_to_player(player3)
+				elif player1_active:
+					state = CHAR_1
+					_switch_to_player(player1)
+				else:
+					print("No other active characters.")
+					return
 				reset_char_switch_delay()
 		CHAR_3:
-			if Input.is_action_just_pressed("ui_accept") and can_change == true:
-				state = CHAR_1
-				print(state)
-				print("char 1 active")
-				_switch_to_player(player1)
+			if Input.is_action_just_pressed("ui_accept") and can_change:
+				if player1_active:
+					state = CHAR_1
+					_switch_to_player(player1)
+				elif player2_active:
+					state = CHAR_2
+					_switch_to_player(player2)
+				else:
+					print("No other active characters.")
+					return
 				reset_char_switch_delay()
+
 
 func reset_char_switch_delay():
 	time_left = max_time
