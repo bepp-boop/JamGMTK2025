@@ -5,7 +5,7 @@ var number_of_eyes = 8
 var poked_count = 0
 @onready var eyes_Node: Node = $Eyes
 
-@onready var worm_object: StaticBody3D = get_tree().get_first_node_in_group("worm")
+@onready var worm_object: StaticBody3D = get_tree().get_first_node_in_group("worm").get_child(0)
 @onready var player: CharacterBody3D 
 @onready var switch_manager: Node3D =  get_tree().get_first_node_in_group("switch_manager")
 @onready var give_item = $GiveItem
