@@ -24,7 +24,6 @@ func finish_game():
 	
 	# Find the player in the "player" group and call end_minigame() for them
 	player = get_tree().get_nodes_in_group("player")[character_num]
-	player.itemget()
 	# Give a specific item to player
 	give_item.give_item_to(player)
 	player.end_minigame()	

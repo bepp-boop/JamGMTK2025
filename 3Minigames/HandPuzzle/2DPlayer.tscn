@@ -7,7 +7,7 @@
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bh31q"]
 radius = 12.9365
-height = 40.591
+height = 32.0414
 
 [sub_resource type="Resource" id="Resource_u0vai"]
 script = ExtResource("3_4s570")

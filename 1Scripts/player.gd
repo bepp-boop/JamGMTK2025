@@ -53,7 +53,8 @@ func _process(delta: float) -> void:
 		shoot()
 	if Input.is_action_just_pressed("debugbutton"):
 		$CollisionShape3D.disabled = !$CollisionShape3D.disabled
-		print("Collision changed to: %s " % $CollisionShape3D.disabled)
+		#inventory=['fork']
+		print("Collision changed to: %s " % !$CollisionShape3D.disabled)
 
 func _physics_process(delta: float):
 	if dead or input_disabled:

@@ -7,15 +7,17 @@ extends Node3D
 @export var require_all: bool = true  # If false, any one item is enough
 @onready var receive_sound: AudioStreamPlayer3D = $receive_sound
 
-
-@onready var area = $AnimatedSprite3D/StaticBody3D/CollisionShape3D
+@onready var switch_manager: Node3D = get_tree().get_first_node_in_group("switch_manager")  # Switch Manager to get the state
+@onready var area = $Area3D
 @onready var give_item = $GiveItem
 
-func _ready():
-	area.body_entered.connect(_on_body_entered)
 
-func _on_body_entered(body):
-	if has_required_items(body):
+func activateInteractable():
+	
+	var character_num = switch_manager.getState()  # Get the active character number (state)
+	print("giving food to baby")
+	var player = get_tree().get_nodes_in_group("player")[character_num]
+	if has_required_items(player):
 		var burger_walls = get_tree().get_nodes_in_group("burgerwall")
 		for wall in burger_walls:
 			wall.queue_free()
