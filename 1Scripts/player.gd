@@ -10,7 +10,7 @@ extends CharacterBody3D
 
 var minigame_instance
 
-const SPEED = 5.0
+@export var SPEED = 5.0
 const MOUSE_SENSITIVITY = 0.5
 
 var input_disabled = false  # Track if input is disabled
@@ -78,6 +78,10 @@ func shoot():
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		var minigame_name = ray_cast_3d.get_collider().activateMinigame()
 		start_minigame(minigame_name)
+	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("activateInteractable"):
+		print("hit collider of"+ray_cast_3d.get_collider().name)
+		ray_cast_3d.get_collider().activateInteractable()
+
 	
 func has_item(item_name: String) -> bool:
 	return inventory.has(item_name)  # assuming `inventory` is a Dictionary or Array

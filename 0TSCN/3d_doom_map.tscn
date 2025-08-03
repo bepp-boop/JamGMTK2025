@@ -565,7 +565,7 @@ mesh = ExtResource("20_nyatc")
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, -43.5409, 40.3789, 58.9894)
 
 [node name="Faucet" parent="Environment/World/Lvl3" instance=ExtResource("3_y0ok8")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.4557, 45.8886, -77.0948)
+transform = Transform3D(1.99937, 0, 0, 0, 1.99937, 0, 0, 0, 1.99937, -53.1338, 50.8051, -78.4725)
 
 [node name="Magicwall" parent="Environment/World/Lvl3" instance=ExtResource("10_orrd0")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -70.1418, 43.252, -13.8114)
@@ -576,8 +576,9 @@ transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 1, -41.4176, 39.7713, 72.5876)
 [node name="Lvl_Exit" parent="Environment/World/Lvl3" instance=ExtResource("6_vnqse")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.2555, 45.7242, 78.5444)
 
-[node name="River" type="MeshInstance3D" parent="Environment/World/Lvl3"]
+[node name="River" type="MeshInstance3D" parent="Environment/World/Lvl3" groups=["river"]]
 transform = Transform3D(0.998572, 0, -0.0534165, 0, 1, 0, 0.0534165, 0, 0.998572, 1.85854, 7.06401, -0.189631)
+visible = false
 mesh = ExtResource("15_rqdm6")
 skeleton = NodePath("../..")
 surface_material_override/0 = ExtResource("16_rqjlu")
@@ -1067,6 +1068,7 @@ visible = false
 [node name="Player3" parent="SwitchManager" instance=ExtResource("1_1s3sh")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8384, 50.6526, -4.36115)
 visible = false
+SPEED = 8.0
 
 [node name="coin_need_gate" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42147, 0, 2.29818)
