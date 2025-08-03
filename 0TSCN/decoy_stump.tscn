@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://be1jnw3kw1k3q"]
+
+[ext_resource type="Texture2D" uid="uid://da17q5u3jj62l" path="res://4Sprites/Enviro/TreeSheet.png" id="1_t4ipc"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rcerr"]
+atlas = ExtResource("1_t4ipc")
+region = Rect2(540, 1080, 540, 540)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gdxci"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rcerr")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_x1e6j"]
+
+[node name="Decoy_stump" type="Node3D"]
+
+[node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, 0.0693026, 8.40321, 0.08217)
+billboard = 2
+sprite_frames = SubResource("SpriteFrames_gdxci")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.961539, 0.111284, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.823336, -1.84245, 0)
+shape = SubResource("SphereShape3D_x1e6j")
