@@ -4,7 +4,7 @@ var eyes_instanced = []
 var number_of_eyes = 8
 var poked_count = 0
 @onready var eyes_Node: Node = $Eyes
-
+@onready var worm_scream: AudioStreamPlayer2D = $WormScream
 @onready var worm_object: StaticBody3D = get_tree().get_first_node_in_group("worm").get_child(0)
 @onready var player: CharacterBody3D 
 @onready var switch_manager: Node3D =  get_tree().get_first_node_in_group("switch_manager")
@@ -42,5 +42,6 @@ func count_poke():
 	print("poked count %s" % poked_count)
 	if poked_count == number_of_eyes:
 		print("got them all")
+		worm_scream.play()
 		finish_game()
 	
