@@ -22,12 +22,12 @@ animations = [{
 [node name="DecoyTree" type="Node3D"]
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0.0693026, 4.35615, 0.08217)
+transform = Transform3D(4, 0, 0, 0, 4, 0, 0, 0, 1, 0.0693026, 8.40321, 0.08217)
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_p1rxa")
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0)
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 1, 0.406467, -1.00838, 0)
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
