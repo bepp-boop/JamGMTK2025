@@ -1,8 +1,8 @@
 extends Node 
-@onready var switch_manager = get_tree().get_first_node_in_group("switch_manager")
 
+
+@onready var switch_manager = get_tree().get_first_node_in_group("switch_manager")
 @onready var area = $AnimatedSprite3D/Area3D
-@onready var switch_manager: Node3D = get_tree().get_first_node_in_group("switch_manager")  # Switch Manager to get the state
 @export var required_items: Array[String] = ["key"]
 @export var require_all: bool = true  # If false, any one item is enough
 
@@ -10,9 +10,6 @@ extends Node
 func _ready():
 	area.body_entered.connect(_on_body_entered)
 	
-
-
-
 
 func _on_body_entered(body: Node):	
 	var character_num = switch_manager.getState()  # Get the active character number (state)

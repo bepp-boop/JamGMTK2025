@@ -122,7 +122,8 @@ func kill():
 func finish_player():
 	var controller = get_parent()
 	if controller and controller.has_method("finish_player"):
-		controller.finish_player(player)
+		print("trying to finish for player:%s " % name)
+		controller.finish_player(name)
 	else:
 		push_warning("Controller not found or doesn't have finish_player() method.")
 
