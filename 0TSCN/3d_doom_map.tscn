@@ -1,10 +1,9 @@
-[gd_scene load_steps=110 format=3 uid="uid://2ym2f5lmq2bh"]
+[gd_scene load_steps=101 format=3 uid="uid://2ym2f5lmq2bh"]
 
 [ext_resource type="PackedScene" uid="uid://ch4j34ltuliln" path="res://0TSCN/player.tscn" id="1_1s3sh"]
 [ext_resource type="PackedScene" uid="uid://dhniupm7flkwb" path="res://0TSCN/SwitchManager.tscn" id="1_c4kt8"]
 [ext_resource type="PackedScene" uid="uid://6fypg6vaymgt" path="res://5Enviornment3D/Terrain/map.blend" id="2_4o4wj"]
 [ext_resource type="ArrayMesh" uid="uid://dk7gu0f4d8f0j" path="res://5Enviornment3D/3DProps/ribcage.obj" id="2_jikqn"]
-[ext_resource type="PackedScene" uid="uid://cwdvae1ds3svm" path="res://0TSCN/collect_object.tscn" id="2_um6cl"]
 [ext_resource type="ArrayMesh" uid="uid://btiui8q711cw5" path="res://5Enviornment3D/3DProps/hand.obj" id="3_hsryo"]
 [ext_resource type="PackedScene" uid="uid://7vmf3vvc6oot" path="res://0TSCN/faucet.tscn" id="3_y0ok8"]
 [ext_resource type="ArrayMesh" uid="uid://b11qpmfs4c0fk" path="res://5Enviornment3D/3DProps/obelisk.obj" id="4_nkqoi"]
@@ -18,17 +17,13 @@
 [ext_resource type="ArrayMesh" uid="uid://6wlkwkeryw1i" path="res://5Enviornment3D/3DProps/altarFull.obj" id="9_s6477"]
 [ext_resource type="Texture2D" uid="uid://bhqvgkr001qdd" path="res://4Sprites/Enviro/NakedClowns.png" id="10_cpiko"]
 [ext_resource type="PackedScene" uid="uid://d4eopkvqx3p20" path="res://0TSCN/magicwall.tscn" id="10_orrd0"]
-[ext_resource type="Texture2D" uid="uid://da17q5u3jj62l" path="res://4Sprites/Enviro/TreeSheet.png" id="10_s6477"]
 [ext_resource type="PackedScene" uid="uid://bakp0ypdgc3sg" path="res://0TSCN/hungrybaby.tscn" id="11_fpmej"]
 [ext_resource type="Script" uid="uid://udkimivua158" path="res://0TSCN/altar.gd" id="11_tykyk"]
 [ext_resource type="ArrayMesh" uid="uid://dibwa0r8jiuwb" path="res://5Enviornment3D/3DProps/hand2.obj" id="11_y6i7p"]
 [ext_resource type="ArrayMesh" uid="uid://c5etwswt4korg" path="res://5Enviornment3D/3DProps/spear.obj" id="12_kcv67"]
-[ext_resource type="Script" uid="uid://cpdk3yuyso00w" path="res://5Enviornment3D/activate.gd" id="12_wromv"]
 [ext_resource type="ArrayMesh" uid="uid://br56imqn41spj" path="res://5Enviornment3D/KeyMarkers/worm.obj" id="15_36sln"]
 [ext_resource type="ArrayMesh" uid="uid://db7bhteih2e5p" path="res://5Enviornment3D/KeyMarkers/river.obj" id="15_rqdm6"]
-[ext_resource type="Script" uid="uid://ckohc082l6bae" path="res://CheckItem.gd" id="15_umwb1"]
 [ext_resource type="Material" uid="uid://e0hsuiptiotu" path="res://2Textures/watershader.tres" id="16_rqjlu"]
-[ext_resource type="Script" uid="uid://2h7qhi1xmn7v" path="res://1Scripts/give_item.gd" id="17_riorx"]
 [ext_resource type="ArrayMesh" uid="uid://bjixe6ts5ochv" path="res://5Enviornment3D/3DProps/meatrocks.obj" id="18_osegs"]
 [ext_resource type="PackedScene" uid="uid://cjrms2jeg3q4h" path="res://0TSCN/forkhole.tscn" id="18_qdb8b"]
 [ext_resource type="Material" uid="uid://bsssgv0h8aae3" path="res://2Textures/meat.tres" id="19_mk7xb"]
@@ -291,23 +286,6 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_w08s7"]
-atlas = ExtResource("10_s6477")
-region = Rect2(0, 0, 540, 540)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_cpiko"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_w08s7")
-}],
-"loop": false,
-"name": &"default",
-"speed": 5.0
-}]
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_fpmej"]
-
 [sub_resource type="ConvexPolygonShape3D" id="ConvexPolygonShape3D_rqdm6"]
 points = PackedVector3Array(-3.95447, 0.164239, -7.86299, -4.12088, 0.968173, -7.08726, -2.92059, 0.633021, -7.65274, -2.7478, -0.475555, -7.78328, -3.84117, -0.825745, -7.29877, -5.97833, -0.534422, -6.53497, -6.08738, 0.434938, -6.05548, -5.07333, 0.990516, -5.66197, -2.2861, 1.98866, -4.05466, 0.0642109, 1.50742, -4.56365, 0.353839, 0.308612, -6.40945, 0.415447, -0.349229, -6.62095, -1.40942, -2.40096, -3.13961, -2.75913, -1.86729, -4.86302, -5.54211, -1.01996, -5.98016, -6.27716, -0.393916, -5.74418, -5.71773, 0.548374, -5.20444, -0.936388, 1.45457, -2.33188, -3.46727, 0.462868, -2.13168, 0.335427, -0.315714, -2.9551, 0.956464, 0.119123, -6.02535, 0.494051, -0.451064, -5.93874, -1.84705, -0.961095, -1.45135, -3.75973, -1.92014, -2.63062)
 
@@ -360,8 +338,6 @@ sky = SubResource("Sky_qk8yf")
 ambient_light_source = 3
 ambient_light_color = Color(0.907355, 0.573788, 3.85046e-07, 1)
 ambient_light_energy = 10.34
-
-[sub_resource type="BoxShape3D" id="BoxShape3D_qk8yf"]
 
 [node name="3D Doom Map" type="Node3D"]
 
@@ -834,42 +810,6 @@ billboard = 1
 sprite_frames = SubResource("SpriteFrames_rqjlu")
 autoplay = "default"
 
-[node name="DecoyTree" type="AnimatedSprite3D" parent="Environment/World/Terrain3"]
-transform = Transform3D(2.93974, 0, 0.598258, 0, 3, 0, -0.598258, 0, 2.93974, -76.9494, 48.7606, -55.8496)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_cpiko")
-autoplay = "default"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Terrain3/DecoyTree"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Terrain3/DecoyTree/StaticBody3D"]
-transform = Transform3D(0.5, 0, -2.98023e-08, 0, 0.5, 0, 2.98023e-08, 0, 0.5, -0.376918, -1.40069, -0.0767055)
-shape = SubResource("BoxShape3D_fpmej")
-
-[node name="DecoyTree2" type="AnimatedSprite3D" parent="Environment/World/Terrain3"]
-transform = Transform3D(2.93974, 0, 0.598258, 0, 3, 0, -0.598258, 0, 2.93974, -63.4228, 48.7606, -64.2257)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_cpiko")
-autoplay = "default"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Terrain3/DecoyTree2"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Terrain3/DecoyTree2/StaticBody3D"]
-transform = Transform3D(0.5, 0, -2.98023e-08, 0, 0.5, 0, 2.98023e-08, 0, 0.5, -0.376918, -1.40069, -0.0767055)
-shape = SubResource("BoxShape3D_fpmej")
-
-[node name="DecoyTree3" type="AnimatedSprite3D" parent="Environment/World/Terrain3"]
-transform = Transform3D(2.93974, 0, 0.598258, 0, 3, 0, -0.598258, 0, 2.93974, -57.1441, 48.7606, -38.2644)
-billboard = 2
-sprite_frames = SubResource("SpriteFrames_cpiko")
-autoplay = "default"
-
-[node name="StaticBody3D" type="StaticBody3D" parent="Environment/World/Terrain3/DecoyTree3"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Environment/World/Terrain3/DecoyTree3/StaticBody3D"]
-transform = Transform3D(0.5, 0, -2.98023e-08, 0, 0.5, 0, 2.98023e-08, 0, 0.5, -0.376918, -1.40069, -0.0767055)
-shape = SubResource("BoxShape3D_fpmej")
-
 [node name="Rocks" type="MeshInstance3D" parent="Environment/World/Terrain3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -87.6189, 41.2175, -21.6622)
 mesh = ExtResource("32_s6dqg")
@@ -1031,30 +971,5 @@ SPEED = 8.0
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -71.8384, 45.0236, -25.6374)
 visible = false
 SPEED = 11.0
-
-[node name="coin_need_gate" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42147, 0, 2.29818)
-script = ExtResource("12_wromv")
-
-[node name="Area3D" type="Area3D" parent="coin_need_gate"]
-collision_layer = 2
-collision_mask = 3
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="coin_need_gate/Area3D"]
-shape = SubResource("BoxShape3D_qk8yf")
-debug_color = Color(0, 0.624446, 0.528954, 0.42)
-
-[node name="CheckItem" type="Node" parent="coin_need_gate"]
-script = ExtResource("15_umwb1")
-required_items = Array[String](["bullshit"])
-metadata/_custom_type_script = "uid://ckohc082l6bae"
-
-[node name="CollectObject" parent="." instance=ExtResource("2_um6cl")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.42147, 0, 5.351)
-
-[node name="GiveItem" type="Node" parent="CollectObject"]
-script = ExtResource("17_riorx")
-item_name = "bullshit"
-metadata/_custom_type_script = "uid://2h7qhi1xmn7v"
 
 [editable path="Environment/World/Master/map"]
