@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://beiwsll4vdcci"
-path="res://.godot/imported/CubePieces.png-1f56c71dd4894856bad925f4793fc4e2.ctex"
+uid="uid://d06f0c4txq5l1"
+path="res://.godot/imported/faces.png-cbb18a6034515d9073060291cc5c3923.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://3Minigames/Cube/CubePieces.png"
-dest_files=["res://.godot/imported/CubePieces.png-1f56c71dd4894856bad925f4793fc4e2.ctex"]
+source_file="res://3Minigames/CubePuzzle/faces.png"
+dest_files=["res://.godot/imported/faces.png-cbb18a6034515d9073060291cc5c3923.ctex"]
 
 [params]
 

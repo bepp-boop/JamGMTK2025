@@ -1,0 +1,92 @@
+[gd_scene load_steps=9 format=3 uid="uid://p3cmobrta343"]
+
+[ext_resource type="Texture2D" uid="uid://b1dewotk25dv4" path="res://3Minigames/CubePuzzle/PuzzleSolved.png" id="1_ku1k6"]
+[ext_resource type="Script" uid="uid://bdrtw81j33534" path="res://3Minigames/CubePuzzle/cube_puzzle.gd" id="1_nr7ku"]
+[ext_resource type="PackedScene" uid="uid://srl8kxw35r6a" path="res://3Minigames/CubePuzzle/draggable_piece.tscn" id="1_wium0"]
+[ext_resource type="Texture2D" uid="uid://cuhvi0wkgw8nm" path="res://3Minigames/CubePuzzle/faces2.png" id="2_wium0"]
+[ext_resource type="Texture2D" uid="uid://d06f0c4txq5l1" path="res://3Minigames/CubePuzzle/faces.png" id="3_4vlxy"]
+[ext_resource type="Script" uid="uid://2h7qhi1xmn7v" path="res://1Scripts/give_item.gd" id="6_j8sjt"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_nr7ku"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_wium0")
+}],
+"loop": false,
+"name": &"right",
+"speed": 1.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_4vlxy")
+}],
+"loop": true,
+"name": &"wrong",
+"speed": 5.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_nr7ku"]
+radius = 27.074
+
+[node name="CubePuzzle" type="Node2D"]
+script = ExtResource("1_nr7ku")
+
+[node name="Solution" type="Area2D" parent="."]
+
+[node name="Face" type="AnimatedSprite2D" parent="Solution"]
+position = Vector2(576, 528)
+scale = Vector2(0.440002, 0.440002)
+sprite_frames = SubResource("SpriteFrames_nr7ku")
+animation = &"wrong"
+autoplay = "wrong"
+
+[node name="Sprite2D" type="Sprite2D" parent="Solution"]
+position = Vector2(575, 339)
+scale = Vector2(0.200003, 0.198236)
+texture = ExtResource("1_ku1k6")
+
+[node name="SolutionCollisionShape" type="CollisionShape2D" parent="Solution"]
+position = Vector2(578, 331)
+shape = SubResource("CircleShape2D_nr7ku")
+
+[node name="Pieces" type="Node2D" parent="."]
+
+[node name="DraggablePiece0" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(73, -24)
+piecenumber = 0
+
+[node name="DraggablePiece2" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(120, 370)
+piecenumber = 2
+
+[node name="DraggablePiece3" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(639, 348)
+piecenumber = 3
+
+[node name="DraggablePiece4" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(-68, 191)
+piecenumber = 4
+
+[node name="DraggablePiece5" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(629, -2)
+piecenumber = 5
+
+[node name="DraggablePiece1" parent="Pieces" instance=ExtResource("1_wium0")]
+position = Vector2(821, 168)
+
+[node name="GiveItem" type="Node" parent="."]
+script = ExtResource("6_j8sjt")
+metadata/_custom_type_script = "uid://2h7qhi1xmn7v"
+
+[connection signal="area_shape_entered" from="Solution" to="." method="_on_solution_area_shape_entered"]
+[connection signal="area_shape_exited" from="Solution" to="." method="_on_solution_area_shape_exited"]

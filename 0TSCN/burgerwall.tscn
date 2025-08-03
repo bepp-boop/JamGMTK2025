@@ -1,7 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://d2pr3hg7rbn1r"]
+[gd_scene load_steps=7 format=3 uid="uid://d2pr3hg7rbn1r"]
 
-[ext_resource type="Script" uid="uid://bap6vjenmosft" path="res://1scripts/burgerwall.gd" id="1_htewa"]
 [ext_resource type="Texture2D" uid="uid://bc00mv34h1hy2" path="res://4Sprites/Enviro/burgerwall.png" id="2_hb1eg"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_quf8x"]
+size = Vector3(7.19189, 6.51752, 0.441406)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_kxt35"]
 atlas = ExtResource("2_hb1eg")
@@ -18,19 +20,27 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_b3t4r"]
-radius = 1.0
+[sub_resource type="BoxMesh" id="BoxMesh_quf8x"]
+lightmap_size_hint = Vector2i(34, 51)
+size = Vector3(3, 3, 0.2)
 
-[node name="Burgerwall" type="Node3D"]
-script = ExtResource("1_htewa")
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_htewa"]
+albedo_texture = ExtResource("2_hb1eg")
+
+[node name="StaticBody3D" type="StaticBody3D"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00854492, 0.57901, -0.279297)
+shape = SubResource("BoxShape3D_quf8x")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
 transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2.58861, 0)
+visible = false
 billboard = 2
 sprite_frames = SubResource("SpriteFrames_6kt07")
 frame_progress = 1.0
 
-[node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
-shape = SubResource("SphereShape3D_b3t4r")
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.42229, 0, 0, 0, 2.17897, 0, 0, 0, 1, 0, 0.615215, -0.26848)
+mesh = SubResource("BoxMesh_quf8x")
+surface_material_override/0 = SubResource("StandardMaterial3D_htewa")
