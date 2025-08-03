@@ -52,8 +52,8 @@ func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("shoot"):
 		shoot()
 	if Input.is_action_just_pressed("debugbutton"):
-		print("debug activated")
-		start_minigame()
+		$CollisionShape3D.disabled = !$CollisionShape3D.disabled
+		print("Collision changed to: %s " % $CollisionShape3D.disabled)
 
 func _physics_process(delta: float):
 	if dead or input_disabled:
@@ -85,7 +85,8 @@ func shoot():
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("activateMinigame"):
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		var minigame_name = ray_cast_3d.get_collider().activateMinigame()
-		start_minigame(minigame_name)
+		if minigame_name:
+			start_minigame(minigame_name)
 	if ray_cast_3d.is_colliding() and ray_cast_3d.get_collider().has_method("activateInteractable"):
 		print("hit collider of"+ray_cast_3d.get_collider().name)
 		ray_cast_3d.get_collider().activateInteractable()

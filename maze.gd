@@ -18,9 +18,7 @@ func _ready():
 # Finish the game for the current player (based on switch_manager state)
 func finish_game():
 	
-	var burger_walls = get_tree().get_nodes_in_group("burgerwall")
-	for wall in burger_walls:
-		wall.queue_free()
+	
 	var character_num = switch_manager.getState()  # Get the active character number (state)
 	print("deleting minigame for player %s" % character_num)
 	
