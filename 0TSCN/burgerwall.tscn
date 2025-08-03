@@ -18,19 +18,18 @@ animations = [{
 "speed": 1.0
 }]
 
-[sub_resource type="SphereShape3D" id="SphereShape3D_b3t4r"]
-radius = 1.0
+[sub_resource type="BoxShape3D" id="BoxShape3D_htewa"]
+size = Vector3(2, 2, 1)
 
 [node name="Burgerwall" type="Node3D"]
 script = ExtResource("1_htewa")
 
 [node name="AnimatedSprite3D" type="AnimatedSprite3D" parent="."]
-transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2.58861, 0)
-billboard = 2
+transform = Transform3D(3, 0, 0, 0, 3, 0, 0, 0, 1, 0, 2.58861, 0)
 sprite_frames = SubResource("SpriteFrames_6kt07")
 frame_progress = 1.0
 
 [node name="StaticBody3D" type="StaticBody3D" parent="AnimatedSprite3D"]
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="AnimatedSprite3D/StaticBody3D"]
-shape = SubResource("SphereShape3D_b3t4r")
+shape = SubResource("BoxShape3D_htewa")
